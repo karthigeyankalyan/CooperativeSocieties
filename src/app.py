@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 
-# import flask_cors
-import pandas
+import flask_cors
 from bson import json_util
 from flask import Flask, render_template, request, session, json
 from src.common.database import Database
@@ -15,7 +14,7 @@ from src.models.memberTransactions import memberTransactions
 from src.models.user import User
 
 app = Flask(__name__)  # main
-# flask_cors.CORS(app)
+flask_cors.CORS(app)
 app.secret_key = "commercial"
 
 
@@ -1713,4 +1712,4 @@ def raw_intents_between_district(start, end, district):
 
 
 if __name__ == '__main__':
-    app.run(port=4025, debug=True)
+    app.run(port=4065, debug=True)
