@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
+import flask_cors
 from bson import json_util
-from flask.ext.cors import CORS
 from flask import Flask, render_template, request, session, json
 from src.common.database import Database
 from src.models.education_officers import EducationOfficers
@@ -14,7 +14,7 @@ from src.models.memberTransactions import memberTransactions
 from src.models.user import User
 
 app = Flask(__name__)  # main
-CORS(app)
+flask_cors.CORS(app)
 app.secret_key = "commercial"
 
 
