@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-import flask_cors
+# import flask_cors
 import pandas
 from bson import json_util
 from flask import Flask, render_template, request, session, json
@@ -15,7 +15,7 @@ from src.models.memberTransactions import memberTransactions
 from src.models.user import User
 
 app = Flask(__name__)  # main
-flask_cors.CORS(app)
+# flask_cors.CORS(app)
 app.secret_key = "commercial"
 
 
