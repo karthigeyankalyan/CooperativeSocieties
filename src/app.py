@@ -24,6 +24,12 @@ def initialize_database():
     Database.initialize()
 
 
+@app.route('/')
+def home():
+    # remote_address = request.headers.getlist("X-Forwarded-For")[0]
+    return render_template('home.html')
+
+
 @app.route('/login')
 def login_form():
     return render_template('login.html')
