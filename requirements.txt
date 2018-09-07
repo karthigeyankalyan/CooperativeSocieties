@@ -1,0 +1,4 @@
+Flask==0.10.1
+pymongo==3.2.1
+requests==2.8.0
+uwsgi
