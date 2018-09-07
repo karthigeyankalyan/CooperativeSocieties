@@ -1,0 +1,238 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-top: 10px">
+    <button onclick="downloadSWSReport()">Society Stock Report</button>
+    <button onclick="downloadMGReport()">Member Garment Report</button>
+    <button onclick="downloadEOReport()">EO Garment Report</button>
+</div>
+
+<script>
+
+    function downloadSWSReport() {
+    var source = "/raw_installments_between/"+"{{start_date}}/{{end_date}}/{{district}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.center + "-" + d.garment_type;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "cut_piece_units": d3.sum(leaves, function(d) {return parseFloat(d.cut_piece_units);}),
+                            "stitched_units": d3.sum(leaves, function(d) {return parseFloat(d.units_received);}),
+                            "total_required": d3.sum(leaves, function(d) {return parseFloat(d.units_required);})
+                        }
+                    })
+                .entries(json);
+
+            var doc = new jsPDF();
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(60, 10, 'Society-Garment Wise Stock Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(60, 20, '{{society}}');
+
+            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(60, 30, 'Stock Records between {{start_date}} to {{end_date}}');
+
+            columns = ["S. No", "Center-Garment", "Cut Piece Stock", "Stitched Units Required", "Stitched Units Received"];
+            rows = [];
+            var total_cpu = 0;
+            var total_sureq = 0;
+            var total_surec = 0;
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                total_cpu += aggregatedData[l].values.cut_piece_units;
+                total_sureq += aggregatedData[l].values.total_required;
+                total_surec += aggregatedData[l].values.stitched_units;
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [aggregatedData[l].values.cut_piece_units], [aggregatedData[l].values.total_required],
+                    [aggregatedData[l].values.stitched_units]]);
+            }
+            rows.push([['Total'], [''], [total_cpu], [total_sureq], [total_surec]]);
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.save('Garment-Society-Stock Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+    function downloadMGReport() {
+    var doc = new jsPDF();
+    var source = "/raw_member_transactions_between/"+"{{start_date}}/{{end_date}}/{{district}}/{{society}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.name + "-" + d.garment_type;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "wage_to_pay": d3.sum(leaves, function(d) {return parseFloat(d.wage_expected);}),
+                            "units_assigned": d3.sum(leaves, function(d) {return parseFloat(d.no_of_units);}),
+                            "units_returned": d3.sum(leaves, function(d) {return parseFloat(d.units_returned);})
+                        }
+                    })
+                .entries(json);
+
+            console.log(json);
+            console.log(aggregatedData);
+
+            var doc = new jsPDF();
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(70, 10, 'Member Wise Garment Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(60, 20, '{{society}}');
+
+            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(50, 30, 'Stitching and Assigned details between {{start_date}} to {{end_date}}');
+
+            columns = ["S. No", "Member-Garment", "Units Assigned", "Units Returned", "Wages"];
+            rows = [];
+            var total_wages = 0;
+            var ur_total = 0;
+            var ua_total = 0;
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                total_wages += aggregatedData[l].values.wage_to_pay;
+                ur_total += aggregatedData[l].values.units_returned;
+                ua_total += aggregatedData[l].values.units_assigned;
+
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [aggregatedData[l].values.units_assigned], [aggregatedData[l].values.units_returned],
+                    [aggregatedData[l].values.wage_to_pay]]);
+            }
+            rows.push([['Total'], [''], [ua_total], [ur_total], [total_wages]]);
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.save('Member-Garment-Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+    function downloadEOReport() {
+    var doc = new jsPDF();
+    var source = "/raw_intents_between_date/"+"{{start_date}}/{{end_date}}/{{district}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.eo;
+                })
+                .key(function (d) {
+                    return d.garment_type;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "units_returned": d3.sum(leaves, function(d) {return parseFloat(d.units_received);})
+                        }
+                    })
+                .entries(json);
+
+            console.log(aggregatedData);
+
+            var doc = new jsPDF('l', 'mm', [300, 210]);
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(120, 10, 'Member Wise Garment Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(110, 20, '{{society}}');
+
+            doc.text(120, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(105, 30, 'Stitching and Assigned details between {{start_date}} to {{end_date}}');
+
+            var columns = ["S. No", "EO Name", "HP,Shirt(1-5)", "FP,Shirt(6-8)", "Boys Total", "SK,BL(1-5)", "Salwar Kameez(6-8)",
+                "Girls Total", "Overcoat", "Grand Total"];
+            var rows = [];
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                var units_hps = 0;
+                var units_fps = 0;
+                var units_skbl = 0;
+                var units_salwar = 0;
+                var units_oc = 0;
+
+                var hps = ['Half Pant Shirt', 'Half Pant'];
+                var fps = ['Full Pant', 'Full Pant Shirt'];
+                var bl = ['Skirt', 'Blouse'];
+                var sb = ['Salwar Bottom', 'Salwar Dupatta', 'Salwar Top'];
+                var oc = ['Overcoat'];
+
+                for(var gtypes = 0; gtypes < aggregatedData[l].values.length; gtypes++) {
+                    if (hps.indexOf(aggregatedData[l].values[gtypes].key) !== -1) {
+                        units_hps += aggregatedData[l].values[gtypes].values.units_returned;
+                    }
+                    else if (fps.indexOf(aggregatedData[l].values[gtypes].key) !== -1) {
+                        units_fps += aggregatedData[l].values[gtypes].values.units_returned;
+                    }
+                    else if (bl.indexOf(aggregatedData[l].values[gtypes].key) !== -1) {
+                        units_skbl += aggregatedData[l].values[gtypes].values.units_returned;
+                    }
+                    else if (sb.indexOf(aggregatedData[l].values[gtypes].key) !== -1) {
+                        units_salwar += aggregatedData[l].values[gtypes].values.units_returned;
+                    }
+                    else if (oc.indexOf(aggregatedData[l].values[gtypes].key) !== -1) {
+                        units_oc += aggregatedData[l].values[gtypes].values.units_returned;
+                    }
+                }
+
+                var boys_units = units_hps + units_fps;
+                var girls_units = units_skbl+units_salwar;
+                var total_units = boys_units+girls_units+units_oc;
+
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [units_hps], [units_fps], [boys_units], [units_skbl], [units_salwar],
+                    [girls_units], [units_oc], [total_units]]);
+            }
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.save('Member-Garment-Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+</script>
+
+{% endblock %}

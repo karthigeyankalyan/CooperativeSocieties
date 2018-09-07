@@ -1,0 +1,105 @@
+{% extends "pre_login_base.html" %}
+{% block content %}
+
+<!--Form for user registration-->
+<div class="container login-page-form" style="display: flex; flex-direction: row; flex: 1.5; justify-content: center">
+    <form id="register-form" action="/authorize/register" method="post" style="display: flex; flex-direction: column; justify-content: space-around">
+        <span style="justify-content: center; display: flex">In case of HQ-Staff, leave the district and society name empty!</span>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" name="email" placeholder="ramesh@example.com">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" name="password" placeholder="xxxxx">
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" name="username" placeholder="ramesh">
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation</label>
+              <select class="form-control" id="designation" name="designation">
+                {% set designation = ['Accountant', 'DSWO/ICO', 'HQ Staff'] %}
+                {% for ch in designation %}
+                    <option value= "{{ch}}">{{ch}}</option>"
+                {% endfor %}
+              </select>
+        </div>
+        <div class="form-group">
+              <label for="district">Select District:</label>
+                <select class="form-control" style="text-align: center;" id="district" name="district">
+                    {% set districts = ["Chennai", "Coimbatore", "Dharmapuri", "Dindugul", "Erode",
+                    "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai",
+                    "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukottai",
+                    "Ramnad", "Salem", "Sivagangai", "Thanjavur", "Theni",
+                    "Thirunelveli", "Thirupur", "Thiruvallur", "Thiruvannamalai",
+                    "Trichy", "Tuticorin", "Vellore", "Villupuram", "Virudhunagar"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
+        </div>
+        <div class="form-group">
+            <label for="society">Name of Society</label>
+            <select class="societyPicker" style="text-align: center;" id="society" name="society">
+            </select>
+        </div>
+        <div style="justify-content: center; display: flex">
+            <button type="submit" class="btn btn-success">Sign-up</button>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    //Setting default value of dropdown to be empty
+        $("#district").prop("selectedIndex", -1);
+
+        var distSociety =  {"Chennai": ["The Madras Womens Tailoring Indl.Co.Op Society Ltd",  "Ramakrishna Adi_Dravidar Womens Tailoring Indl.Co.",  "The Annie Besant Handi-Capped Womens Welfare Co.Op",  "The Chennai Womens Cottage Industries Co.Op Societ"],
+            "Coimbatore":   ["The Coimbatore Ladies Garment Makers Co-Operative ",  "Pollachi Tailoring Womens Development Cottage Co-O"],
+            "Cuddalore":    ["The Cuddalore Ladies Tailoring Industrial Co.Opera",  "The Chidambaram Ladies Tailoring And Allied Indi."],
+            "Dharmapuri":   ["The Dharmapuri Tailoring Women Development Cottage",  "The Dharmapuri Stationary Printing & Tailoring Wom"],
+            "Dindugul":     ["Reg. No Swsw 42 Annai Abirami Women Tailoring Deve",  "Ind 1713 Annai Sathya Women Industrial Co-Operativ",  "Reg.No. Sw 88 Dindigul District Stationery And Wom"],
+            "Erode":        ["The Erode District Women Stationery, Printing And ",  "The Erode Ladies Tailoring Workers Industrial Co-O",  "The Gobichettipalayam Tailoring Workers Women Deve"],
+            "Kancheepuram": ["Kancheepuram Ladies Tailoring Co-Operative Society",  "Sri Kamatchiamman Ladies Tailoring Development Cot",  "Tambaram Ladies Tailoring Indl. Co-Operative Socie",  "Chengalpattu District Ladies Note Book Manufacture"],
+            "Kanyakumari":  ["Kumari District Tailoring Women Development Cottag", "Kumari District Chalkcryon Manufacturing Women Dev"],
+            "Karur": ["The Karur Tailoring And Allied Works Women Develop"],
+            "Krishnagiri": ["Hosur Tailoring Women Development Cottage Co Op So",  "The Mathur Tailoring Women Development Co Op Socie",  "The Barugur Tailoring Women Development Co Op Soci"],
+            "Madurai": ["Madurai Gorippalayam Women Tailoring Workers Indu",  "S.W. 55. Ranimangammal Tailoring Women Development", "The Angayarkanni Southern Regional Women Tailoring",  "Madurai District Arignar Anna Women Stationery Goo"],
+            "Nagapattinam": ["The Annai Anjugam Tailoring Women Development Cott"],
+            "Namakkal": ["The Velur Ladies Readymade Garment Makers Industri",  "Tiruchengodu Ladies And Tailoring Printing And Stationery"],
+            "Nilgiris": ["Nilgiri District Tailoring Women Development Cotta"],
+            "Perambalur": ["District Womens Tailoring & Industrial Co-Op.Socie"],
+            "Pudukottai": ["Pudukkottai Women Tailoring Industrial Co-Op Socie",  "Annavasal Amuthasurabi Chalk Craiyons Women Tailor"],
+            "Ramnad": ["S.W.52 Annai Sathya Women Tailoring Co-Op Society ",  "Ramnad District Women Tailoring Coop Society Ind N",  "Aringar Anna Ladies Tailoring Coop Society Ind No.",  "Sw.37 Thaimugambigai Tailoring Coop Soceity Rmd.1/"],
+            "Salem": ["Salem Ladies Tailoring Industrial Co-Op Society In",  "Attur Adi-Dravidar Tailoring Workers Woman Develop"],
+            "Sivagangai": ["Chinnamarudhu Periyamarudhu Pandiyar Women Develop",  "Sivagangai Women Tailoring Development Co-Operativ",  "Mangalam Chalk Cryan & Women Tailoring Development",  "Kunthavai Natchiyar Women Development Tailoring Co"],
+            "Thanjavur": ["Thanajavur Women Tailoring Industrial Co-Op-Societ",  "Kunthavai Nachiyar Ladies Tailoring Industral Co-O",  "Kumbakonam Ladies Tailoring Industral Co-Op- Socie"],
+            "Theni": ["S.W.98 Valluvar Vasuki Tailoring Women Development",  "Ind.1684 Annai Sathiya Womens Tailoring Industrial",  "Ind.1710 Periyakulam Women Tailoring Industrial Co"],
+            "Thirunelveli": ["Tirunelveli Women Tailoring Workers Industrial Co-",  "Tirunelveli Anna Women Paper Cardboard And Station",  "Valliyoor Union Tailoring Workers Industrial Coope"],
+            "Thirupur": ["Palladam Women Stationery Goods Manufacturing And "],
+            "Thiruvallur": ["Thiruvallur District Womens Tailoring Industrial C"],
+            "Thiruvannamalai": ["The Annai Sathiya Tailoring Womens Indl Co-Op Soc",  "The Tiruvannamalai Tailoring Womens Development C",  "Thiruvarur District Women Tailoring And Industrial",  "Valangaiman Women Stationery Manufacturers And Tai"],
+            "Trichy": ["Trichy Womens Tailoring Co-Op.Society,8/11, North ",  "Trichy Kavery Womens Tailoring Co-Op.Society, 29, ",  "Trichy Womens Stationary Tailoring Co-Op.Society,3"],
+            "Tuticorin": ["Muthunagar Womens Tailoring Co-Operetive Societ", "Bharathiyar Readymade Garment Makers Co-Operative", "Ranianna Tailoring Co-Operetive Society"],
+            "Vellore": ["The Velapadi Women Tailoring & Small Industrial Co",  "Annai Curie Chalk Manufacturing Physically Handica",  "Annai Indira Gandhi Women Tailoring Industrial Ser",  "The Arcot Tailoring Women Development Cottage Co-O"],
+            "Villupuram": ["Villupuram Womens Tailoring Industrial Co-Operativ",  "Ulundhurpet Printing Stationery And Tailoring Good"],
+            "Virudhunagar": ["Q.255,Virudhunagar Ladies Tailoring Industrial Co-",  "S.W.48 Annai Sivakami Women Tailoring Industrial C",  "Ind.1753,Annai Sathiya Women Tailoring Workers Ind",  "Ind.1767,Dr.Khanu Women Tailoring Workers Industri"]}
+
+            var classPick = '.societyPicker';
+            var html;
+            var $locations = $(classPick);
+            $('#district').change(function () {
+                var district = $(this).val(), societies = distSociety[district] || [];
+
+                html = $.map(societies, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $locations.html(html)
+            });
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<form id="new-intent" action="/BonusCalculationForMembers" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Bonus Calculation</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="profits">Enter Profits</label>
+                <label for="startDate">Start Date</label>
+                <label for="endDate">End Date</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="number" id="profits" name="profits">
+                <input type="date" id="startDate" name="startDate">
+                <input type="date" id="endDate" name="endDate">
+            </div>
+        </div>
+
+    </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Get Bonus Details</button>
+        </div>
+</form>
+
+{% endblock %}

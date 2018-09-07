@@ -1,0 +1,80 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<body>
+        <div id="Search" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <label for="myInput" style="margin-left: 10%">Search by Name:</label>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        </div>
+
+        <div id="eoList">
+        </div>
+
+</body>
+
+<script>
+        var source = "/rawDistrictNameEOs/{{district}}/{{Name}}";
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                {
+                    $("#eoDetails").find("tbody").empty();
+                    var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
+                    $("#eoList").append(tbl);
+                    var hr = "<tr>";
+                    var th1 = "<th style='text-align:center;vertical-align:middle'>" + "EO Name" + "</th>";
+                    var th2 = "<th style='text-align:center;vertical-align:middle'>" + "District" + "</th>";
+                    var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Block" + "</th>";
+                    var th4 = "<th style='text-align:center;vertical-align:middle'>" + "Society Name" + "</th>";
+                    var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Travel Charges" + "</th>";
+                    var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Update Entry" + "</th>";
+                    var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Delete Entry" + "</th>";
+                    $("#eoDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th7);
+                    for (var j = 0; j < json.length; j++) {
+                        {
+                            var loan_id = json[j]["_id"];
+                            var url = '/updateEO/'+loan_id;
+                            var url1 = '/deleteEO/'+loan_id;
+                            var row = $('<tr></tr>').html('<td>' +
+                                json[j]["name"] + '</td>'+
+                                '<td>'+ json[j]["district"] +'</td>'+
+                                '<td>'+ json[j]["block"] +'</td>'+
+                                '<td>'+ json[j]["society_name"] +'</td>'+
+                                '<td>'+ json[j]["travel_charge"] +'</td>'+
+                                '<td><button class="btn btn-default"><a href="' + url + '">'+ 'View Details' +'</a></button></td>'+
+                                '<td><button class="btn btn-default"><a href="' + url1 + '">'+ 'Delete Entry' +'</a></button></td>');
+                            $("#eoDetails").append(row);
+                        }
+                    }
+                }
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("eoList");
+        tr = table.getElementsByTagName("tr");
+        console.log(tr.length);
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<form id="new-intent" action="/new_garment/{{user._id}}" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Garment Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="numCenters"># of Garments</label>
+                <label for="district">District</label>
+                <label for="society">Society</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="number" value="26" id="numCenters" name="numCenters" onmousemove="createFields(this)">
+                <select class="form-control" style="text-align: center;" id="district" name="district">
+                    {% set districts = ["Chennai", "Coimbatore", "Dharmapuri", "Dindugul", "Erode",
+                    "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai",
+                    "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukottai",
+                    "Ramnad", "Salem", "Sivagangai", "Thanjavur", "Theni",
+                    "Thirunelveli", "Thirupur", "Thiruvallur", "Thiruvannamalai",
+                    "Trichy", "Tuticorin", "Vellore", "Villupuram", "Virudhunagar"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
+                <select class="societyPicker" style="text-align: center;" id="society" name="society">
+                </select>
+            </div>
+        </div>
+
+        <div id="centerOvr" class="form-group">
+            <div id="centerDetails" style="display: flex; flex-direction: column;">
+            </div>
+        </div>
+    </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save Garment Details</button>
+        </div>
+</form>
+
+<script>
+
+        var distSociety =  {"Chennai": ["The Madras Womens Tailoring Indl.Co.Op Society Ltd",  "Ramakrishna Adi_Dravidar Womens Tailoring Indl.Co.",  "The Annie Besant Handi-Capped Womens Welfare Co.Op",  "The Chennai Womens Cottage Industries Co.Op Societ"],
+            "Coimbatore":   ["The Coimbatore Ladies Garment Makers Co-Operative ",  "Pollachi Tailoring Womens Development Cottage Co-O"],
+            "Cuddalore":    ["The Cuddalore Ladies Tailoring Industrial Co.Opera",  "The Chidambaram Ladies Tailoring And Allied Indi."],
+            "Dharmapuri":   ["The Dharmapuri Tailoring Women Development Cottage",  "The Dharmapuri Stationary Printing & Tailoring Wom"],
+            "Dindugul":     ["Reg. No Swsw 42 Annai Abirami Women Tailoring Deve",  "Ind 1713 Annai Sathya Women Industrial Co-Operativ",  "Reg.No. Sw 88 Dindigul District Stationery And Wom"],
+            "Erode":        ["The Erode District Women Stationery, Printing And ",  "The Erode Ladies Tailoring Workers Industrial Co-O",  "The Gobichettipalayam Tailoring Workers Women Deve"],
+            "Kancheepuram": ["Kancheepuram Ladies Tailoring Co-Operative Society",  "Sri Kamatchiamman Ladies Tailoring Development Cot",  "Tambaram Ladies Tailoring Indl. Co-Operative Socie",  "Chengalpattu District Ladies Note Book Manufacture"],
+            "Kanyakumari":  ["Kumari District Tailoring Women Development Cottag", "Kumari District Chalkcryon Manufacturing Women Dev"],
+            "Karur": ["The Karur Tailoring And Allied Works Women Develop"],
+            "Krishnagiri": ["Hosur Tailoring Women Development Cottage Co Op So",  "The Mathur Tailoring Women Development Co Op Socie",  "The Barugur Tailoring Women Development Co Op Soci"],
+            "Madurai": ["Madurai Gorippalayam Women Tailoring Workers Indu",  "S.W. 55. Ranimangammal Tailoring Women Development", "The Angayarkanni Southern Regional Women Tailoring",  "Madurai District Arignar Anna Women Stationery Goo"],
+            "Nagapattinam": ["The Annai Anjugam Tailoring Women Development Cott"],
+            "Namakkal": ["The Velur Ladies Readymade Garment Makers Industri",  "Tiruchengodu Ladies And Tailoring Printing And Stationery"],
+            "Nilgiris": ["Nilgiri District Tailoring Women Development Cotta"],
+            "Perambalur": ["District Womens Tailoring & Industrial Co-Op.Socie"],
+            "Pudukottai": ["Pudukkottai Women Tailoring Industrial Co-Op Socie",  "Annavasal Amuthasurabi Chalk Craiyons Women Tailor"],
+            "Ramnad": ["S.W.52 Annai Sathya Women Tailoring Co-Op Society ",  "Ramnad District Women Tailoring Coop Society Ind N",  "Aringar Anna Ladies Tailoring Coop Society Ind No.",  "Sw.37 Thaimugambigai Tailoring Coop Soceity Rmd.1/"],
+            "Salem": ["Salem Ladies Tailoring Industrial Co-Op Society In",  "Attur Adi-Dravidar Tailoring Workers Woman Develop"],
+            "Sivagangai": ["Chinnamarudhu Periyamarudhu Pandiyar Women Develop",  "Sivagangai Women Tailoring Development Co-Operativ",  "Mangalam Chalk Cryan & Women Tailoring Development",  "Kunthavai Natchiyar Women Development Tailoring Co"],
+            "Thanjavur": ["Thanajavur Women Tailoring Industrial Co-Op-Societ",  "Kunthavai Nachiyar Ladies Tailoring Industral Co-O",  "Kumbakonam Ladies Tailoring Industral Co-Op- Socie"],
+            "Theni": ["S.W.98 Valluvar Vasuki Tailoring Women Development",  "Ind.1684 Annai Sathiya Womens Tailoring Industrial",  "Ind.1710 Periyakulam Women Tailoring Industrial Co"],
+            "Thirunelveli": ["Tirunelveli Women Tailoring Workers Industrial Co-",  "Tirunelveli Anna Women Paper Cardboard And Station",  "Valliyoor Union Tailoring Workers Industrial Coope"],
+            "Thirupur": ["Palladam Women Stationery Goods Manufacturing And "],
+            "Thiruvallur": ["Thiruvallur District Womens Tailoring Industrial C"],
+            "Thiruvannamalai": ["The Annai Sathiya Tailoring Womens Indl Co-Op Soc",  "The Tiruvannamalai Tailoring Womens Development C",  "Thiruvarur District Women Tailoring And Industrial",  "Valangaiman Women Stationery Manufacturers And Tai"],
+            "Trichy": ["Trichy Womens Tailoring Co-Op.Society,8/11, North ",  "Trichy Kavery Womens Tailoring Co-Op.Society, 29, ",  "Trichy Womens Stationary Tailoring Co-Op.Society,3"],
+            "Tuticorin": ["Muthunagar Womens Tailoring Co-Operetive Societ", "Bharathiyar Readymade Garment Makers Co-Operative", "Ranianna Tailoring Co-Operetive Society"],
+            "Vellore": ["The Velapadi Women Tailoring & Small Industrial Co",  "Annai Curie Chalk Manufacturing Physically Handica",  "Annai Indira Gandhi Women Tailoring Industrial Ser",  "The Arcot Tailoring Women Development Cottage Co-O"],
+            "Villupuram": ["Villupuram Womens Tailoring Industrial Co-Operativ",  "Ulundhurpet Printing Stationery And Tailoring Good"],
+            "Virudhunagar": ["Q.255,Virudhunagar Ladies Tailoring Industrial Co-",  "S.W.48 Annai Sivakami Women Tailoring Industrial C",  "Ind.1753,Annai Sathiya Women Tailoring Workers Ind",  "Ind.1767,Dr.Khanu Women Tailoring Workers Industri"]}
+
+            var classPick = '.societyPicker';
+            var html;
+            var $locations = $(classPick);
+            $('#district').change(function () {
+                var district = $(this).val(), societies = distSociety[district] || [];
+
+                html = $.map(societies, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $locations.html(html)
+            });
+
+    function createFields(that) {
+        $("#centerDetails").empty();
+        for(var i=0; i< parseInt(that.value); i++) {
+            var inputSNO = "s"+i;
+            var GarmentType = "gt"+i;
+            var GarmentName = "gn"+i;
+            var WPU = "wpu"+i;
+            var CC = "cc"+i;
+            var Deductions = "d"+i;
+            if (i === 0) {
+                var row = $('<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;"></div>')
+                    .html(
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<label for='+inputSNO+'>S.No</label>' +
+                            '<input type="number" id='+inputSNO+' name='+inputSNO+' value='+(i+1)+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<label for='+GarmentType+'>Garment Type</label>' +
+                            '<input type="text" id='+GarmentType+' name='+GarmentType+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<label for='+GarmentName+'>Garment Name</label>' +
+                            '<input type="text" id='+GarmentName+' name='+GarmentName+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<label for='+WPU+'>Wage Per Unit</label>' +
+                            '<input type="number" id='+WPU+' name='+WPU+'>' +
+                        '</div>'+
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<label for='+CC+'>Cutting Charges</label>' +
+                            '<input type="number" id='+CC+' name='+CC+'>' +
+                        '</div>'+
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<label for='+Deductions+'>Deductions</label>' +
+                            '<input type="number" id='+Deductions+' name='+Deductions+'>' +
+                        '</div>'
+                    );
+            }
+            else {
+                row = $('<div style="display: flex; flex-direction: row; justify-content: space-around"></div>')
+                    .html(
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<input type="number" id='+inputSNO+' name='+inputSNO+' value='+(i+1)+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<input type="text" class="societyPicker" id='+GarmentType+' name='+GarmentType+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column;">' +
+                            '<input type="text" class="societyPicker" id='+GarmentName+' name='+GarmentName+'>' +
+                        '</div>' +
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<input type="number" id='+WPU+' name='+WPU+'>' +
+                        '</div>'+
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<input type="number" id='+CC+' name='+CC+'>' +
+                        '</div>'+
+                        '<div style="display: flex; flex-direction: column; ">' +
+                            '<input type="number" id='+Deductions+' name='+Deductions+'>' +
+                        '</div>'
+                    );
+            }
+            $("#centerDetails").append(row);
+        }
+        populateGarments()
+    }
+
+function populateGarments() {
+    var gTypes = ['Half Pant', 'Half Pant', 'Half Pant', 'Half Pant', 'Half Pant Shirt', 'Half Pant Shirt', 'Half Pant Shirt', 'Half Pant Shirt', 'Full Pant', 'Full Pant', 'Full Pant Shirt', 'Full Pant Shirt', 'Full Pant Shirt', 'Full Pant Shirt', 'Skirt', 'Blouse', 'Blouse', 'Blouse', 'Blouse', 'Salwar Bottom', 'Salwar Top', 'Salwar Dupatta', 'Overcoat', 'Overcoat', 'Overcoat', 'Overcoat'];
+    var gNames = ['Half Pant - Label+Gaja+Button', 'Half Pant - Label+Gaja', 'Half Pant - Label+Button', 'Half Pant - Label', 'Half Pant Shirt - Label+Gaja+Button', 'Half Pant Shirt - Label+Gaja', 'Half Pant Shirt - Label+Button', 'Half Pant Shirt - Label', 'Full Pant - Label', 'Full Pant - Label+Zip', 'Full Pant Shirt - Label+Gaja+Button', 'Full Pant Shirt - Label+Gaja', 'Full Pant Shirt - Label+Button', 'Full Pant Shirt - Label', 'Skirt - Label', 'Blouse - Label+Gaja+Button', 'Blouse - Label+Gaja', 'Blouse - Label+Button', 'Blouse - Label', 'Salwar Bottom - Label', 'Salwar Top - Label', 'Salwar Dupatta - Label', 'Overcoat - Label+Gaja+Button', 'Overcoat - Label+Gaja', 'Overcoat - Label+Button', 'Overcoat - Label'];
+
+    for(var iter=0; iter<27; iter++){
+        var gt = 'gt'+iter;
+        var gn = 'gn'+iter;
+        document.getElementById(gt).value = gTypes[iter];
+        document.getElementById(gn).value = gNames[iter];
+    }
+}
+
+</script>
+{% endblock %}

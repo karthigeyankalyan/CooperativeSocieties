@@ -1,0 +1,18 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<style>
+    #username {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div id="username">
+    <h2>Welcome, {{ user.username }}! </h2>
+    <h2>Below are the options for {{ user.designation }}! </h2>
+</div>
+
+{% endblock %}

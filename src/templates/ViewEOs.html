@@ -1,0 +1,90 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<body>
+        <div id="Search" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <label for="myInput" style="margin-left: 10%">Search by Name:</label>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        </div>
+
+        <div id="eoList">
+        </div>
+
+</body>
+
+<script>
+        var source = "/rawDistrictEOs/{{district}}";
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (jsonFunc) {
+                {
+
+                var aggregated_count = d3.nest()
+                    .key(function (d) {
+                        return d.name;
+                    })
+                    .key(function (d) {
+                        return d.district;
+                    })
+                    .rollup(function (v) {
+                        return v.length;
+                    })
+                    .entries(jsonFunc);
+
+                console.log(aggregated_count);
+
+
+                    $("#eoDetails").find("tbody").empty();
+                    var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
+                    $("#eoList").append(tbl);
+                    var hr = "<tr>";
+                    var th1 = "<th style='text-align:center;vertical-align:middle'>" + "EO Name" + "</th>";
+                    var th2 = "<th style='text-align:center;vertical-align:middle'>" + "District" + "</th>";
+                    var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Number of Centers" + "</th>";
+                    var th4 = "<th style='text-align:center;vertical-align:middle'>" + "View Details" + "</th>";
+                    $("#eoDetails").append(hr + th1 + th2 + th3 + th4);
+                    for (var j = 0; j < aggregated_count.length; j++) {
+                        {
+                            var loan_id = aggregated_count[j].key;
+                            var district = aggregated_count[j].values[0].key;
+                            var url = '/viewEODetails/'+district+"/"+loan_id;
+                            var row = $('<tr></tr>').html('<td>' +
+                                aggregated_count[j].key + '</td>'+
+                                '<td>'+aggregated_count[j].values[0].key +'</td>'+
+                                '<td>'+aggregated_count[j].values[0].values+'</td>'+
+                                '<td><button class="btn btn-default"><a href="' + url + '">'+ 'View Details' +'</a></button></td>');
+                            $("#eoDetails").append(row);
+                        }
+                    }
+                }
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("eoList");
+        tr = table.getElementsByTagName("tr");
+        console.log(tr.length);
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
+
+{% endblock %}

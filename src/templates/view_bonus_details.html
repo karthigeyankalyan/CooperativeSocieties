@@ -1,0 +1,94 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<body>
+        <div id="Search" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <label for="myInput" style="margin-left: 10%">Search by Name:</label>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        </div>
+
+        <div id="eoList">
+        </div>
+
+</body>
+
+<script>
+        var source = "/bonus_calculation/{{start_date}}/{{end_date}}/{{district}}/{{society}}/{{profits}}";
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                {
+                var jsonFunc = d3.nest()
+                    .key(function (d) {
+                        return d.name;
+                    })
+                    .key(function (d) {
+                        return d.member_id;
+                    })
+                    .key(function (d) {
+                        return d.garment_type;
+                    })
+                    .rollup(function (v) {
+                        return {
+                            "total_units": d3.sum(v, function (d) { return d.units_assigned }),
+                            "total_wages": d3.sum(v, function (d) { return d.wage_expected }),
+                            "total_bonus": d3.sum(v, function (d) { return d.bonus })
+                        }
+                    })
+                    .entries(json);
+
+                    $("#eoDetails").find("tbody").empty();
+                    var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
+                    $("#eoList").append(tbl);
+                    var hr = "<tr>";
+                    var th1 = "<th style='text-align:center;vertical-align:middle'>" + "Member Name" + "</th>";
+                    var th2 = "<th style='text-align:center;vertical-align:middle'>" + "Member ID" + "</th>";
+                    var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Type" + "</th>";
+                    var th4 = "<th style='text-align:center;vertical-align:middle'>" + "# of Units" + "</th>";
+                    var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Wage Expected" + "</th>";
+                    var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Bonus Amount" + "</th>";
+                    $("#eoDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6);
+                    for (var j = 0; j < jsonFunc.length; j++) {
+                        {
+                            var row = $('<tr></tr>').html(
+                                '<td>'+jsonFunc[j]["name"] +'</td>'+
+                                '<td>'+jsonFunc[j]["member_id"] +'</td>'+
+                                '<td>'+jsonFunc[j]["garment_type"] +'</td>'+
+                                '<td>'+jsonFunc[j]["share_value"] +'</td>'+
+                                '<td>'+jsonFunc[j]["current_thrift_value"] +'</td>'+
+                                '<td>'+moment(jsonFunc[j]["enrollment_date"]).format('YYYY-MM-DD')+'</td>');
+                            $("#eoDetails").append(row);
+                        }
+                    }
+                }
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("eoList");
+        tr = table.getElementsByTagName("tr");
+        console.log(tr.length);
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
+
+{% endblock %}

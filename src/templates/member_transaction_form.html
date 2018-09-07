@@ -1,0 +1,167 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<form id="new-intent" action="/assign_member/{{installment_id}}" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Member Intent Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="intentID">Installment Number</label>
+                <label for="gType">Garment Type</label>
+                <label for="gName">Garment Name</label>
+                <label for="numUnits"># Units Still to Assign</label>
+                <label for="memberPicker">Select Member</label>
+                <label for="memberName">memberName</label>
+                <label for="assignedUnits">Units Assigned</label>
+                <label for="wpu">Wage Per Unit</label>
+                <label for="deductions">Deductions</label>
+                <label for="advances">Advance Paid</label>
+                <label for="issueDate">Issue Date</label>
+                <label for="deadlineDate">Deadline Date</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="number" id="intentID" name="intentID">
+                <input type="text" id="gType" name="gType" onmousemove="chooseGarment()">
+                <select class="garmentPicker" id="gName" name="gName"></select>
+                <input type="number" id="numUnits" name="numUnits">
+                <select class="memberPicker" id="memberPicker" name="memberPicker" onselect="chooseName()"></select>
+                <input type="text" id="memberName" name="memberName" onmousemove="chooseName()">
+                <input type="number" id="assignedUnits" name="assignedUnits">
+                <input type="number" id="wpu" name="wpu">
+                <input type="number" id="deductions" name="deductions">
+                <input type="number" id="advances" name="advances">
+                <input type="date" id="issueDate" name="issueDate">
+                <input type="date" id="deadlineDate" name="deadlineDate">
+                <input type="text" id="MID" name="MID" style="display: none">
+            </div>
+        </div>
+
+    </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save Transaction Details</button>
+        </div>
+</form>
+
+<script>
+
+    var source = "/rawSingleInstallment/"+"{{installment_id}}";
+    var garment_type;
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            document.getElementById("intentID").value = json[0]["installment_num"];
+            document.getElementById("gType").value = json[0]["garment_type"];
+            document.getElementById("numUnits").value = parseInt(json[0]["units_required"])-parseInt(json[0]["units_assigned"]);
+            document.getElementById('assignedUnits').max = json[0]['units_pm'];
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+
+    var source1 = "/rawDistrictSocietyMembers/"+"{{district}}"+"/"+"{{society}}";
+        $.ajax({
+            type: 'GET',
+            url: source1,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var arr = [];
+                for(var i = 0; i < json.length; i++) {
+                    if(arr.indexOf(json[i]['member_id']) === -1) {
+                        arr.push(json[i]['member_id']);
+                    }
+                }
+
+                var $mp = $('.memberPicker');
+
+                var htmlMP = $.map(arr, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $mp.html(htmlMP);
+                chooseName();
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function chooseGarment() {
+        var member_id = document.getElementById('gType').value;
+        var source2 = "/rawDistrictSocietyGarmentsByType/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+            $.ajax({
+                type: 'GET',
+                url: source2,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (json) {
+                    var arr = [];
+                    for(var i = 0; i < json.length; i++) {
+                        if(arr.indexOf(json[i]['garment_name']) === -1) {
+                            arr.push(json[i]['garment_name']);
+                        }
+                    }
+
+                    var $gp = $('.garmentPicker');
+
+                    var htmlGP = $.map(arr, function(lcn){
+                        return '<option value="' + lcn + '">' + lcn + '</option>'
+                    });
+                    $gp.html(htmlGP);
+                    garmentFunction();
+                },
+                error: function (e) {
+                    alert("error");
+                }
+            });
+    }
+
+    function garmentFunction() {
+    var garment_name = document.getElementById('gName').value;
+    var source2 = "/rawDistrictSocietyGarmentsByName/"+"{{district}}"+"/"+"{{society}}"+"/"+garment_name;
+        $.ajax({
+            type: 'GET',
+            url: source2,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                document.getElementById('wpu').value = json[0]['wage_per_unit'];
+                document.getElementById('deductions').value = json[0]['deductions'];
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+
+    function chooseName() {
+        var member_id = document.getElementById('memberPicker').value;
+        var source1 = "/rawDistrictSocietyIDMember/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+            $.ajax({
+                type: 'GET',
+                url: source1,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (json) {
+                    document.getElementById('memberName').value = json[0]['name'];
+                    document.getElementById('MID').value = json[0]['_id'];
+                    console.log(document.getElementById('MID').value);
+                },
+                error: function (e) {
+                    alert("error");
+                }
+            });
+        }
+
+
+</script>
+{% endblock %}

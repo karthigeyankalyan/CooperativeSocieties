@@ -1,0 +1,142 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<form id="new-intent" action="/update_member_transaction/{{transaction_id}}" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Member Intent Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="gName">Garment Name</label>
+                <label for="memberPicker">Select Member</label>
+                <label for="memberName">memberName</label>
+                <label for="assignedUnits">Units Assigned</label>
+                <label for="returnedUnits">Units Returned</label>
+                <label for="wpu">Wage Per Unit</label>
+                <label for="deductions">Deductions</label>
+                <label for="advances">Advance Paid</label>
+                <label for="deadlineDate">Deadline Date</label>
+                <label for="issueDate">Issue Date</label>
+                <label for="wagePaid">Advances</label>
+                <label for="statusSelect">Current Status of Transaction</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="text" id="gName" name="gName" onmousemove="garmentWPU()">
+                <select class="memberPicker" id="memberPicker" name="memberPicker" onselect="chooseName()"></select>
+                <input type="text" id="memberName" name="memberName">
+                <input type="number" id="assignedUnits" name="assignedUnits">
+                <input type="number" id="returnedUnits" name="returnedUnits">
+                <input type="number" id="wpu" name="wpu">
+                <input type="number" id="deductions" name="deductions">
+                <input type="number" id="advances" name="advances">
+                <input type="date" id="deadlineDate" name="deadlineDate">
+                <input type="date" id="issueDate" name="issueDate">
+                <input type="number" id="wagePaid" name="wagePaid">
+                <select class="statusSelect" id="statusSelect" name="statusSelect">
+                    {% set districts = ["Open", "Closed"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save Transaction Details</button>
+        </div>
+</form>
+
+<script>
+
+    var source = "/rawTransaction/"+"{{transaction_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+            document.getElementById("memberName").value = json[0]["name"];
+            document.getElementById("memberPicker").value = json[0]["member_id"];
+            document.getElementById("assignedUnits").value = json[0]["no_of_units"];
+            document.getElementById("deductions").value = json[0]["deductions"];
+            document.getElementById("deadlineDate").value = moment(json[0]["deadline"]['$date']).format('YYYY-MM-DD');
+            document.getElementById("issueDate").value = moment(json[0]["issue_date"]['$date']).format('YYYY-MM-DD');
+            document.getElementById("gName").value = json[0]["garment_name"];
+            document.getElementById("advances").value = json[0]["advance_paid"];
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+
+    var source1 = "/rawDistrictSocietyMembers/"+"{{district}}"+"/"+"{{society}}";
+        $.ajax({
+            type: 'GET',
+            url: source1,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var arr = [];
+                for(var i = 0; i < json.length; i++) {
+                    if(arr.indexOf(json[i]['member_id']) === -1) {
+                        arr.push(json[i]['member_id']);
+                    }
+                }
+
+                var $mp = $('.memberPicker');
+
+                var htmlMP = $.map(arr, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $mp.html(htmlMP);
+                chooseName();
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function garmentWPU() {
+    var garment_name = document.getElementById('gName').value;
+    var source2 = "/rawDistrictSocietyGarmentsByName/"+"{{district}}"+"/"+"{{society}}"+"/"+garment_name;
+        $.ajax({
+            type: 'GET',
+            url: source2,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                document.getElementById('wpu').value = json[0]['wage_per_unit'];
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+
+    function chooseName() {
+        var member_id = document.getElementById('memberPicker').value;
+        var source1 = "/rawDistrictSocietyIDMember/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+            $.ajax({
+                type: 'GET',
+                url: source1,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (json) {
+                    document.getElementById('memberName').value = json[0]['name'];
+                },
+                error: function (e) {
+                    alert("error");
+                }
+            });
+        }
+
+</script>
+{% endblock %}

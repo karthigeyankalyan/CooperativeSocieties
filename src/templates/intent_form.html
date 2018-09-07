@@ -1,0 +1,212 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<form id="new-intent" action="/new_intent/{{ user._id }}" method="post">
+
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Indent Form</h3>
+        </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+        <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+            <label for="intentId">Intent-ID</label>
+            <label for="district">Select District:</label>
+            <label for="center">Center</label>
+            <label for="receivedDate">Intent Received on Date</label>
+            <label for="deadline" style="display: inline">Deadline for Delivery</label>
+            <label for="garmentType">Garment Type</label>
+            <label for="garmentSize">Garment Size</label>
+            <label for="unitsRequired">Number of Units Required</label>
+            <label for="totalWages">Expected Wages (in Rs.)</label>
+            <label for="unitsPm">Maximum number of Units Per Member</label>
+            <label for="setID">What is the Set-ID?</label>
+            <label for="eo">Educational Officer</label>
+        </div>
+
+        <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+            <input type="number" id="intentId" name="intentId">
+            <select class="form-control" style="text-align: center;" id="district" name="district">
+                      {% set districts = ["Chennai", "Coimbatore", "Dharmapuri", "Dindugul", "Erode",
+                      "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai",
+                      "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukottai",
+                      "Ramnad", "Salem", "Sivagangai", "Thanjavur", "Theni",
+                      "Thirunelveli", "Thirupur", "Thiruvallur", "Thiruvannamalai",
+                      "Trichy", "Tuticorin", "Vellore", "Villupuram", "Virudhunagar"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+            </select>
+            <select class="societyPicker" id="center" name="center" style="display: block; width: 100%"></select>
+            <input type="date" value="" id="receivedDate" name="receivedDate" onchange="populateGarments()">
+            <input type="date" value="" id="deadline" name="deadline" onclick="populateEO()">
+            <select class="garmentPicker" id="garmentType" name="garmentType"></select>
+            <select class="sizePicker" id="garmentSize" name="garmentSize" style="display: block; width: 100%"></select>
+            <input type="number" id="unitsRequired" name="unitsRequired" onchange="calculateWages(this)">
+            <input type="number" id="totalWages" name="totalWages">
+            <input type="number" id="unitsPm" name="unitsPm">
+            <input type="text" id="setID" name="setID">
+            <select class="eoPicker" id="eo" name="eo"></select>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Intent Details</button>
+
+    </div>
+</form>
+
+<script>
+        var distSociety =  {"Chennai": ["The Madras Womens Tailoring Indl.Co.Op Society Ltd",  "Ramakrishna Adi_Dravidar Womens Tailoring Indl.Co.",  "The Annie Besant Handi-Capped Womens Welfare Co.Op",  "The Chennai Womens Cottage Industries Co.Op Societ"],
+            "Coimbatore":   ["The Coimbatore Ladies Garment Makers Co-Operative ",  "Pollachi Tailoring Womens Development Cottage Co-O"],
+            "Cuddalore":    ["The Cuddalore Ladies Tailoring Industrial Co.Opera",  "The Chidambaram Ladies Tailoring And Allied Indi."],
+            "Dharmapuri":   ["The Dharmapuri Tailoring Women Development Cottage",  "The Dharmapuri Stationary Printing & Tailoring Wom"],
+            "Dindugul":     ["Reg. No Swsw 42 Annai Abirami Women Tailoring Deve",  "Ind 1713 Annai Sathya Women Industrial Co-Operativ",  "Reg.No. Sw 88 Dindigul District Stationery And Wom"],
+            "Erode":        ["The Erode District Women Stationery, Printing And ",  "The Erode Ladies Tailoring Workers Industrial Co-O",  "The Gobichettipalayam Tailoring Workers Women Deve"],
+            "Kancheepuram": ["Kancheepuram Ladies Tailoring Co-Operative Society",  "Sri Kamatchiamman Ladies Tailoring Development Cot",  "Tambaram Ladies Tailoring Indl. Co-Operative Socie",  "Chengalpattu District Ladies Note Book Manufacture"],
+            "Kanyakumari":  ["Kumari District Tailoring Women Development Cottag", "Kumari District Chalkcryon Manufacturing Women Dev"],
+            "Karur": ["The Karur Tailoring And Allied Works Women Develop"],
+            "Krishnagiri": ["Hosur Tailoring Women Development Cottage Co Op So",  "The Mathur Tailoring Women Development Co Op Socie",  "The Barugur Tailoring Women Development Co Op Soci"],
+            "Madurai": ["Madurai Gorippalayam Women Tailoring Workers Indu",  "S.W. 55. Ranimangammal Tailoring Women Development", "The Angayarkanni Southern Regional Women Tailoring",  "Madurai District Arignar Anna Women Stationery Goo"],
+            "Nagapattinam": ["The Annai Anjugam Tailoring Women Development Cott"],
+            "Namakkal": ["The Velur Ladies Readymade Garment Makers Industri",  "Tiruchengodu Ladies And Tailoring Printing And Stationery"],
+            "Nilgiris": ["Nilgiri District Tailoring Women Development Cotta"],
+            "Perambalur": ["District Womens Tailoring & Industrial Co-Op.Socie"],
+            "Pudukottai": ["Pudukkottai Women Tailoring Industrial Co-Op Socie",  "Annavasal Amuthasurabi Chalk Craiyons Women Tailor"],
+            "Ramnad": ["S.W.52 Annai Sathya Women Tailoring Co-Op Society ",  "Ramnad District Women Tailoring Coop Society Ind N",  "Aringar Anna Ladies Tailoring Coop Society Ind No.",  "Sw.37 Thaimugambigai Tailoring Coop Soceity Rmd.1/"],
+            "Salem": ["Salem Ladies Tailoring Industrial Co-Op Society In",  "Attur Adi-Dravidar Tailoring Workers Woman Develop"],
+            "Sivagangai": ["Chinnamarudhu Periyamarudhu Pandiyar Women Develop",  "Sivagangai Women Tailoring Development Co-Operativ",  "Mangalam Chalk Cryan & Women Tailoring Development",  "Kunthavai Natchiyar Women Development Tailoring Co"],
+            "Thanjavur": ["Thanajavur Women Tailoring Industrial Co-Op-Societ",  "Kunthavai Nachiyar Ladies Tailoring Industral Co-O",  "Kumbakonam Ladies Tailoring Industral Co-Op- Socie"],
+            "Theni": ["S.W.98 Valluvar Vasuki Tailoring Women Development",  "Ind.1684 Annai Sathiya Womens Tailoring Industrial",  "Ind.1710 Periyakulam Women Tailoring Industrial Co"],
+            "Thirunelveli": ["Tirunelveli Women Tailoring Workers Industrial Co-",  "Tirunelveli Anna Women Paper Cardboard And Station",  "Valliyoor Union Tailoring Workers Industrial Coope"],
+            "Thirupur": ["Palladam Women Stationery Goods Manufacturing And "],
+            "Thiruvallur": ["Thiruvallur District Womens Tailoring Industrial C"],
+            "Thiruvannamalai": ["The Annai Sathiya Tailoring Womens Indl Co-Op Soc",  "The Tiruvannamalai Tailoring Womens Development C",  "Thiruvarur District Women Tailoring And Industrial",  "Valangaiman Women Stationery Manufacturers And Tai"],
+            "Trichy": ["Trichy Womens Tailoring Co-Op.Society,8/11, North ",  "Trichy Kavery Womens Tailoring Co-Op.Society, 29, ",  "Trichy Womens Stationary Tailoring Co-Op.Society,3"],
+            "Tuticorin": ["Muthunagar Womens Tailoring Co-Operetive Societ", "Bharathiyar Readymade Garment Makers Co-Operative", "Ranianna Tailoring Co-Operetive Society"],
+            "Vellore": ["The Velapadi Women Tailoring & Small Industrial Co",  "Annai Curie Chalk Manufacturing Physically Handica",  "Annai Indira Gandhi Women Tailoring Industrial Ser",  "The Arcot Tailoring Women Development Cottage Co-O"],
+            "Villupuram": ["Villupuram Womens Tailoring Industrial Co-Operativ",  "Ulundhurpet Printing Stationery And Tailoring Good"],
+            "Virudhunagar": ["Q.255,Virudhunagar Ladies Tailoring Industrial Co-",  "S.W.48 Annai Sivakami Women Tailoring Industrial C",  "Ind.1753,Annai Sathiya Women Tailoring Workers Ind",  "Ind.1767,Dr.Khanu Women Tailoring Workers Industri"]}
+
+            document.getElementById("district").value = -1;
+
+            var classPick = '.societyPicker';
+            var html;
+            var $locations = $(classPick);
+            $('#district').change(function () {
+                var district = $(this).val(), societies = distSociety[district] || [];
+
+                html = $.map(societies, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $locations.html(html)
+            });
+
+        var garmentSizes =  {"Half Pant":      ["1", "2", "3", "4", "5", "5L"],
+                            "Half Pant Shirt":   ["1", "2", "3", "4", "5", "5L"],
+                            "Full Pant":    ["6", "7", "8", "8L"],
+                            "Full Pant Shirt":   ["6", "7", "8", "8L"],
+                            "Skirt":     ["1", "2", "3", "4", "5", "5L"],
+                            "Blouse":        ["1", "2", "3", "4", "5", "5L"],
+                            "Salwar Bottom": ["6", "7", "8", "8L"],
+                            "Salwar Top":  ["6", "7", "8", "8L"],
+                            "Overcoat":  ["1", "2", "3", "4", "5", "5L", "6", "7", "8", "8L"],
+                            "Salwar Dupatta":        ["6", "7", "8", "8L"]};
+
+            var sizePick = '.sizePicker';
+            var htmlSize;
+            var $sizes = $(sizePick);
+            $('#garmentType').change(function () {
+                var district = $(this).val(), sizes = garmentSizes[district] || [];
+
+                htmlSize = $.map(sizes, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $sizes.html(htmlSize)
+            });
+
+    function populateEO() {
+        var society_name = document.getElementById('center').value;
+        var district = document.getElementById('district').value;
+        var source = "/rawDistrictSocietyEOs/"+district+"/"+society_name;
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var arr = [];
+                for(var i = 0; i < json.length; i++) {
+                    if(arr.indexOf(json[i]['name']) === -1) {
+                        arr.push(json[i]['name']);
+                    }
+                }
+
+                var $eo = $('.eoPicker');
+
+                var htmlEO = $.map(arr, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $eo.html(htmlEO);
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+
+    function populateGarments() {
+        var society_name = document.getElementById('center').value;
+        var district = document.getElementById('district').value;
+        var source = "/rawDistrictICOGarments/"+district;
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var arr = [];
+                for(var i = 0; i < json.length; i++) {
+                    if(arr.indexOf(json[i]['garment_type']) === -1) {
+                        arr.push(json[i]['garment_type']);
+                    }
+                }
+
+                var $gp = $('.garmentPicker');
+
+                var htmlGP = $.map(arr, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $gp.html(htmlGP);
+            document.getElementById("garmentType").value = -1;
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+
+    function calculateWages(that) {
+        var units = parseInt(that.value);
+        var district = document.getElementById('district').value;
+        var gtype = document.getElementById('garmentType').value;
+        var source = "/rawDistrictTypeICOGarments/"+district+"/"+gtype;
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var wpu = json[0]['wage_per_unit'];
+                document.getElementById('totalWages').value = parseInt(wpu)*units;
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
+</script>
+
+{% endblock %}

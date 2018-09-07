@@ -1,0 +1,32 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<style>
+    button{
+        display: inline-block;
+    }
+
+    img{
+        width:100px;
+        height:100px;
+    }
+
+    #logged{
+        text-align: center;
+    }
+
+    #logged span{
+        color: green;
+        font-size: 50px;
+    }
+</style>
+
+<div id="logged">
+    <p> <span id="Success"> Success! </span> </p>
+    <p><img src="http://clipartwork.com/wp-content/uploads/2017/02/best-check-mark-clipart.png"></p>
+
+    <p>Your Installment has been Updated. The respective Society will be notified!</p>
+
+</div>
+
+{% endblock %}

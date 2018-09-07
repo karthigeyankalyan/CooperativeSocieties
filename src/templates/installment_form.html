@@ -1,0 +1,73 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<form id="new-intent" action="/add_installment/{{ intent_id }}" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Installment Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="installmentNum">Installment Number</label>
+                <label for="district">District</label>
+                <label for="society">Society</label>
+                <label for="gType">Garment Type</label>
+                <label for="gSize">Garment Size</label>
+                <label for="setID">Set ID</label>
+                <label for="issueDate">Issue Date</label>
+                <label for="unitsRequired">Units Required</label>
+                <label for="deadline">Deadline Date</label>
+                <label for="unitsPM">Units Per Member</label>
+                <label for="EO">Educational Officer</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="number" id="installmentNum" name="installmentNum">
+                <input type="text" id="district" name="district">
+                <input type="text" id="society" name="society">
+                <input type="text" id="gType" name="gType">
+                <input type="text" id="gSize" name="gSize">
+                <input type="text" id="setID" name="setID">
+                <input type="date" id="issueDate" name="issueDate">
+                <input type="number" id="unitsRequired" name="unitsRequired">
+                <input type="date" id="deadline" name="deadline">
+                <input type="number" id="unitsPM" name="unitsPM">
+                <input type="text" id="EO" name="EO">
+            </div>
+        </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save Installment Details</button>
+        </div>
+    </div>
+
+</form>
+
+<script>
+
+    var source = "/rawIntentSingle/"+"{{intent_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            document.getElementById('district').value = json[0]['district'];
+            document.getElementById('society').value = json[0]['center'];
+            document.getElementById('gType').value = json[0]['garment_type'];
+            document.getElementById('gSize').value = json[0]['garment_size'];
+            document.getElementById('setID').value = json[0]['set_id'];
+            document.getElementById('unitsPM').value = json[0]['units_pm'];
+            document.getElementById('EO').value = json[0]['eo'];
+            document.getElementById('unitsRequired').max = json[0]['units_required'];
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+
+</script>
+
+{% endblock %}

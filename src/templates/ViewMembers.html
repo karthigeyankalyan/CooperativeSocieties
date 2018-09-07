@@ -1,0 +1,85 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<body>
+        <div id="Search" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <label for="myInput" style="margin-left: 10%">Search by Name:</label>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        </div>
+
+        <div id="eoList">
+        </div>
+
+</body>
+
+<script>
+        var source = "/rawDistrictSocietyMembers/{{district}}/{{society}}";
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (jsonFunc) {
+                {
+                    $("#eoDetails").find("tbody").empty();
+                    var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
+                    $("#eoList").append(tbl);
+                    var hr = "<tr>";
+                    var th1 = "<th style='text-align:center;vertical-align:middle'>" + "Member Name" + "</th>";
+                    var th2 = "<th style='text-align:center;vertical-align:middle'>" + "Member ID" + "</th>";
+                    var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Society" + "</th>";
+                    var th4 = "<th style='text-align:center;vertical-align:middle'>" + "Share Value" + "</th>";
+                    var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Thrift Value" + "</th>";
+                    var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Enrollment Date" + "</th>";
+//                    var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Assign Intent" + "</th>";
+                    var th8 = "<th style='text-align:center;vertical-align:middle'>" + "Update" + "</th>";
+                    var th9 = "<th style='text-align:center;vertical-align:middle'>" + "Delete" + "</th>";
+                    $("#eoDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th8 + th9);
+                    for (var j = 0; j < jsonFunc.length; j++) {
+                        {
+                            var loan_id = jsonFunc[j]["_id"];
+                            var url = '/update_member/'+loan_id;
+                            var url1 = '/delete_member/'+loan_id;
+                            var url2 = '/assign_intent/'+loan_id;
+                            var row = $('<tr></tr>').html(
+                                '<td>'+jsonFunc[j]["name"] +'</td>'+
+                                '<td>'+jsonFunc[j]["member_id"] +'</td>'+
+                                '<td>'+jsonFunc[j]["center"] +'</td>'+
+                                '<td>'+jsonFunc[j]["share_value"] +'</td>'+
+                                '<td>'+jsonFunc[j]["current_thrift_value"] +'</td>'+
+                                '<td>'+moment(jsonFunc[j]["enrollment_date"]).format('YYYY-MM-DD')+'</td>'+
+//                                '<td><button class="btn btn-default"><a href="' + url2 + '">'+ 'Assign Intent' +'</a></button></td>'+
+                                '<td><button class="btn btn-default"><a href="' + url + '">'+ 'Update Member' +'</a></button></td>'+
+                                '<td><button class="btn btn-default"><a href="' + url1 + '">'+ 'Delete Member' +'</a></button></td>');
+                            $("#eoDetails").append(row);
+                        }
+                    }
+                }
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("eoList");
+        tr = table.getElementsByTagName("tr");
+        console.log(tr.length);
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
+
+{% endblock %}

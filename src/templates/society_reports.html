@@ -1,0 +1,399 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-top: 10px">
+    <button onclick="downloadBWReport()">Bank Wise Report</button>
+    <button onclick="downloadMGReport()">Member Garment Report</button>
+    <button onclick="downloadMWTeport()">Member Wage/Thrift Report</button>
+</div>
+
+<script>
+
+    function downloadBWReport() {
+    var doc = new jsPDF();
+    var source = "/raw_member_transactions_between/"+"{{start_date}}/{{end_date}}/{{district}}/{{society}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.name;
+                })
+                .key(function (d) {
+                    return d.bank_account+"-"+d.bank_name;
+                })
+                .key(function (d) {
+                    return d.ifsc;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "wage_to_pay": d3.sum(leaves, function(d) {return parseFloat(d.wage_expected);})
+                        }
+                    })
+                .entries(json);
+
+            var doc = new jsPDF();
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(60, 10, 'Bank Wise Member Payment Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(60, 20, '{{society}}');
+
+            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(60, 30, 'Wages to be paid between {{start_date}} to {{end_date}}');
+
+            columns = ["S. No", "Member Name", "Member Bank Account", "Member IFSC", "Wage To Be Paid"];
+            rows = [];
+            var total_wages = 0;
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                total_wages += aggregatedData[l].values[0].wage_to_pay;
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [aggregatedData[l].values[0].key], [aggregatedData[l].values[0].values[0].key],
+                    [aggregatedData[0].values[0].values[0].values.wage_to_pay]]);
+            }
+            rows.push([['Total'], [''], [''], [''], [total_wages]]);
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.save('Payment_Schedule.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+    function downloadMGReport() {
+    var source = "/raw_member_transactions_between/"+"{{start_date}}/{{end_date}}/{{district}}/{{society}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.member_id+"-"+d.name;
+                })
+                .key(function (d) {
+                    return d.garment_type;
+                })
+                .key(function (d) {
+                    return d.garment_name;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "wage_to_pay": d3.sum(leaves, function(d) {return parseFloat(d.wage_expected);}),
+                            "units_assigned": d3.sum(leaves, function(d) {return parseFloat(d.no_of_units);}),
+                            "units_returned": d3.sum(leaves, function(d) {return parseFloat(d.units_returned);}),
+                            "thrift": d3.sum(leaves, function(d) {return parseFloat(d.thrift);}),
+                            "deductions": d3.sum(leaves, function(d) {return parseFloat(d.deductions);}),
+                            "advance": d3.sum(leaves, function(d) {return parseFloat(d.advance_paid);})
+                        }
+                    })
+                .entries(json);
+
+            console.log(aggregatedData);
+
+            var doc = new jsPDF('l', 'mm', [400, 210]);
+
+            doc.setFontSize(20);
+            doc.setTextColor(0,0,255);
+            doc.text(170, 10, 'Member Wise Garment Details');
+
+            doc.setFontSize(13);
+            doc.setTextColor(0,0,0);
+            doc.text(155, 20, '{{society}}');
+
+            doc.text(170, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(140, 30, 'Stitching and Assigned details between {{start_date}} to {{end_date}}');
+
+            doc.setFontSize(10);
+
+            columns = ["S. No", "Member ID-Name", "HP", "HPS", "FP", "FPS", "SKT", "BL", "SB", "ST", "DPT", "OC",
+            "Total Units", "Total Wages", "Thrift", "L", "LG", "LB", "LGB", "LZ", "Advance", "Total Deduction", "Nett. Wage"];
+            rows = [];
+            var total_wages = 0;
+            var total_units = 0;
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                var units_hp = 0;
+                var units_hps = 0;
+                var units_fp = 0;
+                var units_fps = 0;
+                var units_sk = 0;
+                var units_bl = 0;
+                var units_sb = 0;
+                var units_st = 0;
+                var units_dp = 0;
+                var units_oc = 0;
+
+//                Wage Aggregate
+                var wages_hp = 0;
+                var wages_hps = 0;
+                var wages_fp = 0;
+                var wages_fps = 0;
+                var wages_sk = 0;
+                var wages_bl = 0;
+                var wages_sb = 0;
+                var wages_st = 0;
+                var wages_dp = 0;
+                var wages_oc = 0;
+
+//                Thrift Aggregate
+                var thrift_hp = 0;
+                var thrift_hps = 0;
+                var thrift_fp = 0;
+                var thrift_fps = 0;
+                var thrift_sk = 0;
+                var thrift_bl = 0;
+                var thrift_sb = 0;
+                var thrift_st = 0;
+                var thrift_dp = 0;
+                var thrift_oc = 0;
+
+//              Advance Aggregate
+                var advance_hp = 0;
+                var advance_hps = 0;
+                var advance_fp = 0;
+                var advance_fps = 0;
+                var advance_sk = 0;
+                var advance_bl = 0;
+                var advance_sb = 0;
+                var advance_st = 0;
+                var advance_dp = 0;
+                var advance_oc = 0;
+
+                var lded = 0;
+                var lgded = 0;
+                var lbded = 0;
+                var lgbded = 0;
+                var lzded = 0;
+
+                var hp = ['Half Pant - Label+Gaja+Button', 'Half Pant - Label+Gaja', 'Half Pant - Label+Button', 'Half Pant - Label'];
+                var hps = ['Half Pant Shirt - Label+Gaja+Button', 'Half Pant Shirt - Label+Gaja', 'Half Pant Shirt - Label+Button', 'Half Pant Shirt - Label'];
+                var fp = ['Full Pant - Label', 'Full Pant - Label+Zip'];
+                var fps = ['Full Pant Shirt - Label+Gaja+Button', 'Full Pant Shirt - Label+Gaja', 'Full Pant Shirt - Label+Button', 'Full Pant Shirt - Label'];
+                var sk = ['Skirt - Label'];
+                var bl = ['Blouse - Label+Gaja+Button', 'Blouse - Label+Gaja', 'Blouse - Label+Button', 'Blouse - Label'];
+                var sb = ['Salwar Bottom - Label'];
+                var st = ['Salwar Top - Label'];
+                var dpt = ['Salwar Dupatta - Label'];
+                var oc = ['Overcoat - Label+Gaja+Button', 'Overcoat - Label+Gaja', 'Overcoat - Label+Button', 'Overcoat - Label'];
+
+                var label = ['Half Pant - Label', 'Full Pant - Label', 'Full Pant Shirt - Label', 'Half Pant Shirt - Label', 'Skirt - Label',
+                'Blouse - Label', 'Salwar Bottom - Label', 'Salwar Top - Label', 'Salwar Dupatta - Label', 'Overcoat - Label'];
+                var lg = ['Half Pant - Label+Gaja', 'Full Pant Shirt - Label+Gaja', 'Half Pant Shirt - Label+Gaja',
+                'Blouse - Label+Gaja', 'Overcoat - Label+Gaja'];
+                var lb = ['Half Pant - Label+Button', 'Full Pant Shirt - Label+Button', 'Half Pant Shirt - Label+Button',
+                'Blouse - Label+Button', 'Overcoat - Label+Button'];
+                var lgb = ['Half Pant - Label+Gaja+Button', 'Full Pant Shirt - Label+Gaja+Button', 'Half Pant Shirt - Label+Gaja+Button',
+                'Blouse - Label+Gaja+Button', 'Overcoat - Label+Gaja+Button'];
+                var lz = ['Full Pant - Label+Zip'];
+
+                for(var gtypes = 0; gtypes < aggregatedData[l].values.length; gtypes++) {
+                    for(var gnames = 0; gnames < aggregatedData[l].values[gtypes].values.length; gnames++) {
+                        if (hp.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_hp += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_hp += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_hp += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_hp += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (hps.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_hps += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_hps += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_hps += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_hps += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (fp.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_fp += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_fp += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_fp += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_fp += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (fps.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_fps += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_fps += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_fps += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_fps += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (sk.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_sk += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_sk += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_sk += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_sk += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (bl.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_bl += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_bl += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_bl += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_bl += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (sb.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_sb += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_sb += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_sb += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_sb += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (st.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_st += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_st += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_st += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_st += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else if (dpt.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            units_dp += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_dp += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_dp += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_dp += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+                        else {
+                            units_oc += aggregatedData[l].values[gtypes].values[gnames].values.units_returned;
+                            wages_oc += aggregatedData[l].values[gtypes].values[gnames].values.wage_to_pay;
+                            thrift_oc += aggregatedData[l].values[gtypes].values[gnames].values.thrift;
+                            advance_oc += aggregatedData[l].values[gtypes].values[gnames].values.advance;
+                        }
+
+//                        Checking for type of deduction
+                        if (label.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            lded += aggregatedData[l].values[gtypes].values[gnames].values.deductions;
+                        }
+                        else if (lg.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            lgded += aggregatedData[l].values[gtypes].values[gnames].values.deductions;
+                        }
+                        else if (lgb.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            lgbded += aggregatedData[l].values[gtypes].values[gnames].values.deductions;
+                        }
+                        else if (lb.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            lbded += aggregatedData[l].values[gtypes].values[gnames].values.deductions;
+                        }
+                        else if (lz.indexOf(aggregatedData[l].values[gtypes].values[gnames].key) !== -1) {
+                            lzded += aggregatedData[l].values[gtypes].values[gnames].values.deductions;
+                        }
+                    }
+                }
+
+                var member_units = units_hp + units_hps + units_fp + units_fps + units_sk + units_bl + units_sb + units_st + units_dp + units_oc;
+                var member_wages = wages_hp + wages_hps + wages_fp + wages_fps + wages_sk + wages_bl + wages_sb + wages_st + wages_dp + wages_oc;
+                var member_thrift = thrift_hp + thrift_hps + thrift_fp + thrift_fps + thrift_sk + thrift_bl + thrift_sb + thrift_st + thrift_dp + thrift_oc;
+                var member_advance = advance_hp + advance_hps + advance_fp + advance_fps + advance_sk + advance_bl + advance_sb + advance_st + advance_dp + advance_oc;
+
+                var garment_deduction = lded + lbded + lgded + lgbded + lzded;
+                var member_deduction = garment_deduction + member_thrift + member_advance;
+                var net_wages = member_wages - member_deduction;
+
+                total_wages += member_wages;
+                total_units += member_units;
+
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [units_hp], [units_hps], [units_fp], [units_fps], [units_sk], [units_bl], [units_sb], [units_st],
+                    [units_dp], [units_oc], [member_units], [member_wages], [member_thrift], [lded], [lgded], [lbded],
+                    [lgbded], [lzded], [member_advance], [member_deduction], [net_wages]]);
+            }
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.addPage();
+
+            doc.text(50, 20, 'HP - Half Pant Units');
+            doc.text(50, 25, 'HPS - Half Pant Shirt Units');
+            doc.text(50, 30, 'FP - Full Pant Units');
+            doc.text(50, 35, 'FPS - Full Pant Shirt Units');
+            doc.text(50, 40, 'SKT - Skirt Units');
+            doc.text(50, 45, 'BL - Blouse Units');
+            doc.text(50, 50, 'SB - Salwar Bottom Units');
+            doc.text(50, 55, 'ST - Salwar Top Units');
+            doc.text(50, 60, 'DPT - Duppata Units');
+            doc.text(50, 65, 'L - Label Deductions');
+            doc.text(50, 70, 'LG - Label Gaja Deductions');
+            doc.text(50, 75, 'LB - Label Button Deductions');
+            doc.text(50, 80, 'LGB - Label Gaja Button Deductions');
+            doc.text(50, 85, 'LZ - Label Zip Deductions');
+
+            doc.save('Member-Garment-Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+    function downloadMWTeport() {
+    var doc = new jsPDF();
+    var source = "/raw_member_transactions_between/"+"{{start_date}}/{{end_date}}/{{district}}/{{society}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.name;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "wage_to_pay": d3.sum(leaves, function(d) {return parseFloat(d.wage_expected);}),
+                            "thrift": d3.sum(leaves, function(d) {return parseFloat(d.thrift);}),
+                            "shares": d3.sum(leaves, function(d) {return parseFloat(d.share);})
+                        }
+                    })
+                .entries(json);
+
+            var doc = new jsPDF();
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(70, 10, 'Member Wise Garment Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(60, 20, '{{society}}');
+
+            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+
+            doc.text(50, 30, 'Thrift and Share Accumulated between {{start_date}} to {{end_date}}');
+
+            columns = ["S. No", "Member", "Shares", "Thrift", "Wages"];
+            rows = [];
+            var total_wages = 0;
+            var ur_total = 0;
+            var ua_total = 0;
+            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
+                total_wages += aggregatedData[l].values.wage_to_pay;
+                ur_total += aggregatedData[l].values.thrift;
+                ua_total += aggregatedData[l].values.shares;
+
+                rows.push([[l + 1], [aggregatedData[l].key],
+                    [aggregatedData[l].values.shares], [aggregatedData[l].values.thrift],
+                    [aggregatedData[l].values.wage_to_pay]]);
+            }
+            rows.push([['Total'], [''], [ua_total], [ur_total], [total_wages]]);
+            doc.autoTable(columns, rows, {startY: 40});
+
+            doc.save('Member-Garment-Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "pre_login_base.html" %}
+{% block content %}
+
+<style>
+    #content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="content" id="content">
+    <h2>Looks like the username or password you have entered is incorrect</h2>
+    <h6>Click here to login again!</h6>
+    <a href="/login"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log-In</button></a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<form id="new-intent" action="/update_installment/{{ installment_id }}" method="post">
+
+        <div>
+            <h3>Installment Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="unitsReceived">Cut Piece Units Received</label>
+                <label for="receivedDate">Received Date</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="number" id="unitsReceived" name="unitsReceived">
+                <input type="date" id="receivedDate" name="receivedDate">
+            </div>
+        </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save Installment Details</button>
+        </div>
+
+</form>
+
+{% endblock %}

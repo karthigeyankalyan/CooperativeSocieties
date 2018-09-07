@@ -1,0 +1,67 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<form id="new-intent" action="/updateEO/{{eo_id}}" method="post">
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+
+        <div>
+            <h3>Update Educational Officer Form</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="name">EO</label>
+                <label for="district">District</label>
+                <label for="block">Block</label>
+                <label for="societyName">Society Name</label>
+                <label for="travelCharges">Travel Charges</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <input type="text" id="name" name="name">
+                <select class="form-control" style="text-align: center;" id="district" name="district">
+                    {% set districts = ["Chennai", "Coimbatore", "Dharmapuri", "Dindugul", "Erode",
+                    "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai",
+                    "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukottai",
+                    "Ramnad", "Salem", "Sivagangai", "Thanjavur", "Theni",
+                    "Thirunelveli", "Thirupur", "Thiruvallur", "Thiruvannamalai",
+                    "Trichy", "Tuticorin", "Vellore", "Villupuram", "Virudhunagar"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
+                <input type="text" name="block" id="block">
+                <input type="text" name="societyName" id="societyName">
+                <input type="number" name="travelCharges" id="travelCharges">
+            </div>
+        </div>
+
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <button type="submit" class="btn btn-success">Save EO Details</button>
+        </div>
+    </div>
+</form>
+
+<script>
+
+    var source = "/rawEO/"+"{{eo_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            document.getElementById("district").value = json[0]["district"];
+            document.getElementById("name").value = json[0]["name"];
+            document.getElementById("block").value = json[0]["block"];
+            document.getElementById("societyName").value = json[0]["society_name"];
+            document.getElementById("travelCharges").value = json[0]["travel_charge"];
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+
+</script>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "post_login_dswo.html" %}
+{% block content %}
+
+<form id="new-intent" action="/update_intent/{{intent_id}}" method="post">
+
+    <label for="intentId">Intent-ID</label>
+    <input type="number" id="intentId" name="intentId">
+
+    <div class="form-group">
+          <label for="district">Select District:</label>
+          <select class="form-control" style="text-align: center;" id="district" name="district">
+            {% set districts = ['Ariyalur', 'Karur', 'Nagapattinam', 'Perambalur',
+              'Pudukkottai', 'Thanjavur', 'Tiruchirappalli','Tiruvarur', 'Dharmapuri',
+              'Coimbatore', 'Erode', 'Krishnagiri', 'Namakkal', 'The Nilgiris', 'Salem',
+              'Tiruppur', 'Dindigul', 'Kanyakumari', 'Madurai', 'Ramanathapuram', 'Sivaganga',
+              'Theni', 'Thoothukudi','Tirunelveli', 'Virudhunagar', 'Chennai', 'Cuddalore', 'Kancheepuram',
+              'Tiruvallur', 'Tiruvannamalai', 'Vellore','Viluppuram'] %}
+
+            {% for district in districts %}
+                <option value= "{{district}}">{{district}}</option>"
+            {% endfor %}
+          </select>
+    </div>
+
+    <div class="form-group">
+        <label for="center">Center</label>
+        <input type="text" id="center" name="center" style="display: block; width: 100%">
+    </div>
+
+    <div class="form-group" id="sts" style="display: flex; flex-direction: row; justify-content: space-around;">
+        <label for="receivedDate">Intent Received on Date</label>
+        <input type="date" value="" id="receivedDate" name="receivedDate">
+
+        <label for="deadline" style="display: inline">Deadline for Delivery</label>
+        <input type="date" value="" id="deadline" name="deadline">
+
+        <label for="totalWages">Expected Wages (in Rs.)</label>
+        <input type="number" id="totalWages" name="totalWages">
+    </div>
+
+    <div class="form-group" id="joining" style="display: flex; flex-direction: row; justify-content: space-around;">
+        <label for="garmentType">Garment Type</label>
+        <input type="text" id="garmentType" name="garmentType">
+
+        <label for="garmentSize">Garment Size</label>
+        <input type="text" id="garmentSize" name="garmentSize">
+
+        <label for="unitsRequired">Number of Units Required</label>
+        <input type="number" id="unitsRequired" name="unitsRequired">
+
+        <label for="unitsReceived">Number of Units Received</label>
+        <input type="number" id="unitsReceived" name="unitsReceived">
+    </div>
+
+    <div class="form-group">
+        <label for="unitsPm">Maximum number of Units Per Member</label>
+        <input type="number" id="unitsPm" name="unitsPm">
+
+        <label for="setID">Set ID</label>
+        <input type="number" id="setID" name="setID">
+    </div>
+
+    <div class="form-group">
+        <label for="eo">Educational Officer</label>
+        <select class="eoPicker" id="eo" name="eo"></select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Intent Details</button>
+
+</form>
+
+<script>
+    var source = "/rawIntentSingle/"+"{{intent_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            document.getElementById("intentID").value = json[0]["intent_id"];
+            document.getElementById("district").value = json[0]["district"];
+            document.getElementById("center").value = json[0]["center"];
+            document.getElementById("receivedDate").value = moment(json[0]["received_date"]['$date']).format("YYYY-MM-DD");
+            document.getElementById("deadline").value = moment(json[0]["deadline"]['$date']).format("YYYY-MM-DD");
+            document.getElementById("totalWages").value = json[0]["total_wages"];
+            document.getElementById("garmentType").value = json[0]["garment_type"];
+            document.getElementById("garmentSize").value = json[0]["garment_size"];
+            document.getElementById("unitsRequired").value = json[0]["units_required"];
+            document.getElementById("unitsReceived").value = json[0]["units_received"];
+            document.getElementById("unitsPm").value = json[0]["units_pm"];
+            document.getElementById("eo").value = json[0]["eo"];
+            document.getElementById("setID").value = json[0]["set_id"];
+        },
+            error: function (e) {
+                alert("error");
+            }
+        });
+</script>
+
+{% endblock %}
