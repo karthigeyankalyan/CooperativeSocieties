@@ -15,7 +15,7 @@ from src.models.memberTransactions import memberTransactions
 from src.models.user import User
 
 app = Flask(__name__)  # main
-# flask_cors.CORS(app)
+flask_cors.CORS(app)
 app.secret_key = "commercial"
 
 
