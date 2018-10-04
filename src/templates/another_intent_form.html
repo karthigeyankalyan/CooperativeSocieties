@@ -1,7 +1,7 @@
 {% extends "post_login_dswo.html" %}
 {% block content %}
 
-<form id="new-intent" action="/new_intent/{{ user._id }}" method="post">
+<form id="new-intent" action="/add_another_intent/{{ intent_id }}" method="post">
 
     <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
 
@@ -11,7 +11,7 @@
 
     <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
         <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
-            <label for="intentId">Intent-ID</label>
+            <label for="intentID">Intent-ID</label>
             <label for="district">Select District:</label>
             <label for="center">Center</label>
             <label for="receivedDate">Intent Received on Date</label>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
-            <input type="number" id="intentId" name="intentId">
+            <input type="number" id="intentID" name="intentID">
             <select class="form-control" style="text-align: center;" id="district" name="district">
                     {% set districts = ["Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindugul", "Erode",
                       "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai",
@@ -39,9 +39,9 @@
                         <option value= "{{district}}">{{district}}</option>"
                     {% endfor %}
             </select>
-            <select class="societyPicker" id="center" name="center" style="display: block; width: 100%"></select>
-            <input type="date" value="" id="receivedDate" name="receivedDate" onchange="populateGarments()">
-            <input type="date" value="" id="deadline" name="deadline" onclick="populateEO()">
+            <input type="text" id="center" name="center" style="display: block; width: 100%">
+            <input type="date" value="" id="receivedDate" name="receivedDate" onmousemove="populateGarments()">
+            <input type="date" value="" id="deadline" name="deadline" onmousemove="populateEO()">
             <select class="garmentPicker" id="garmentType" name="garmentType"></select>
             <select class="sizePicker" id="garmentSize" name="garmentSize" style="display: block; width: 100%"></select>
             <input type="number" id="unitsRequired" name="unitsRequired" onchange="calculateWages(this)">
@@ -59,6 +59,28 @@
 </form>
 
 <script>
+    var source = "/rawIntentSingle/"+"{{intent_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json, "{{intent_id}}");
+            document.getElementById("intentID").value = json[0]["intent_id"];
+            document.getElementById("district").value = json[0]["district"];
+            document.getElementById("center").value = json[0]["center"];
+            document.getElementById("receivedDate").value = moment(json[0]["received_date"]['$date']).format("YYYY-MM-DD");
+            document.getElementById("deadline").value = moment(json[0]["deadline"]['$date']).format("YYYY-MM-DD");
+            document.getElementById("garmentType").value = json[0]["garment_type"];
+            document.getElementById("unitsPm").value = json[0]["units_pm"];
+            document.getElementById("setID").value = json[0]["set_id"];
+        },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
         var distSociety =  {"Chennai": ["The Madras Womens Tailoring Indl.Co.Op Society Ltd",  "Ramakrishna Adi_Dravidar Womens Tailoring Indl.Co.",  "The Annie Besant Handi-Capped Womens Welfare Co.Op",  "The Chennai Womens Cottage Industries Co.Op Societ"],
             "Coimbatore":   ["The Coimbatore Ladies Garment Makers Co-Operative ",  "Pollachi Tailoring Womens Development Cottage Co-O"],
             "Cuddalore":    ["The Cuddalore Ladies Tailoring Industrial Co.Opera",  "The Chidambaram Ladies Tailoring And Allied Indi."],
@@ -100,6 +122,7 @@
                 });
                 $locations.html(html)
             });
+
         var garmentSizes =  {"Half Pant":      ["1", "2", "3", "4", "5", "5L"],
                             "Half Pant Shirt":   ["1", "2", "3", "4", "5", "5L"],
                             "Full Pant":    ["6", "7", "8", "8L"],
@@ -120,6 +143,7 @@
                 });
                 $sizes.html(htmlSize)
             });
+
     function populateEO() {
         var society_name = document.getElementById('center').value;
         var district = document.getElementById('district').value;
@@ -147,6 +171,7 @@
             }
         });
     }
+
     function populateGarments() {
         var society_name = document.getElementById('center').value;
         var district = document.getElementById('district').value;
@@ -168,12 +193,27 @@
                     return '<option value="' + lcn + '">' + lcn + '</option>'
                 });
                 $gp.html(htmlGP);
-            document.getElementById("garmentType").value = -1;
             },
             error: function (e) {
                 alert("error");
             }
         });
+
+    var source1 = "/rawIntentSingle/"+"{{intent_id}}";
+    $.ajax({
+        type: 'GET',
+        url: source1,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            document.getElementById("unitsPm").value = json[0]["units_pm"];
+            document.getElementById("setID").value = json[0]["set_id"];
+        },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
     }
     function calculateWages(that) {
         var units = parseInt(that.value);

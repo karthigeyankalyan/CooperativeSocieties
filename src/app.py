@@ -237,7 +237,8 @@ def intent_form(user_id):
     if email is not None:
         if request.method == 'GET':
             user = User.get_by_id(user_id)
-            return render_template('intent_form.html', user=user)
+            return render_template('intent_form.html', user=user, district=user.district,
+                                   society=user.society_name)
 
         else:
             intent_id = request.form['intentId']
@@ -253,6 +254,45 @@ def intent_form(user_id):
             set_id = request.form['setID']
             eo_name = request.form['eo']
             user_id = user_id
+
+            intent = Intent(intent_id=intent_id, district=district, center=center, received_date=received_date,
+                            garment_type=garment_type, units_required=units_required, units_received=0,
+                            deadline=deadline, total_wages=total_wages, units_pm=units_pm, user_id=user_id,
+                            set_id=set_id, eo=eo_name, garment_size=garment_size)
+
+            intent.save_to_mongo()
+
+            user = User.get_by_id(user_id)
+
+            return render_template('intent_added.html', intent=intent, intent_id=intent._id, user=user)
+
+    else:
+        return render_template('login_fail.html')
+
+
+@app.route('/add_another_intent/<string:_id>', methods=['POST', 'GET'])
+def another_intent_form(_id):
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        if request.method == 'GET':
+            return render_template('another_intent_form.html', user=user, district=user.district,
+                                   society=user.society_name, intent_id=_id)
+
+        else:
+            intent_id = request.form['intentID']
+            district = request.form['district']
+            center = request.form['center']
+            received_date = request.form['receivedDate']
+            garment_type = request.form['garmentType']
+            garment_size = request.form['garmentSize']
+            units_required = request.form['unitsRequired']
+            deadline = request.form['deadline']
+            total_wages = request.form['totalWages']
+            units_pm = request.form['unitsPm']
+            set_id = request.form['setID']
+            eo_name = request.form['eo']
+            user_id = user._id
 
             intent = Intent(intent_id=intent_id, district=district, center=center, received_date=received_date,
                             garment_type=garment_type, units_required=units_required, units_received=0,
