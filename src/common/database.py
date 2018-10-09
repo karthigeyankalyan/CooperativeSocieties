@@ -1,6 +1,8 @@
 import os
 
 import pymongo
+from bson import ObjectId
+from bson.errors import InvalidId
 
 
 class Database(object):
@@ -27,6 +29,14 @@ class Database(object):
     @staticmethod
     def find(collection, query):
         return Database.DATABASE[collection].find(query)
+
+    @staticmethod
+    def is_valid(oid):
+        try:
+            ObjectId(oid)
+            return True
+        except (InvalidId, TypeError):
+            return False
 
     @staticmethod
     def find_one(collection, query):

@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 import flask_cors
-from bson import json_util
+from bson import json_util, ObjectId
 from flask import Flask, render_template, request, session, json
 from src.common.database import Database
 from src.models.education_officers import EducationOfficers
@@ -666,7 +666,10 @@ def view_members():
 @app.route('/rawMember/<string:_id>')
 def get_single_member_details(_id):
     district_intents_array = []
-    district_intents = Database.find("members", {"_id": _id})
+    if Database.is_valid(_id):
+        district_intents = Database.find("members", {"_id": ObjectId(_id)})
+    else:
+        district_intents = Database.find("members", {"_id": _id})
 
     for intent in district_intents:
         district_intents_array.append(intent)
@@ -725,7 +728,10 @@ def get_district_society_id_member_details(District, Society, memID):
 @app.route('/delete_member/<string:_id>')
 def delete_member(_id):
 
-    memberProfile.delete_from_mongo(_id=_id)
+    if Database.is_valid(_id):
+        memberProfile.delete_from_mongo(_id=ObjectId(_id))
+    else:
+        memberProfile.delete_from_mongo(_id=_id)
 
     return render_template('deleted.html')
 

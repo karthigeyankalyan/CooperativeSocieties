@@ -1,28 +1,32 @@
 import uuid
 from datetime import datetime
 
+from bson import ObjectId
+
 from src.common.database import Database
 
 
 class memberProfile(object):
 
-    def __init__(self, name, district, center, enrollment_date, user_id, member_id, address,
-                 outstanding_balance=None, no_of_violations=None, contact_details=None, _id=None,
-                 overall_wage_entitled=None, overall_wage_paid=None, bank_account_number=None,
-                 bank_ifsc_code=None, bank_name=None):
+    def __init__(self, name, district, center, enrollment_date, user_id, member_id, address, aadhar_no,
+                 social_status, date_of_birth, outstanding_balance=None, no_of_violations=None,
+                 contact_details=None, _id=None, overall_wage_entitled=None, overall_wage_paid=None,
+                 bank_account_number=None, bank_ifsc_code=None, bank_name=None, share_value=None,
+                 thrift_value=None):
         self.name = name
         self.district = district
         self.center = center
         self.member_id = member_id
         self.address = address
         self.no_of_violations = no_of_violations
-        self.member_overall_thrift = 0
+        self.member_overall_thrift = thrift_value
         self.contact_details = contact_details
         self.bank_account_number = bank_account_number
         self.bank_ifsc_code = bank_ifsc_code
         self.bank_name = bank_name
-        self.share_value = 0
+        self.share_value = share_value
         self.user_id = user_id
+        self.social_status = social_status
 
         if enrollment_date:
             self.enrollment_date = (datetime.combine(datetime.strptime(enrollment_date, '%Y-%m-%d').date(),
@@ -30,7 +34,14 @@ class memberProfile(object):
         else:
             self.enrollment_date = enrollment_date
 
+        if date_of_birth:
+            self.date_of_birth = (datetime.combine(datetime.strptime(date_of_birth, '%Y-%m-%d').date(),
+                                                   datetime.now().time()))
+        else:
+            self.date_of_birth = date_of_birth
+
         self.outstanding_balance = outstanding_balance
+        self.aadhar_no = aadhar_no
         self.overall_wage_entitled = overall_wage_entitled
         self.overall_wage_paid = overall_wage_paid
         self._id = uuid.uuid4().hex if _id is None else _id
@@ -48,20 +59,36 @@ class memberProfile(object):
         else:
             enrollment_date = enrollment_date
 
-        Database.update_member_details(collection='members', query={'_id': mem_id}, district=district, name=name,
-                                       center=center, member_id=member_id, address=address,
-                                       contact_details=contact_details, user_id=user_id,
-                                       enrollment_date=enrollment_date, bank_account_number=bank_account_number,
-                                       bank_ifsc_code=bank_ifsc_code, bank_name=bank_name)
+        if Database.is_valid(mem_id):
+            Database.update_member_details(collection='members', query={'_id': ObjectId(mem_id)}, district=district, name=name,
+                                           center=center, member_id=member_id, address=address,
+                                           contact_details=contact_details, user_id=user_id,
+                                           enrollment_date=enrollment_date, bank_account_number=bank_account_number,
+                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name)
+        else:
+            Database.update_member_details(collection='members', query={'_id': mem_id}, district=district, name=name,
+                                           center=center, member_id=member_id, address=address,
+                                           contact_details=contact_details, user_id=user_id,
+                                           enrollment_date=enrollment_date, bank_account_number=bank_account_number,
+                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name)
 
     @classmethod
     def update_member_share(cls, thrift, share, mem_id):
-        Database.update_member_shares(collection='members', query={'_id': mem_id}, share=share, thrift=thrift)
+        if Database.is_valid(mem_id):
+            Database.update_member_shares(collection='members', query={'_id': ObjectId(mem_id)},
+                                          share=share, thrift=thrift)
+        else:
+            Database.update_member_shares(collection='members', query={'_id': mem_id},
+                                          share=share, thrift=thrift)
 
     @classmethod
-    def update_paid_wages(cls, _id, wage_paid, wage_entitled):
-        Database.update_overall_wages_paid(collection='members', query={'_id': _id}, wage_paid=wage_paid,
-                                           wage_entitled=wage_entitled)
+    def update_paid_wages(cls, mem_id, wage_paid, wage_entitled):
+        if Database.is_valid(mem_id):
+            Database.update_overall_wages_paid(collection='members', query={'_id': ObjectId(mem_id)},
+                                               wage_paid=wage_paid, wage_entitled=wage_entitled)
+        else:
+            Database.update_overall_wages_paid(collection='members', query={'_id': mem_id},
+                                               wage_paid=wage_paid, wage_entitled=wage_entitled)
 
     def json(self):
         return {
@@ -78,6 +105,9 @@ class memberProfile(object):
             'share_value': self.share_value,
             'outstanding_balance': self.outstanding_balance,
             'current_thrift_value': self.member_overall_thrift,
+            'social_status': self.social_status,
+            'date_of_birth': self.date_of_birth,
+            'aadhar_no': self.aadhar_no,
             '_id': self._id,
         }
 
