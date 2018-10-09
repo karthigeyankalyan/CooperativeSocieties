@@ -800,7 +800,7 @@ def view_eos():
         return render_template('login_fail.html')
 
 
-@app.route('/viewEODetails/<string:District>/<string:Name>', methods=['POST', 'GET'])
+@app.route('/viewEODetails/<string:District>/<string:Name>')
 def view_district_name_eos(District, Name):
     email = session['email']
     user = User.get_by_email(email)
@@ -815,12 +815,15 @@ def view_district_name_eos(District, Name):
 #  Delete EO
 ################################
 
-@app.route('/delete_application/<string:_id>')
+@app.route('/deleteEO/<string:_id>')
 def delete_application(_id):
+
+    email = session['email']
+    user = User.get_by_email(email)
 
     EducationOfficers.delete_from_mongo(_id=_id)
 
-    return render_template('deleted.html')
+    return render_template('deleted.html', user=user)
 
 
 ################################
