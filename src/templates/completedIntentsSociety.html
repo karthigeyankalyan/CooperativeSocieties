@@ -26,7 +26,7 @@
             var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Type" + "</th>";
             var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Required Units" + "</th>";
             var th8 = "<th style='text-align:center;vertical-align:middle'>" + "Received Units" + "</th>";
-//            var th9 = "<th style='text-align:center;vertical-align:middle'>" + "Update Intent" + "</th>";
+//            var th9 = "<th style='text-align:center;vertical-align:middle'>" + "Update Indent" + "</th>";
             var th10 = "<th style='text-align:center;vertical-align:middle'>" + "View Installment" + "</th>";
             $("#intentDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th7 + th8 + th10);
             for (var j = 0; j < json.length; j++) {
@@ -42,7 +42,7 @@
                         '<td>'+json[j]["garment_type"] +'</td>'+
                         '<td>'+json[j]["units_required"] +'</td>'+
                         '<td>'+json[j]["units_received"] +'</td>'+
-//                        '<td><button class="btn btn-default"><a href="' + url + '">'+ 'Update Intent' +'</a></button></td>'+
+//                        '<td><button class="btn btn-default"><a href="' + url + '">'+ 'Update Indent' +'</a></button></td>'+
                         '<td><button class="btn btn-default"><a href="' + url1 + '">'+ 'View Installments' +'</a></button></td>');
                     $("#intentDetails").append(row);
             }

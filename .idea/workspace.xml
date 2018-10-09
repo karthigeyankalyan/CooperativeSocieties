@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/database.py" afterPath="$PROJECT_DIR$/src/common/database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/another_intent_form.html" afterPath="$PROJECT_DIR$/src/templates/another_intent_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/eo_form.html" afterPath="$PROJECT_DIR$/src/templates/eo_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/garment_form.html" afterPath="$PROJECT_DIR$/src/templates/garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ico_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/ico_garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/initial_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/initial_garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/intent_form.html" afterPath="$PROJECT_DIR$/src/templates/intent_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_form.html" afterPath="$PROJECT_DIR$/src/templates/member_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/post_login_accountant.html" afterPath="$PROJECT_DIR$/src/templates/post_login_accountant.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/post_login_dswo.html" afterPath="$PROJECT_DIR$/src/templates/post_login_dswo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/register.html" afterPath="$PROJECT_DIR$/src/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/update_garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ViewIntents.html" afterPath="$PROJECT_DIR$/src/templates/ViewIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntents.html" afterPath="$PROJECT_DIR$/src/templates/completedIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntents.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntents.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,6 +50,26 @@
                 <marker date="1534578987669" expanded="true" signature="1437:1476" ph="..." />
                 <marker date="1534578987669" expanded="true" signature="1552:1591" ph="..." />
                 <marker date="1534578987669" expanded="true" signature="1665:1704" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewIntents.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding>
+                <marker date="1539085049052" expanded="true" signature="587:626" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="689:728" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="797:836" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="892:931" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="993:1032" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="1098:1137" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="1205:1244" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="1312:1351" ph="..." />
+                <marker date="1539085049052" expanded="true" signature="1419:1458" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,7 +127,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/database.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -139,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/ViewGarments.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewICOGarments.html" />
         <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
@@ -190,6 +204,7 @@
         <option value="$PROJECT_DIR$/src/templates/eo_form.html" />
         <option value="$PROJECT_DIR$/src/templates/another_intent_form.html" />
         <option value="$PROJECT_DIR$/src/common/database.py" />
+        <option value="$PROJECT_DIR$/src/templates/ViewIntents.html" />
       </list>
     </option>
   </component>
@@ -542,13 +557,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="46" column="52" lean-forward="true" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Downloads/Testing TABCEDCO/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -945,45 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewEOsByDistrictName.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <marker date="1534578987669" expanded="true" signature="1001:1040" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1109:1148" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1218:1257" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1324:1363" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1437:1476" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1552:1591" ph="..." />
-            <marker date="1534578987669" expanded="true" signature="1665:1704" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewEOs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1534577906453" expanded="true" signature="1447:1486" ph="..." />
-            <marker date="1534577906453" expanded="true" signature="1555:1594" ph="..." />
-            <marker date="1534577906453" expanded="true" signature="1664:1703" ph="..." />
-            <marker date="1534577906453" expanded="true" signature="1782:1821" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="864" column="0" lean-forward="false" selection-start-line="864" selection-start-column="0" selection-end-line="864" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/eo_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1022,6 +991,63 @@
         <state relative-caret-position="153">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="864" column="0" lean-forward="false" selection-start-line="864" selection-start-column="0" selection-end-line="864" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewEOs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1534577906453" expanded="true" signature="1447:1486" ph="..." />
+            <marker date="1534577906453" expanded="true" signature="1555:1594" ph="..." />
+            <marker date="1534577906453" expanded="true" signature="1664:1703" ph="..." />
+            <marker date="1534577906453" expanded="true" signature="1782:1821" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewEOsByDistrictName.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1534578987669" expanded="true" signature="1001:1040" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1109:1148" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1218:1257" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1324:1363" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1437:1476" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1552:1591" ph="..." />
+            <marker date="1534578987669" expanded="true" signature="1665:1704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <marker date="1539085049052" expanded="true" signature="587:626" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="689:728" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="797:836" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="892:931" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="993:1032" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="1098:1137" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="1205:1244" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="1312:1351" ph="..." />
+            <marker date="1539085049052" expanded="true" signature="1419:1458" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
