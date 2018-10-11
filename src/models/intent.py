@@ -93,3 +93,8 @@ class Intent(object):
     def find_by_district(cls, district):
         intent = Database.find(collection='intents', query={'district': district})
         return [cls(**inten) for inten in intent]
+
+    @classmethod
+    def delete_from_mongo(cls, _id):
+        Database.delete_from_mongo(collection='intents', query={'_id': _id})
+

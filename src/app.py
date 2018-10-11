@@ -737,6 +737,20 @@ def delete_member(_id):
 
 
 ################################
+#  Delete Member
+################################
+
+@app.route('/delete_indent/<string:_id>')
+def delete_indent(_id):
+
+    if Database.is_valid(_id):
+        Intent.delete_from_mongo(_id=ObjectId(_id))
+    else:
+        Intent.delete_from_mongo(_id=ObjectId(_id))
+
+    return render_template('deleted.html')
+
+################################
 #  Add EO / View EO / Update EO
 ################################
 
