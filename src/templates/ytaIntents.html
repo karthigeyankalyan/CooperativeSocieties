@@ -31,7 +31,7 @@
             $("#intentDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th7 + th8 + th9 + th10);
             for (var j = 0; j < json.length; j++) {
                     var intent_id = json[j]["_id"];
-                    var url = '/updateIntent/'+intent_id;
+                    var url = '/update_intent/'+intent_id;
                     var url1 = '/view_installments/'+intent_id;
                     var row = $('<tr></tr>').html('<td>' +
                         json[j]["intent_id"] + '</td>'+
