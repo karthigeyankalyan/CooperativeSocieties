@@ -176,3 +176,7 @@ class Database(object):
     @staticmethod
     def delete_from_mongo(collection, query):
         Database.DATABASE[collection].remove(query)
+
+    @staticmethod
+    def change_password(collection, query, password):
+        return Database.DATABASE[collection].update_one(query, {'$set': {'password': password}}, True)

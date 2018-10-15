@@ -79,6 +79,26 @@ def register_user():
         return render_template('profile_dswo.html', user=user)
 
 
+@app.route('/change_password/<string:_id>', methods=['POST', 'GET'])
+def change_password(_id):
+    user = User.get_by_id(_id)
+    if request.method == 'GET':
+        return render_template('update_password.html', user=user)
+    else:
+        old_password = request.form['oldPassword']
+        newPassword = request.form['newPassword']
+        newPasswordAgain = request.form['newPasswordAgain']
+
+    if user.password == old_password:
+        if newPassword == newPasswordAgain:
+            User.change_password(user._id, new_password=newPassword)
+            return render_template('passwords_changed.html', user=user)
+        else:
+            return render_template('passwords_dont_match.html', user=user)
+    else:
+        return render_template('passwords_dont_match.html', user=user)
+
+
 ##########################
 # Add Installment
 ##########################

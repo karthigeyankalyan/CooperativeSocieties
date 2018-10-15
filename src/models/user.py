@@ -69,3 +69,7 @@ class User(object):
 
     def save_to_mongo(self):
         Database.insert("users", self.json())
+
+    @classmethod
+    def change_password(cls, user_id, new_password):
+        Database.change_password(collection='users', query={'_id': user_id}, password=new_password)
