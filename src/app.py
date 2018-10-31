@@ -217,8 +217,11 @@ def view_installments(_id):
     email = session['email']
     user = User.get_by_email(email)
     if email is not None:
-        if user.society_name is not None:
+        if user.designation == 'DSWO/ICO' is not None:
             return render_template('ViewInstallments.html', user=user, society=user.society_name,
+                                   district=user.district, intent_id=_id)
+        elif user.designation == 'Accountant' is not None:
+            return render_template('ViewInstallments_acc.html', user=user, society=user.society_name,
                                    district=user.district, intent_id=_id)
 
     else:

@@ -1,0 +1,63 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+    <button><a href="/add_installment/{{intent_id}}">Add Installment</a></button>
+</div>
+
+<div id="intentList">
+</div>
+
+<script>
+    var int_id = "{{intent_id}}";
+    var source = "/rawInstallmentsByIntent/"+int_id;
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            $("#intentDetails").find("tbody").empty();
+            var tbl = $("<table class='table table-bordered table-dark' id='intentDetails'/>");
+            $("#intentList").append(tbl);
+            var hr = "<tr>";
+            var th1 = "<th style='text-align:center;vertical-align:middle'>" + "Intent Number" + "</th>";
+            var th2 = "<th style='text-align:center;vertical-align:middle'>" + "Name of Society" + "</th>";
+            var th3 = "<th style='text-align:center;vertical-align:middle'>" + "EO" + "</th>";
+            var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Deadline" + "</th>";
+            var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Type" + "</th>";
+            var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Required Units" + "</th>";
+            var th8 = "<th style='text-align:center;vertical-align:middle'>" + "Assigned Units" + "</th>";
+            var th9 = "<th style='text-align:center;vertical-align:middle'>" + "Received Units" + "</th>";
+            var th10 = "<th style='text-align:center;vertical-align:middle'>" + "Update Installment" + "</th>";
+            var th11 = "<th style='text-align:center;vertical-align:middle'>" + "Assign Member" + "</th>";
+            var th12 = "<th style='text-align:center;vertical-align:middle'>" + "View Transactions" + "</th>";
+            $("#intentDetails").append(hr + th1 + th2 + th3 + th5 + th6 + th7 + th8 + th9 + th10 + th11 + th12);
+            for (var j = 0; j < json.length; j++) {
+                    var intent_id = json[j]["_id"];
+                    var url = '/update_installment/'+intent_id;
+                    var url1 = '/assign_member/'+intent_id;
+                    var url2 = '/View_Transactions/'+intent_id;
+                    var row = $('<tr></tr>').html('<td>' +
+                        json[j]["installment_num"] + '</td>'+
+                        '<td>'+json[j]["center"]+'</td>'+
+                        '<td>'+json[j]["eo"] +'</td>'+
+                        '<td>'+moment(json[j]["deadline"]['$date']).format('YYYY-MM-DD') +'</td>'+
+                        '<td>'+json[j]["garment_type"] +'</td>'+
+                        '<td>'+json[j]["units_required"] +'</td>'+
+                        '<td>'+json[j]["units_assigned"] +'</td>'+
+                        '<td>'+json[j]["units_received"] +'</td>'+
+                        '<td><button class="btn btn-default"><a href="' + url + '">'+ 'Update Installment' +'</a></button></td>'+
+                        '<td><button class="btn btn-default"><a href="' + url1 + '">'+ 'Assign Member' +'</a></button></td>'+
+                        '<td><button class="btn btn-default"><a href="' + url2 + '">'+ 'View Transactions' +'</a></button></td>');
+                $("#intentDetails").append(row);
+            }
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+
+</script>
+
+{% endblock %}
