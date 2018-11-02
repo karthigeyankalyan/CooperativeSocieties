@@ -756,7 +756,7 @@ def delete_member(_id):
     else:
         memberProfile.delete_from_mongo(_id=_id)
 
-    return render_template('deleted.html')
+    return render_template('deleted_society.html')
 
 
 ################################
@@ -766,12 +766,15 @@ def delete_member(_id):
 @app.route('/delete_indent/<string:_id>')
 def delete_indent(_id):
 
+    email = session['email']
+    user = User.get_by_id(email)
+
     if Database.is_valid(_id):
         Intent.delete_from_mongo(_id=ObjectId(_id))
     else:
-        Intent.delete_from_mongo(_id=ObjectId(_id))
+        Intent.delete_from_mongo(_id=_id)
 
-    return render_template('deleted.html')
+    return render_template('deleted.html', user=user)
 
 ################################
 #  Add EO / View EO / Update EO
@@ -895,7 +898,7 @@ def delete_ICO_garment(_id):
 
     GarmentICO.delete_from_mongo(_id=_id)
 
-    return render_template('deleted.html', user=user)
+    return render_template('deleted_society.html', user=user)
 
 
 ################################
