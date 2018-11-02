@@ -128,13 +128,13 @@ def installment_form(intent_id):
             garment = Database.find("GarmentICO", {"district": user.district,
                                                    "garment_type": garment_type})
 
-            # wage_per_unit = 0
-            #
+            wage_per_unit = 0
+
             for result_object in garment[0:1]:
                 wage_per_unit = result_object['wage_per_unit']
-            #
-            # total_wages = int(units_required)*int(wage_per_unit)
-            #
+
+            total_wages = int(units_required)*int(wage_per_unit)
+
             # installment = Installment(intent_id=intent_id, district=district, center=center, garment_type=garment_type,
             #                           units_required=units_required, deadline=deadline, total_wages=total_wages,
             #                           units_pm=units_pm, user_id=user_id, set_id=set_id, garment_size=garment_size,
