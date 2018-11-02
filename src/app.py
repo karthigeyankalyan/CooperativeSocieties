@@ -119,7 +119,7 @@ def installment_form(intent_id):
             garment_size = request.form['gSize']
             set_id = request.form['setID']
             issue_date = request.form['issueDate']
-            units_required = request.form['unitsRequired']
+            units_required = int(request.form['unitsRequired'])
             deadline = request.form['deadline']
             units_pm = request.form['unitsPM']
             eo_name = request.form['EO']
@@ -133,9 +133,7 @@ def installment_form(intent_id):
             for result_object in garment[0:1]:
                 wage_per_unit = result_object['wage_per_unit']
 
-            # total_wages = int(units_required)*int(wage_per_unit)
-
-            total_wages = 0
+            total_wages = units_required*int(wage_per_unit)
 
             installment = Installment(intent_id=intent_id, district=district, center=center, garment_type=garment_type,
                                       units_required=units_required, deadline=deadline, total_wages=total_wages,
