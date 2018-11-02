@@ -18,6 +18,7 @@
                 <label for="setID">Set ID</label>
                 <label for="issueDate">Issue Date</label>
                 <label for="unitsRequired">Units Required</label>
+                <label for="totalWages">Total Wages</label>
                 <label for="deadline">Deadline Date</label>
                 <label for="unitsPM">Units Per Member</label>
                 <label for="EO">Educational Officer</label>
@@ -31,7 +32,8 @@
                 <input type="text" id="gSize" name="gSize">
                 <input type="text" id="setID" name="setID">
                 <input type="date" id="issueDate" name="issueDate">
-                <input type="number" id="unitsRequired" name="unitsRequired">
+                <input type="number" id="unitsRequired" name="unitsRequired" onchange="populateWPU(this)">
+                <input type="number" id="totalWages" name="totalWages">
                 <input type="date" id="deadline" name="deadline">
                 <input type="number" id="unitsPM" name="unitsPM">
                 <input type="text" id="EO" name="EO">
@@ -68,6 +70,23 @@
         }
     });
 
+    function populateWPU(that) {
+        var garment_type = document.getElementById('gType').value;
+        var district = document.getElementById('district').value;
+        var source = "/rawDistrictTypeICOGarments/"+district+"/"+garment_type;
+        $.ajax({
+            type: 'GET',
+            url: source,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                document.getElementById('totalWages').value = parseInt(json[0]['wage_per_unit'])*that.value;
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+    }
 </script>
 
 {% endblock %}
