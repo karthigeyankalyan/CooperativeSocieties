@@ -391,7 +391,7 @@ def add_member_transaction_form(installment_id):
             deadline = request.form['deadlineDate']
             issue_date = request.form['issueDate']
 
-            wage_expected = int(assigned_units)*int(wage_per_unit)
+            wage_expected = float(assigned_units)*float(wage_per_unit)
 
             member_identifier, bank_account, ifsc = None, None, None
 
@@ -416,15 +416,13 @@ def add_member_transaction_form(installment_id):
                 assUnitsIntent = result_object['units_assigned']
 
             memberTransaction = memberTransactions(name=name, member_id=member_identifier, garment_name=garment_name,
-                                                   wage_expected=0, advance_paid=advances, deductions=deductions,
+                                                   wage_expected=wage_expected, advance_paid=advances, deductions=deductions,
                                                    installment_id=installment_id, intent_id=intent_id,
                                                    deadline=deadline, no_of_units=assigned_units,
                                                    issue_date=issue_date, district=district, society=society,
                                                    bank_account=bank_account, ifsc=ifsc, garment_type=garment_type)
 
             memberTransaction.save_to_mongo()
-
-            print(assigned_units, assUnitsIntent)
 
             Installment.update_assigned(_id=installment_id, units_assigned=int(assigned_units)+int(assUnits),
                                         units_received=0)
