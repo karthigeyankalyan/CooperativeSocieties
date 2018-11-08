@@ -28,7 +28,7 @@
                 <input type="text" id="gType" name="gType" onmousemove="chooseGarment()">
                 <select class="garmentPicker" id="gName" name="gName"></select>
                 <input type="number" id="numUnits" name="numUnits">
-                <select class="memberPicker" id="memberPicker" name="memberPicker" onselect="chooseName()"></select>
+                <select class="memberPicker" id="memberPicker" name="memberPicker" onchange="chooseName()"></select>
                 <input type="text" id="memberName" name="memberName" onmousemove="chooseName()">
                 <input type="number" id="assignedUnits" name="assignedUnits">
                 <input type="text" id="wpu" name="wpu">
@@ -176,9 +176,11 @@
                 for(var i=0; i < json.length; i++) {
                     units_already_assigned_member += json[i]['no_of_units'];
                 }
+                document.getElementById('assignedUnits').value = units_already_assigned_member;
             },
             error: function (e) {
                 units_already_assigned_member = 0;
+                document.getElementById('assignedUnits').value = 0;
             }
         });
 
