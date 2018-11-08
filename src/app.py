@@ -600,7 +600,7 @@ def add_member_form(user_id):
     user = User.get_by_id(user_id)
     if email is not None:
         if request.method == 'GET':
-            return render_template('member_form.html', user=user)
+            return render_template('member_form.html', user=user, user_id=user_id)
 
         else:
             name = request.form['memberName']
