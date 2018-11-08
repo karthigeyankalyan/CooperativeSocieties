@@ -734,7 +734,7 @@ def get_district_society_id_member_details(District, Society, memID):
     district_intents_array = []
     district_intents = Database.find("members", {"$and": [{"district": District},
                                                           {"center": Society},
-                                                          {"member_id": memID}]})
+                                                          {"member_id": int(memID)}]})
 
     for intent in district_intents:
         district_intents_array.append(intent)
