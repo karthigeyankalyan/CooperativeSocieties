@@ -151,6 +151,7 @@
                 contentType: "application/json",
                 dataType: 'json',
                 success: function (json) {
+                    console.log(json);
                     document.getElementById('memberName').value = json[0]['name'];
                     document.getElementById('MID').value = json[0]['_id'];
                     fixing_limit(json[0]['_id']);
