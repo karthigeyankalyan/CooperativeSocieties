@@ -155,7 +155,12 @@
                     console.log(json);
                     document.getElementById('memberName').value = json[0]['name'];
                     document.getElementById('MID').value = json[0]['_id'];
-                    fixing_limit(json[0]['_id']);
+                    if(json[0]['_id']['$oid']) {
+                        fixing_limit(json[0]['_id']['$oid']);
+                    }
+                    else {
+                        fixing_limit(json[0]['_id']);
+                    }
                 },
                 error: function (e) {
                     alert("error");
