@@ -118,18 +118,14 @@
         $locations.html(html)
     });
 
-    var member_id = "{{member_id}}";
-
-    console.log(member_id['$oid']);
-
-    var source = "/rawMember/"+member_id['$oid'];
-
+    var source = "/rawMember/"+"{{member_id}}";
     $.ajax({
         type: 'GET',
         url: source,
         contentType: "application/json",
         dataType: 'json',
         success: function (json) {
+            console.log(json);
             document.getElementById("memberName").value = json[0]["name"];
             document.getElementById("district").value = json[0]["district"];
             document.getElementById("center").value = json[0]["center"];
