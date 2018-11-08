@@ -8,8 +8,8 @@ from src.common.database import Database
 
 class memberProfile(object):
 
-    def __init__(self, name, district, center, enrollment_date, user_id, member_id, address, aadhar_no,
-                 social_status, date_of_birth, outstanding_balance=None, no_of_violations=None,
+    def __init__(self, name, district, center, enrollment_date, user_id, member_id, address, aadhar_no=None,
+                 social_status=None, date_of_birth=None, outstanding_balance=None, no_of_violations=None,
                  contact_details=None, _id=None, overall_wage_entitled=None, overall_wage_paid=None,
                  bank_account_number=None, bank_ifsc_code=None, bank_name=None, share_value=None,
                  thrift_value=None):
@@ -51,7 +51,7 @@ class memberProfile(object):
 
     @classmethod
     def update_member(cls, name, district, center, enrollment_date, member_id, address, contact_details,
-                      mem_id, user_id, bank_account_number, bank_ifsc_code, bank_name):
+                      mem_id, user_id, bank_account_number, bank_ifsc_code, bank_name, aadhar, dob, status):
 
         if enrollment_date:
             enrollment_date = (datetime.combine(datetime.strptime(enrollment_date, '%Y-%m-%d').date(),
@@ -59,18 +59,26 @@ class memberProfile(object):
         else:
             enrollment_date = enrollment_date
 
+        if dob:
+            dob = (datetime.combine(datetime.strptime(dob, '%Y-%m-%d').date(),
+                                    datetime.now().time()))
+        else:
+            dob = enrollment_date
+
         if Database.is_valid(mem_id):
             Database.update_member_details(collection='members', query={'_id': ObjectId(mem_id)}, district=district, name=name,
                                            center=center, member_id=member_id, address=address,
                                            contact_details=contact_details, user_id=user_id,
                                            enrollment_date=enrollment_date, bank_account_number=bank_account_number,
-                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name)
+                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name, aadhar=aadhar,
+                                           dob=dob, status=status)
         else:
             Database.update_member_details(collection='members', query={'_id': mem_id}, district=district, name=name,
                                            center=center, member_id=member_id, address=address,
                                            contact_details=contact_details, user_id=user_id,
                                            enrollment_date=enrollment_date, bank_account_number=bank_account_number,
-                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name)
+                                           bank_ifsc_code=bank_ifsc_code, bank_name=bank_name, aadhar=aadhar,
+                                           dob=dob, status=status)
 
     @classmethod
     def update_member_share(cls, thrift, share, mem_id):

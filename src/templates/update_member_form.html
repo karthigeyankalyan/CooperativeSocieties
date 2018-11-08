@@ -19,6 +19,9 @@
                 <label for="shares">Current Share Value</label>
                 <label for="thrift">Current Thrift Value</label>
                 <label for="enrollDate">Enrollment Date</label>
+                <label for="dob">Date of Birth</label>
+                <label for="socialStatus">Social Status</label>
+                <label for="aadhar">Aadhar #</label>
                 <label for="bankAccount">Bank Account Number</label>
                 <label for="IFSC">IFSC Code</label>
                 <label for="bankName">Bank Name</label>
@@ -49,6 +52,14 @@
                 <input type="number" id="shares" name="shares">
                 <input type="number" id="thrift" name="thrift">
                 <input type="date" id="enrollDate" name="enrollDate">
+                <input type="date" id="dob" name="dob">
+                <select id="socialStatus" name="socialStatus">
+                    {% set districts = ["Married", "Single", "Widowed", "Divorced/Abandoned"] %}
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
+                <input type="text" id="aadhar" name="aadhar">
                 <input type="text" id="bankAccount" name="bankAccount">
                 <input type="text" id="IFSC" name="IFSC">
                 <input type="text" id="bankName" name="bankName">
@@ -88,7 +99,8 @@
         "Thirunelveli": ["Tirunelveli Women Tailoring Industrial Co-Op Society LTD IND 1704",  "Tirunelveli Anna Women Cardboard and Stationery Workers and Tailoring Development Industrial Coop Society LTD IND 1192",  "Valliyoor Union Tailoring Workers Industrial Cooperative Society IND 1631"],
         "Thirupur": ["Palladam Women Stationery And Tailoring Industrial Cooperative Society LTD IND 1260"],
         "Thiruvallur": ["Thiruvallur District Womens Tailoring Industrial Coop Society LTD SW 45"],
-        "Thiruvannamalai": ["The Annai Sathiya Tailoring Womens Indl Co-Op Society LTD IND 1769",  "The Tiruvannamalai Tailoring Womens Development Cottage Coop Society LTD SW 40ottage Coop Society LTD SW 40"],  	"Thiruvarur": ["Thiruvarur District Women Tailoring And Industrial Development Coop Society LTD SW 109",  "Valangaiman Women Stationery Manufacturers And Tailoring Industrial Cooperative Society LTD IND 1311", "Nallur Coi Women Workers and Tailoring Industrial Coop Society LTD IND 1469"],
+        "Thiruvannamalai": ["The Annai Sathiya Tailoring Womens Indl Co-Op Society LTD IND 1769",  "The Tiruvannamalai Tailoring Womens Development Cottage Coop Society LTD SW 40ottage Coop Society LTD SW 40"],
+  	"Thiruvarur": ["Thiruvarur District Women Tailoring And Industrial Development Coop Society LTD SW 109",  "Valangaiman Women Stationery Manufacturers And Tailoring Industrial Cooperative Society LTD IND 1311", "Nallur Coi Women Workers and Tailoring Industrial Coop Society LTD IND 1469"],
         "Trichy": ["Trichy Womens Tailoring Co-Op.Society LTD R 728",  "Trichy Kavery Womens Tailoring Co-Op.Society LTD IND 1691",  "Trichy Womens Stationary Tailoring Co-Op.Society LTD IND 1315"],
         "Tuticorin": ["Muthunagar Womens Tailoring Co-Operetive Society LTD SW 39", "Bharathiyar Readymade Materials Manufacturing Women Development Tailoring Co-Operative Society LTD IND 1743", "Ranianna Tailoring Cottage Co-Operetive Society LTD IND 1775"],
         "Vellore": ["The Velapadi Women Tailoring & Small Industrial Service Coop Society LTD IND 1676",  "Annai Curie Chalk Manufacturing Physically Handicapped Women Tailoring Development Industrial Service Coop Society LTD SW 94",  "Annai Indira Gandhi Women Tailoring Industrial Service Coop Society LTD IND 1718",  "The Arcot Tailoring Women Development Cottage Co-Operative Society SW 36", "Annai Indira Gandhi Women Tailoring Industrial Service Coop Society LTD IND 1718vice Cooperative Society LTD IND 1718"],
@@ -118,10 +130,14 @@
             document.getElementById("center").value = json[0]["center"];
             document.getElementById("memberID").value = json[0]["member_id"];
             document.getElementById("address").value = json[0]["address"];
-            document.getElementById("address").value = json[0]["contact_details"];
+            document.getElementById("contact").value = json[0]["contact_details"];
             document.getElementById("shares").value = json[0]["share_value"];
+            document.getElementById("thrift").value = json[0]["current_thrift_value"];
+            document.getElementById("socialStatus").value = json[0]["social_status"];
+            document.getElementById("aadhar").value = json[0]["aadhar_no"];
             document.getElementById("address").value = json[0]["current_thrift_value"];
             document.getElementById("enrollDate").value = moment(json[0]["enrollment_date"]['$date']).format("YYYY-MM-DD");
+            document.getElementById("dob").value = moment(json[0]["date_of_birth"]['$date']).format("YYYY-MM-DD");
         },
         error: function (e) {
             alert("error");

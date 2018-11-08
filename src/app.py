@@ -613,10 +613,14 @@ def add_member_form(user_id):
             bank_account = request.form['bankAccount']
             ifsc = request.form['IFSC']
             bank_name = request.form['bankName']
+            aadhar = request.form['aadhar']
+            status = request.form['socialStatus']
+            dob = request.form['dob']
 
             member = memberProfile(name=name, district=district, center=society, member_id=memberID, address=address,
                                    contact_details=contact, enrollment_date=enrollDate, user_id=user_id,
-                                   bank_account_number=bank_account, bank_ifsc_code=ifsc, bank_name=bank_name)
+                                   bank_account_number=bank_account, bank_ifsc_code=ifsc, bank_name=bank_name,
+                                   aadhar_no=aadhar, social_status=status, date_of_birth=dob)
 
             member.save_to_mongo()
 
@@ -645,15 +649,20 @@ def update_member_form(_id):
             bank_account = request.form['bankAccount']
             ifsc = request.form['IFSC']
             bank_name = request.form['bankName']
+            aadhar = request.form['aadhar']
+            status = request.form['socialStatus']
+            dob = request.form['dob']
 
             member = memberProfile(name=name, district=district, center=society, member_id=memberID,
                                    address=address, contact_details=contact, enrollment_date=enrollDate,
-                                   user_id=user._id)
+                                   user_id=user._id, aadhar_no=aadhar, social_status=status,
+                                   date_of_birth=dob)
 
             member.update_member(name=name, district=district, center=society, member_id=memberID, address=address,
                                  contact_details=contact, enrollment_date=enrollDate, user_id=user._id,
                                  mem_id=_id, bank_account_number=bank_account, bank_ifsc_code=ifsc,
-                                 bank_name=bank_name)
+                                 bank_name=bank_name, aadhar=aadhar, status=status,
+                                 dob=dob)
 
             return render_template('member_added.html', name=name, district=district, user=user)
 
@@ -1792,4 +1801,4 @@ def raw_intents_between_district(start, end, district):
 
 
 if __name__ == '__main__':
-    app.run(port=4065, debug=True)
+    app.run(port=4035, debug=True)
