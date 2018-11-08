@@ -37,7 +37,13 @@
                     $("#eoDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th8 + th9);
                     for (var j = 0; j < jsonFunc.length; j++) {
                         {
-                            var loan_id = jsonFunc[j]["_id"];
+                            if (jsonFunc[j]["_id"]['$oid']) {
+                                var loan_id = jsonFunc[j]["_id"]["$oid"];
+                            }
+                            else {
+                                loan_id = jsonFunc[j]["_id"];
+                            }
+
                             var url = '/update_member/'+loan_id;
                             var url1 = '/delete_member/'+loan_id;
                             var url2 = '/assign_intent/'+loan_id;

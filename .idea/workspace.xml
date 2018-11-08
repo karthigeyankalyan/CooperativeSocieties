@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_member_form.html" afterPath="$PROJECT_DIR$/src/templates/update_member_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ViewMembers.html" afterPath="$PROJECT_DIR$/src/templates/ViewMembers.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,13 +17,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="1037">
               <caret line="689" column="0" lean-forward="false" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewMembers.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/ViewMembers.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <marker date="1541700021165" expanded="true" signature="1021:1060" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1133:1172" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1243:1282" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1351:1390" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1463:1502" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1576:1615" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1808:1847" ph="..." />
+                <marker date="1541700021165" expanded="true" signature="1915:1954" ph="..." />
               </folding>
             </state>
           </provider>
@@ -137,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
-        <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
         <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_accountant.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_dswo.html" />
@@ -165,6 +183,7 @@
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/update_member_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
       </list>
     </option>
   </component>
@@ -655,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewMembers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" column="116" lean-forward="true" selection-start-line="49" selection-start-column="116" selection-end-line="49" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/passwords_changed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -926,10 +938,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="1037">
           <caret line="689" column="0" lean-forward="false" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewMembers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <marker date="1541700021165" expanded="true" signature="1021:1060" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1133:1172" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1243:1282" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1351:1390" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1463:1502" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1576:1615" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1808:1847" ph="..." />
+            <marker date="1541700021165" expanded="true" signature="1915:1954" ph="..." />
           </folding>
         </state>
       </provider>
