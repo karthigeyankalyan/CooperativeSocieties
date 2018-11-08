@@ -751,12 +751,15 @@ def get_district_society_id_member_details(District, Society, memID):
 @app.route('/delete_member/<string:_id>')
 def delete_member(_id):
 
+    email = session['email']
+    user = User.get_by_email(email)
+
     if Database.is_valid(_id):
         memberProfile.delete_from_mongo(_id=ObjectId(_id))
     else:
         memberProfile.delete_from_mongo(_id=_id)
 
-    return render_template('deleted_society.html')
+    return render_template('deleted_society.html', user=user)
 
 
 ################################
