@@ -133,6 +133,9 @@
             document.getElementById("shares").value = json[0]["share_value"];
             document.getElementById("thrift").value = json[0]["current_thrift_value"];
             document.getElementById("socialStatus").value = json[0]["social_status"];
+            document.getElementById("bankAccount").value = json[0]["bank_account_number"];
+            document.getElementById("bankName").value = json[0]["bank_name"];
+            document.getElementById("IFSC").value = json[0]["bank_ifsc_code"];
             document.getElementById("aadhar").value = json[0]["aadhar_no"];
             document.getElementById("address").value = json[0]["current_thrift_value"];
             document.getElementById("enrollDate").value = moment(json[0]["enrollment_date"]['$date']).format("YYYY-MM-DD");

@@ -145,6 +145,7 @@
     function chooseName() {
         var member_id = document.getElementById('memberPicker').value;
         var source1 = "/rawDistrictSocietyIDMember/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+        console.log(source1);
             $.ajax({
                 type: 'GET',
                 url: source1,
