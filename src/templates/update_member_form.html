@@ -118,8 +118,12 @@
         $locations.html(html)
     });
 
-    var source = "/rawMember/"+"{{member_id}}";
-    console.log("{{member_id}}");
+    var member_id = "{{member_id}}";
+
+    console.log(member_id['$oid']);
+
+    var source = "/rawMember/"+member_id['$oid'];
+
     $.ajax({
         type: 'GET',
         url: source,
