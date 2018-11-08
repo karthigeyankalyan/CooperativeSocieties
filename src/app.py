@@ -1693,6 +1693,31 @@ def get_dates_society():
         return render_template('login_fail.html')
 
 
+@app.route('/raw_member_transactions_historic/<string:installment_id>/<string:member_id>')
+def raw_member_transactions_historic(installment_id, member_id):
+    accounts = []
+
+    accounts_dict = Database.find("memberTransactions", {"$and": [{"installment_id": installment_id},
+                                                                  {"member_id": member_id}]})
+
+    for tran in accounts_dict:
+        accounts.append(tran)
+
+    # df = pandas.DataFrame(accounts)
+    #
+    # print(df)
+    #
+    # df_agg = df.groupby(['member_id', 'name', 'garment_type']).agg(sum)
+    # df_json = json.loads(df_agg.reset_index().to_json(orient='records'))
+    #
+    # print(df_json)
+    #
+    # accounts_final = json.dumps(df_json, default=json_util.default)
+    accounts_final = json.dumps(accounts, default=json_util.default)
+
+    return accounts_final
+
+
 @app.route('/raw_member_transactions_between/<string:start_date>/<string:end_date>/<string:district>/<string:society>')
 def raw_member_transactions(start_date, end_date, district, society):
     accounts = []
@@ -1709,16 +1734,6 @@ def raw_member_transactions(start_date, end_date, district, society):
     for tran in accounts_dict:
         accounts.append(tran)
 
-    # df = pandas.DataFrame(accounts)
-    #
-    # print(df)
-    #
-    # df_agg = df.groupby(['member_id', 'name', 'garment_type']).agg(sum)
-    # df_json = json.loads(df_agg.reset_index().to_json(orient='records'))
-    #
-    # print(df_json)
-    #
-    # accounts_final = json.dumps(df_json, default=json_util.default)
     accounts_final = json.dumps(accounts, default=json_util.default)
 
     return accounts_final
