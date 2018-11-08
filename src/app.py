@@ -1693,7 +1693,7 @@ def get_dates_society():
         return render_template('login_fail.html')
 
 
-@app.route('/raw_member_transactions_historic/<string:installment_id>/<string:member_id>')
+@app.route('/rawMemberTransactionsHistoric/<string:installment_id>/<string:member_id>')
 def raw_member_transactions_historic(installment_id, member_id):
     accounts = []
 
