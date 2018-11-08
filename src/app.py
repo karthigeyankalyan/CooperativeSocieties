@@ -732,9 +732,10 @@ def get_district_society_member_details(District, Society):
 @app.route('/rawDistrictSocietyIDMember/<string:District>/<string:Society>/<string:memID>')
 def get_district_society_id_member_details(District, Society, memID):
     district_intents_array = []
+    mid = int(memID)
     district_intents = Database.find("members", {"$and": [{"district": District},
                                                           {"center": Society},
-                                                          {"member_id": memID}]})
+                                                          {"member_id": mid}]})
 
     for intent in district_intents:
         district_intents_array.append(intent)
