@@ -319,7 +319,7 @@ def another_intent_form(_id):
 
             user = User.get_by_id(user_id)
 
-            return render_template('intent_added.html', intent=intent, user=user)
+            return render_template('intent_added.html', intent_id=intent._id, user=user)
 
     else:
         return render_template('login_fail.html')
