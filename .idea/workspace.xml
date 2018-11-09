@@ -32,20 +32,20 @@
       <file leaf-file-name="ytaIntents.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="42" column="98" lean-forward="true" selection-start-line="42" selection-start-column="98" selection-end-line="42" selection-end-column="98" />
               <folding>
-                <marker date="1541745375471" expanded="true" signature="628:667" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="730:769" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="838:877" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="939:978" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1048:1087" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1149:1188" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1254:1293" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1361:1400" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1468:1507" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1575:1614" ph="..." />
-                <marker date="1541745375471" expanded="true" signature="1686:1725" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="628:667" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="730:769" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="838:877" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="939:978" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1048:1087" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1149:1188" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1254:1293" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1361:1400" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1468:1507" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1575:1614" ph="..." />
+                <marker date="1541745571850" expanded="true" signature="1686:1725" ph="..." />
               </folding>
             </state>
           </provider>
@@ -1053,20 +1053,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="42" column="98" lean-forward="true" selection-start-line="42" selection-start-column="98" selection-end-line="42" selection-end-column="98" />
           <folding>
-            <marker date="1541745375471" expanded="true" signature="628:667" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="730:769" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="838:877" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="939:978" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1048:1087" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1149:1188" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1254:1293" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1361:1400" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1468:1507" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1575:1614" ph="..." />
-            <marker date="1541745375471" expanded="true" signature="1686:1725" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="628:667" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="730:769" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="838:877" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="939:978" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1048:1087" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1149:1188" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1254:1293" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1361:1400" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1468:1507" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1575:1614" ph="..." />
+            <marker date="1541745571850" expanded="true" signature="1686:1725" ph="..." />
           </folding>
         </state>
       </provider>
