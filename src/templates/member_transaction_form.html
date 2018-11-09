@@ -176,11 +176,11 @@
                 for(var i=0; i < json.length; i++) {
                     units_already_assigned_member += json[i]['no_of_units'];
                 }
-                document.getElementById('assignedUnits').value = units_already_assigned_member;
+//                document.getElementById('assignedUnits').max = units_already_assigned_member;
             },
             error: function (e) {
                 units_already_assigned_member = 0;
-                document.getElementById('assignedUnits').value = 0;
+//                document.getElementById('assignedUnits').max = 0;
             }
         });
 
