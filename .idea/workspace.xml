@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_transaction_form.html" afterPath="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/another_intent_form.html" afterPath="$PROJECT_DIR$/src/templates/another_intent_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ico_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/ico_garment_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/initial_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/initial_garment_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/initial_garment_form_ico.html" afterPath="$PROJECT_DIR$/src/templates/initial_garment_form_ico.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/intent_form.html" afterPath="$PROJECT_DIR$/src/templates/intent_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_form.html" afterPath="$PROJECT_DIR$/src/templates/member_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_eo_form.html" afterPath="$PROJECT_DIR$/src/templates/update_eo_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/update_garment_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_intent_form.html" afterPath="$PROJECT_DIR$/src/templates/update_intent_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_member_form.html" afterPath="$PROJECT_DIR$/src/templates/update_member_form.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,63 +27,142 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.py">
+      <file leaf-file-name="member_transaction_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="1697" column="0" lean-forward="false" selection-start-line="1697" selection-start-column="0" selection-end-line="1697" selection-end-column="0" />
+            <state relative-caret-position="-51">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ico_garment_added.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_added.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ico_garment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="22" column="88" lean-forward="false" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <marker date="1541742164586" expanded="true" signature="2610:2697" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="2772:2810" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="3061:3099" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="3349:3387" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="3637:3676" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="3902:3941" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="4221:4286" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="4361:4399" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="4581:4619" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="4811:4849" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="5041:5080" ph="..." />
+                <marker date="1541742164586" expanded="true" signature="5233:5272" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberProfile.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/memberProfile.py">
+      <file leaf-file-name="initial_garment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1311">
-              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="23" column="88" lean-forward="false" selection-start-line="23" selection-start-column="88" selection-end-line="23" selection-end-column="88" />
+              <folding>
+                <marker date="1541742165473" expanded="true" signature="11132:11219" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="11294:11332" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="11583:11621" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="11871:11909" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="12159:12198" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="12424:12463" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="12688:12727" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="13026:13091" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="13166:13204" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="13386:13424" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="13616:13654" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="13846:13885" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="14038:14077" ph="..." />
+                <marker date="1541742165473" expanded="true" signature="14228:14267" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="initial_garment_form_ico.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form_ico.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="22" column="88" lean-forward="false" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+              <folding>
+                <marker date="1541742164790" expanded="true" signature="2589:2676" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="2751:2789" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="3040:3078" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="3328:3366" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="3616:3655" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="3881:3920" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="4200:4265" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="4340:4378" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="4560:4598" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="4790:4828" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="5020:5059" ph="..." />
+                <marker date="1541742164790" expanded="true" signature="5212:5251" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="installment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/installment_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-306">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberTransactions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/memberTransactions.py">
+      <file leaf-file-name="bonus_calculation_form.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/bonus_calculation_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-464">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="-294">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member_transaction_form.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_form.html">
+      <file leaf-file-name="update_installment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/update_installment_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="-153">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member_form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
+      <file leaf-file-name="update_eo_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/update_eo_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+            <state relative-caret-position="221">
+              <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/database.py">
+      <file leaf-file-name="update_garment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/update_garment_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="26" column="88" lean-forward="false" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -110,6 +199,8 @@
       <find>member_transaction_f</find>
       <find>rawMemberTra</find>
       <find>member_transaction_for</find>
+      <find>Thiruvar</find>
+      <find>&quot;Theni&quot;,</find>
       <find>fixing</find>
     </findStrings>
   </component>
@@ -125,24 +216,16 @@
         <option value="$PROJECT_DIR$/src/templates/home.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/src/templates/register.html" />
-        <option value="$PROJECT_DIR$/src/templates/initial_garment_form_ico.html" />
-        <option value="$PROJECT_DIR$/src/templates/initial_garment_form.html" />
-        <option value="$PROJECT_DIR$/src/templates/update_eo_form.html" />
         <option value="$PROJECT_DIR$/src/templates/intent_added.html" />
-        <option value="$PROJECT_DIR$/src/templates/update_garment_form.html" />
-        <option value="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" />
         <option value="$PROJECT_DIR$/src/templates/garment_form.html" />
-        <option value="$PROJECT_DIR$/src/templates/ico_garment_form.html" />
         <option value="$PROJECT_DIR$/src/templates/post_login_dswo.html" />
         <option value="$PROJECT_DIR$/src/templates/post_login_accountant.html" />
-        <option value="$PROJECT_DIR$/src/templates/another_intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewTransactions.html" />
         <option value="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
-        <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_accountant.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_dswo.html" />
         <option value="$PROJECT_DIR$/src/templates/update_password.html" />
@@ -162,14 +245,22 @@
         <option value="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/models/intent.py" />
         <option value="$PROJECT_DIR$/src/models/memberTransactions.py" />
-        <option value="$PROJECT_DIR$/src/templates/update_intent_form.html" />
         <option value="$PROJECT_DIR$/src/models/memberProfile.py" />
-        <option value="$PROJECT_DIR$/src/templates/member_form.html" />
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
-        <option value="$PROJECT_DIR$/src/templates/update_member_form.html" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/member_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/another_intent_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_intent_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_member_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_eo_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_garment_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/ico_garment_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/initial_garment_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/initial_garment_form_ico.html" />
       </list>
     </option>
   </component>
@@ -548,83 +639,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/intent_added.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_garment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_ico_garment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form_ico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="95" column="46" lean-forward="false" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/post_login_dswo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/post_login_accountant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/garment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/another_intent_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewEOs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ViewEOsByDistrictName.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -761,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/installment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="34" column="106" lean-forward="true" selection-start-line="34" selection-start-column="106" selection-end-line="34" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/garmentICO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-393">
@@ -841,48 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_intent_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#input#1;n#div#1;n#div#1;n#div#0;n#form#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_member_transaction_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_member_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ViewMembers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -908,10 +873,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="35" column="88" lean-forward="true" selection-start-line="35" selection-start-column="88" selection-end-line="35" selection-end-column="88" />
           <folding />
         </state>
       </provider>
@@ -942,10 +923,171 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/another_intent_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_intent_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_installment_form_society.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_ico_garment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_member_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="88" lean-forward="false" selection-start-line="36" selection-start-column="88" selection-end-line="36" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_member_transaction_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_eo_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_garment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="88" lean-forward="false" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_installment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="-51">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_added.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="88" lean-forward="false" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+          <folding>
+            <marker date="1541742164586" expanded="true" signature="2610:2697" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="2772:2810" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="3061:3099" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="3349:3387" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="3637:3676" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="3902:3941" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="4221:4286" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="4361:4399" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="4581:4619" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="4811:4849" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="5041:5080" ph="..." />
+            <marker date="1541742164586" expanded="true" signature="5233:5272" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="23" column="88" lean-forward="false" selection-start-line="23" selection-start-column="88" selection-end-line="23" selection-end-column="88" />
+          <folding>
+            <marker date="1541742165473" expanded="true" signature="11132:11219" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="11294:11332" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="11583:11621" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="11871:11909" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="12159:12198" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="12424:12463" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="12688:12727" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="13026:13091" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="13166:13204" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="13386:13424" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="13616:13654" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="13846:13885" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="14038:14077" ph="..." />
+            <marker date="1541742165473" expanded="true" signature="14228:14267" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form_ico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" column="88" lean-forward="false" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+          <folding>
+            <marker date="1541742164790" expanded="true" signature="2589:2676" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="2751:2789" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3040:3078" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3328:3366" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3616:3655" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3881:3920" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4200:4265" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4340:4378" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4560:4598" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4790:4828" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="5020:5059" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="5212:5251" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/installment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/bonus_calculation_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
