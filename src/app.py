@@ -458,7 +458,7 @@ def update_member_transaction_form(_id):
             issue_date = request.form['issueDate']
             wage_paid = request.form['wagePaid']
 
-            wage_to_pay = int(returned_units)*int(wage_per_unit)
+            wage_to_pay = int(returned_units)*float(wage_per_unit)
 
             intent_id, assUnits, installment_id, assUnitsIntent, mem_mongo_id = None, None, None, None, None
             District, Society, overall_current_thrift, overall_current_share = None, None, None, None
