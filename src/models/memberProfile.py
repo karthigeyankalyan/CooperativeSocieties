@@ -16,7 +16,7 @@ class memberProfile(object):
         self.name = name
         self.district = district
         self.center = center
-        self.member_id = member_id
+        self.member_id = int(member_id)
         self.address = address
         self.no_of_violations = no_of_violations
         self.member_overall_thrift = thrift_value
@@ -67,14 +67,14 @@ class memberProfile(object):
 
         if Database.is_valid(mem_id):
             Database.update_member_details(collection='members', query={'_id': ObjectId(mem_id)}, district=district, name=name,
-                                           center=center, member_id=member_id, address=address,
+                                           center=center, member_id=int(member_id), address=address,
                                            contact_details=contact_details, user_id=user_id,
                                            enrollment_date=enrollment_date, bank_account_number=bank_account_number,
                                            bank_ifsc_code=bank_ifsc_code, bank_name=bank_name, aadhar=aadhar,
                                            dob=dob, status=status)
         else:
             Database.update_member_details(collection='members', query={'_id': mem_id}, district=district, name=name,
-                                           center=center, member_id=member_id, address=address,
+                                           center=center, member_id=int(member_id), address=address,
                                            contact_details=contact_details, user_id=user_id,
                                            enrollment_date=enrollment_date, bank_account_number=bank_account_number,
                                            bank_ifsc_code=bank_ifsc_code, bank_name=bank_name, aadhar=aadhar,
