@@ -429,7 +429,8 @@ def add_member_transaction_form(installment_id):
             Intent.update_assigned(_id=intent_id, units_assigned=int(assigned_units)+int(assUnitsIntent),
                                    units_received=0)
 
-            return render_template('member_transaction_added.html', name=name, district=user.district, user=user)
+            return render_template('member_transaction_added.html', name=name, district=user.district, user=user,
+                                   installment_id=installment_id, society=user.society_name)
 
     else:
         return render_template('login_fail.html')
