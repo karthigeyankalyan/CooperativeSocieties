@@ -9,7 +9,7 @@ class Installment(object):
     def __init__(self, installment_num, intent_id, district, center, units_required, garment_type, uploaded_date,
                  deadline, total_wages, units_pm, user_id, units_received=None, units_assigned=None,  eo=None,
                  garment_size=None, _id=None, set_id=None, material_received_date=None, cut_piece_units=None,
-                 status=None):
+                 status=None, units_sanctioned=None):
         self.intent_id = intent_id
         self.installment_num = installment_num
         self.district = district
@@ -34,6 +34,7 @@ class Installment(object):
         self.cut_piece_units = 0 if cut_piece_units is None else cut_piece_units
         self.units_assigned = 0 if units_assigned is None else units_assigned
         self.units_received = 0 if units_received is None else units_received
+        self.units_sanctioned = 0 if units_sanctioned is None else units_sanctioned
 
         if deadline:
             self.deadline = (datetime.combine(datetime.strptime(deadline, '%Y-%m-%d').date(),
@@ -93,6 +94,11 @@ class Installment(object):
         Database.update_status(collection='installments', query={'_id': _id})
 
     @classmethod
+    def update_delivery(cls, _id, units_delivered):
+        Database.update_delivery(collection='installments', query={'_id': _id},
+                                 units_delivered=units_delivered)
+
+    @classmethod
     def update_status_reverse(cls, _id):
         Database.update_status_reverse(collection='installments', query={'_id': _id})
 
@@ -111,6 +117,7 @@ class Installment(object):
             'units_required': self.units_required,
             'units_assigned': self.units_assigned,
             'units_received': self.units_received,
+            'units_sanctioned': self.units_sanctioned,
             'deadline': self.deadline,
             'total_wages': self.total_wages,
             'status': self.status,

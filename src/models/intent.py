@@ -8,7 +8,7 @@ class Intent(object):
 
     def __init__(self, intent_id, district, center, received_date, garment_type, units_required, units_received,
                  deadline, total_wages, units_pm, user_id, set_id, eo, garment_size, units_assigned=None,
-                 _id=None, cut_piece_units=None, stitched_units=None):
+                 _id=None, cut_piece_units=None, stitched_units=None, units_sanctioned=None):
         self.intent_id = intent_id
         self.district = district
         self.center = center
@@ -34,6 +34,7 @@ class Intent(object):
         self.stitched_units = stitched_units
         self.units_pm = units_pm
         self.user_id = user_id
+        self.units_sanctioned = int(units_sanctioned)
         self._id = uuid.uuid4().hex if _id is None else _id
 
     def save_to_mongo(self):

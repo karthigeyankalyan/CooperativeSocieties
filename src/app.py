@@ -192,6 +192,23 @@ def update_installment_form(_id):
         return render_template('login_fail.html')
 
 
+@app.route('/update_installment_delivery/<string:_id>', methods=['POST', 'GET'])
+def update_installment_form(_id):
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        if request.method == 'GET':
+            return render_template('update_installment_delivery_form.html', user=user, installment_id=_id)
+        else:
+            units_for_delivery = request.form['unitsForDelivery']
+            Installment.update_delivery( _id=_id, units_delivered=units_for_delivery)
+
+            return render_template('intent_added.html', user=user)
+
+    else:
+        return render_template('login_fail.html')
+
+
 @app.route('/View_Intents', methods=['POST', 'GET'])
 def view_intents_ovr_district():
     email = session['email']
@@ -216,6 +233,18 @@ def view_installments(_id):
         elif user.designation == 'Accountant':
             return render_template('ViewInstallments_acc.html', user=user, society=user.society_name,
                                    district=user.district, intent_id=_id)
+
+    else:
+        return render_template('login_fail.html')
+
+
+@app.route('/view_installments_received')
+def view_installments(_id):
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        return render_template('ViewInstallmentsReceived.html', user=user, society=user.society_name,
+                               district=user.district, intent_id=_id)
 
     else:
         return render_template('login_fail.html')
@@ -1780,6 +1809,22 @@ def raw_installments_for_delivery_between(district, society):
     accounts_dict = Database.find("installments", {"$and": [{"deadline": {"$gte": start, "$lt": end}},
                                                             {"district": district},
                                                             {"center": society}]})
+
+    for tran in accounts_dict:
+        accounts.append(tran)
+
+    accounts_final = json.dumps(accounts, default=json_util.default)
+
+    return accounts_final
+
+
+@app.route('/raw_all_installments_received/<string:district>/<string:society>')
+def raw_installments_for_delivery_between(district, society):
+    accounts = []
+
+    accounts_dict = Database.find("installments", {"$and": [{"district": district},
+                                                            {"center": society},
+                                                            {"$where": "this.units_received > 0"}]})
 
     for tran in accounts_dict:
         accounts.append(tran)

@@ -132,6 +132,10 @@ class Database(object):
         return Database.DATABASE[collection].update_one(query, {'$set': {'status': "Ongoing"}}, True)
 
     @staticmethod
+    def update_delivery(query, collection, units_delivered):
+        return Database.DATABASE[collection].update_one(query, {'$set': {'units_sanctioned': units_delivered}}, True)
+
+    @staticmethod
     def update_overall_wages_paid(query, collection, wage_paid, wage_entitled):
         return Database.DATABASE[collection].update_one(query, {'$set': {'overall_wage_paid': wage_paid,
                                                                          'overall_wage_entitled': wage_entitled}}, True)
