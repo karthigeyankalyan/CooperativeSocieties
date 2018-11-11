@@ -49,6 +49,8 @@
 
 <script>
 
+    var units_per_member = 0;
+
     var source = "/rawSingleInstallment/"+"{{installment_id}}";
     var garment_type;
     $.ajax({
@@ -61,6 +63,7 @@
             document.getElementById("gType").value = json[0]["garment_type"];
             document.getElementById("numUnits").value = parseInt(json[0]["units_required"])-parseInt(json[0]["units_assigned"]);
             document.getElementById('assignedUnits').max = json[0]['units_pm'];
+            units_per_member = json[0]['units_pm'];
         },
         error: function (e) {
             alert("error");
@@ -176,28 +179,12 @@
                 for(var i=0; i < json.length; i++) {
                     units_already_assigned_member += json[i]['no_of_units'];
                 }
-                document.getElementById('assignedUnits').value = units_already_assigned_member;
+                document.getElementById('assignedUnits').max = parseInt(units_per_member) - parseInt(units_already_assigned_member);
             },
             error: function (e) {
-                units_already_assigned_member = 0;
-                document.getElementById('assignedUnits').value = 0;
+                document.getElementById('assignedUnits').max = parseInt(units_per_member);
             }
         });
-
-        var source = "/rawSingleInstallment/"+"{{installment_id}}";
-        $.ajax({
-            type: 'GET',
-            url: source,
-            contentType: "application/json",
-            dataType: 'json',
-            success: function (json) {
-                document.getElementById('assignedUnits').max = json[0]['units_pm'] - units_already_assigned_member;
-            },
-            error: function (e) {
-                alert("error");
-            }
-        });
-
     }
 
 </script>
