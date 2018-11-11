@@ -5,7 +5,6 @@
 </div>
 
 <script>
-
     var district = "{{district}}";
     var society = "{{society}}";
     var source = "/RawOngoingIntentsYTASociety/"+district+"/"+society;
@@ -15,7 +14,6 @@
         contentType: "application/json",
         dataType: 'json',
         success: function (json) {
-            console.log(json, district, society);
             $("#intentDetails").find("tbody").empty();
             var tbl = $("<table class='table table-bordered table-dark' id='intentDetails'/>");
             $("#intentList").append(tbl);

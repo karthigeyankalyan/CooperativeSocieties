@@ -652,17 +652,19 @@ def update_member_form(_id):
             aadhar = request.form['aadhar']
             status = request.form['socialStatus']
             dob = request.form['dob']
+            shares = request.form['shares']
+            thrift = request.form['thrift']
 
             member = memberProfile(name=name, district=district, center=society, member_id=memberID,
                                    address=address, contact_details=contact, enrollment_date=enrollDate,
                                    user_id=user._id, aadhar_no=aadhar, social_status=status,
                                    date_of_birth=dob)
 
-            member.update_member(name=name, district=district, center=society, member_id=memberID, address=address,
-                                 contact_details=contact, enrollment_date=enrollDate, user_id=user._id,
-                                 mem_id=_id, bank_account_number=bank_account, bank_ifsc_code=ifsc,
-                                 bank_name=bank_name, aadhar=aadhar, status=status,
-                                 dob=dob)
+            member.update_member(name=name, district=district, center=society, member_id=memberID,
+                                 address=address, contact_details=contact, enrollment_date=enrollDate,
+                                 user_id=user._id, mem_id=_id, bank_account_number=bank_account,
+                                 bank_ifsc_code=ifsc, bank_name=bank_name, aadhar=aadhar, status=status,
+                                 dob=dob, share_value=shares, thrift_value=thrift)
 
             return render_template('member_added.html', name=name, district=district, user=user)
 

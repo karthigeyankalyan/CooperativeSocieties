@@ -96,7 +96,7 @@ class Database(object):
     @staticmethod
     def update_member_details(name, district, center, enrollment_date, member_id, address, contact_details,
                               query, collection, user_id, bank_account_number, bank_ifsc_code, bank_name,
-                              aadhar, status, dob):
+                              aadhar, status, dob, share_value, thrift_value):
         return Database.DATABASE[collection].update_one(query, {'$set': {'district': district,
                                                                          'center': center,
                                                                          'name': name,
@@ -108,6 +108,8 @@ class Database(object):
                                                                          'wage_per_unit': member_id,
                                                                          'address': address,
                                                                          'aadhar_no': aadhar,
+                                                                         'share_value': share_value,
+                                                                         'current_thrift_value': thrift_value,
                                                                          'date_of_birth': dob,
                                                                          'social_status': status,
                                                                          'contact_details': contact_details}}, True)
