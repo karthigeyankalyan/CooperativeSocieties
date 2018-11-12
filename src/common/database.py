@@ -136,6 +136,14 @@ class Database(object):
         return Database.DATABASE[collection].update_one(query, {'$set': {'units_sanctioned': units_delivered}}, True)
 
     @staticmethod
+    def update_transaction_delete(query, collection, units_assigned_new):
+        return Database.DATABASE[collection].update_one(query, {'$set': {'units_assigned': units_assigned_new}}, True)
+
+    @staticmethod
+    def update_installment_transaction_delete(query, collection, units_assigned_new):
+        return Database.DATABASE[collection].update_one(query, {'$set': {'units_assigned': units_assigned_new}}, True)
+
+    @staticmethod
     def update_overall_wages_paid(query, collection, wage_paid, wage_entitled):
         return Database.DATABASE[collection].update_one(query, {'$set': {'overall_wage_paid': wage_paid,
                                                                          'overall_wage_entitled': wage_entitled}}, True)

@@ -65,6 +65,11 @@ class Intent(object):
         Database.update_assigned_units(collection='intents', query={'_id': _id}, units_assigned=units_assigned,
                                        units_received=units_received)
 
+    @classmethod
+    def update_transaction_delete(cls, _id, units_assigned_new):
+        Database.update_transaction_delete(collection='intents', query={'_id': _id},
+                                           units_assigned_new=units_assigned_new)
+
     def json(self):
         return {
             'intent_id': self.intent_id,

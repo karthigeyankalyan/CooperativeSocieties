@@ -102,6 +102,11 @@ class Installment(object):
     def update_status_reverse(cls, _id):
         Database.update_status_reverse(collection='installments', query={'_id': _id})
 
+    @classmethod
+    def update_installment_transaction_delete(cls, _id, units_assigned_new):
+        Database.update_installment_transaction_delete(collection='intents', query={'_id': _id},
+                                                       units_assigned_new=units_assigned_new)
+
     def json(self):
         return {
             'intent_id': self.intent_id,

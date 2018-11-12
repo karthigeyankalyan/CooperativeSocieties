@@ -100,3 +100,6 @@ class memberTransactions(object):
             '_id': self._id
         }
 
+    @classmethod
+    def delete_from_mongo(cls, _id):
+        Database.delete_from_mongo(collection='memberTransactions', query={'_id': _id})

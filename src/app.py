@@ -193,7 +193,7 @@ def update_installment_form(_id):
 
 
 @app.route('/update_installment_delivery/<string:_id>', methods=['POST', 'GET'])
-def update_installment_form(_id):
+def update_installment_delivery_form(_id):
     email = session['email']
     user = User.get_by_email(email)
     if email is not None:
@@ -239,7 +239,7 @@ def view_installments(_id):
 
 
 @app.route('/view_installments_received')
-def view_installments(_id):
+def view_installments_received(_id):
     email = session['email']
     user = User.get_by_email(email)
     if email is not None:
@@ -933,6 +933,41 @@ def delete_ICO_garment(_id):
     user = User.get_by_email(session['email'])
 
     GarmentICO.delete_from_mongo(_id=_id)
+
+    return render_template('deleted_society.html', user=user)
+
+
+################################
+#  Delete Member Transaction
+################################
+
+@app.route('/delete_member_transaction/<string:_id>')
+def delete_member_transaction(_id):
+
+    user = User.get_by_email(session['email'])
+
+    member = Database.find("memberTransactions", {"_id": _id})
+
+    intent_id, installment_id = None, None
+    no_of_units, intent_units, installment_units = 0, 0, 0
+
+    for result_object in member[0:1]:
+        intent_id = result_object['intent_id']
+        installment_id = result_object['installment_id']
+        no_of_units = result_object['no_of_units']
+
+    intent = Database.find("intents", {"_id": _id})
+    installment = Database.find("installments", {"_id": _id})
+
+    for result_object in intent[0:1]:
+        intent_units = result_object['units_assigned']
+
+    for result_object in installment[0:1]:
+        installment_units = result_object['units_assigned']
+
+    memberTransactions.delete_from_mongo(_id=_id)
+    Intent.update_transaction_delete(_id=intent_id, units_assigned_new=int(intent_units)-int(no_of_units))
+    Installment.update_installment_transaction_delete(_id=intent_id, units_assigned_new=(int(installment_units)-int(no_of_units)))
 
     return render_template('deleted_society.html', user=user)
 
@@ -1819,7 +1854,7 @@ def raw_installments_for_delivery_between(district, society):
 
 
 @app.route('/raw_all_installments_received/<string:district>/<string:society>')
-def raw_installments_for_delivery_between(district, society):
+def raw_installments_for_received(district, society):
     accounts = []
 
     accounts_dict = Database.find("installments", {"$and": [{"district": district},
