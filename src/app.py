@@ -714,6 +714,19 @@ def view_members():
         return render_template('login_fail.html')
 
 
+@app.route('/loggedOut')
+def log_out():
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        if user.society_name is not None:
+            user.logout()
+            return render_template('logged_out.html', user=user.username)
+
+    else:
+        return render_template('login_fail.html')
+
+
 ################################
 #  Get Member
 ################################

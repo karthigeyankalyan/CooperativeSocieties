@@ -25,6 +25,7 @@
                     var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
                     $("#eoList").append(tbl);
                     var hr = "<tr>";
+                    var th10 = "<th style='text-align:center;vertical-align:middle'>" + "S. No" + "</th>";
                     var th1 = "<th style='text-align:center;vertical-align:middle'>" + "Member Name" + "</th>";
                     var th2 = "<th style='text-align:center;vertical-align:middle'>" + "Member ID" + "</th>";
                     var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Society" + "</th>";
@@ -34,7 +35,7 @@
 //                    var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Assign Intent" + "</th>";
                     var th8 = "<th style='text-align:center;vertical-align:middle'>" + "Update" + "</th>";
                     var th9 = "<th style='text-align:center;vertical-align:middle'>" + "Delete" + "</th>";
-                    $("#eoDetails").append(hr + th1 + th2 + th3 + th4 + th5 + th6 + th8 + th9);
+                    $("#eoDetails").append(hr + th10 + th1 + th2 + th3 + th4 + th5 + th6 + th8 + th9);
                     for (var j = 0; j < jsonFunc.length; j++) {
                         {
                             if (jsonFunc[j]["_id"]['$oid']) {
@@ -48,6 +49,7 @@
                             var url1 = '/delete_member/'+loan_id;
                             var url2 = '/assign_intent/'+loan_id;
                             var row = $('<tr></tr>').html(
+                                '<td>'+ (j+1) +'</td>'+
                                 '<td>'+jsonFunc[j]["name"] +'</td>'+
                                 '<td>'+jsonFunc[j]["member_id"] +'</td>'+
                                 '<td>'+jsonFunc[j]["center"] +'</td>'+
