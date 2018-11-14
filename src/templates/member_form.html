@@ -15,6 +15,7 @@
                 <label for="memberID">Member ID</label>
                 <label for="address">Address</label>
                 <label for="contact">Contact Details</label>
+                <label for="caste">Caste</label>
                 <label for="shares">Current Share Value</label>
                 <label for="thrift">Current Thrift Value</label>
                 <label for="enrollDate">Enrollment Date</label>
@@ -48,6 +49,13 @@
                 <input type="number" id="memberID" name="memberID">
                 <input type="text" id="address" name="address">
                 <input type="text" id="contact" name="contact">
+                <select class="form-control" style="text-align: center;" id="caste" name="caste">
+                    {% set districts = ["SC", "ST", "OBC", "OC", "BC", "MBC"] %}
+
+                    {% for district in districts %}
+                        <option value= "{{district}}">{{district}}</option>"
+                    {% endfor %}
+                </select>
                 <input type="number" id="shares" name="shares">
                 <input type="number" id="thrift" name="thrift">
                 <input type="date" id="enrollDate" name="enrollDate">

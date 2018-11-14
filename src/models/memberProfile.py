@@ -12,7 +12,7 @@ class memberProfile(object):
                  social_status=None, date_of_birth=None, outstanding_balance=None, no_of_violations=None,
                  contact_details=None, _id=None, overall_wage_entitled=None, overall_wage_paid=None,
                  bank_account_number=None, bank_ifsc_code=None, bank_name=None, share_value=None,
-                 thrift_value=None):
+                 thrift_value=None, caste=None):
         self.name = name
         self.district = district
         self.center = center
@@ -27,6 +27,7 @@ class memberProfile(object):
         self.share_value = share_value
         self.user_id = user_id
         self.social_status = social_status
+        self.caste = caste
 
         if enrollment_date:
             self.enrollment_date = (datetime.combine(datetime.strptime(enrollment_date, '%Y-%m-%d').date(),
@@ -52,7 +53,7 @@ class memberProfile(object):
     @classmethod
     def update_member(cls, name, district, center, enrollment_date, member_id, address, contact_details,
                       mem_id, user_id, bank_account_number, bank_ifsc_code, bank_name, aadhar, dob, status,
-                      share_value, thrift_value):
+                      share_value, thrift_value, caste):
 
         if enrollment_date:
             enrollment_date = (datetime.combine(datetime.strptime(enrollment_date, '%Y-%m-%d').date(),
@@ -72,14 +73,15 @@ class memberProfile(object):
                                            contact_details=contact_details, user_id=user_id, enrollment_date=enrollment_date,
                                            bank_account_number=bank_account_number, bank_ifsc_code=bank_ifsc_code,
                                            bank_name=bank_name, aadhar=aadhar, dob=dob, status=status, share_value=share_value,
-                                           thrift_value=thrift_value)
+                                           thrift_value=thrift_value, caste=caste)
         else:
             Database.update_member_details(collection='members', query={'_id': mem_id}, district=district, name=name,
                                            center=center, member_id=int(member_id), address=address,
                                            contact_details=contact_details, user_id=user_id,
                                            enrollment_date=enrollment_date, bank_account_number=bank_account_number,
                                            bank_ifsc_code=bank_ifsc_code, bank_name=bank_name, aadhar=aadhar,
-                                           dob=dob, status=status, share_value=share_value, thrift_value=thrift_value)
+                                           dob=dob, status=status, share_value=share_value, thrift_value=thrift_value,
+                                           caste=caste)
 
     @classmethod
     def update_member_share(cls, thrift, share, mem_id):
@@ -117,6 +119,7 @@ class memberProfile(object):
             'social_status': self.social_status,
             'date_of_birth': self.date_of_birth,
             'aadhar_no': self.aadhar_no,
+            'caste': self.caste,
             '_id': self._id,
         }
 
