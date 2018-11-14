@@ -647,11 +647,14 @@ def add_member_form(user_id):
             status = request.form['socialStatus']
             caste = request.form['caste']
             dob = request.form['dob']
+            shares = request.form['shares']
+            thrift = request.form['thrift']
 
             member = memberProfile(name=name, district=district, center=society, member_id=memberID, address=address,
                                    contact_details=contact, enrollment_date=enrollDate, user_id=user_id,
                                    bank_account_number=bank_account, bank_ifsc_code=ifsc, bank_name=bank_name,
-                                   aadhar_no=aadhar, social_status=status, date_of_birth=dob, caste=caste)
+                                   aadhar_no=aadhar, social_status=status, date_of_birth=dob, caste=caste,
+                                   share_value=shares, thrift_value=thrift)
 
             member.save_to_mongo()
 
