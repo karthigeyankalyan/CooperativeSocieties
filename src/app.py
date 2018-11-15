@@ -688,6 +688,7 @@ def update_member_form(_id):
             dob = request.form['dob']
             shares = request.form['shares']
             thrift = request.form['thrift']
+            caste = request.form['caste']
 
             member = memberProfile(name=name, district=district, center=society, member_id=memberID,
                                    address=address, contact_details=contact, enrollment_date=enrollDate,
@@ -698,7 +699,7 @@ def update_member_form(_id):
                                  address=address, contact_details=contact, enrollment_date=enrollDate,
                                  user_id=user._id, mem_id=_id, bank_account_number=bank_account,
                                  bank_ifsc_code=ifsc, bank_name=bank_name, aadhar=aadhar, status=status,
-                                 dob=dob, share_value=shares, thrift_value=thrift)
+                                 dob=dob, share_value=shares, thrift_value=thrift, caste=caste)
 
             return render_template('member_added.html', name=name, district=district, user=user)
 
