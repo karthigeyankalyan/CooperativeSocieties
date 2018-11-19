@@ -34,7 +34,7 @@ class Intent(object):
         self.stitched_units = stitched_units
         self.units_pm = units_pm
         self.user_id = user_id
-        self.units_sanctioned = int(units_sanctioned)
+        self.units_sanctioned = 0 if units_sanctioned is None else int(units_sanctioned)
         self._id = uuid.uuid4().hex if _id is None else _id
 
     def save_to_mongo(self):
