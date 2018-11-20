@@ -104,7 +104,7 @@ class Installment(object):
 
     @classmethod
     def update_installment_transaction_delete(cls, _id, units_assigned_new):
-        Database.update_installment_transaction_delete(collection='intents', query={'_id': _id},
+        Database.update_installment_transaction_delete(collection='installments', query={'_id': _id},
                                                        units_assigned_new=units_assigned_new)
 
     def json(self):

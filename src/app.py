@@ -201,7 +201,7 @@ def update_installment_delivery_form(_id):
             return render_template('update_installment_delivery_form.html', user=user, installment_id=_id)
         else:
             units_for_delivery = request.form['unitsForDelivery']
-            Installment.update_delivery( _id=_id, units_delivered=units_for_delivery)
+            Installment.update_delivery(_id=_id, units_delivered=units_for_delivery)
 
             return render_template('intent_added.html', user=user)
 
@@ -1877,7 +1877,7 @@ def raw_installments_for_received(district, society):
 
     accounts_dict = Database.find("installments", {"$and": [{"district": district},
                                                             {"center": society},
-                                                            {"$where": "this.units_received > 0"}]})
+                                                            {"$where": "this.units_received > this.units_sanctioned"}]})
 
     for tran in accounts_dict:
         accounts.append(tran)
