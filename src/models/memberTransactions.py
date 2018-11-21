@@ -9,7 +9,7 @@ class memberTransactions(object):
     def __init__(self, name, member_id, garment_type, district, society, wage_expected, advance_paid, intent_id,
                  installment_id, issue_date, no_of_units, deadline, bank_account, ifsc, remaining_amount=None,
                  units_returned=None, thrift=None, _id=None, transaction_status=None, share=None, garment_name=None,
-                 deductions=None):
+                 deductions=None, garment_size=None, contact_details=None):
         self.name = name
         self.member_id = member_id
         self.bank_account = bank_account
@@ -18,6 +18,7 @@ class memberTransactions(object):
         self.society = society
         self.garment_type = garment_type
         self.garment_name = garment_name
+        self.garment_size = garment_size
         self.wage_expected = float(wage_expected)
         self.advance_paid = float(advance_paid)
         self.deductions = float(deductions)
@@ -27,6 +28,7 @@ class memberTransactions(object):
         self.share = float(share) if thrift is not None else share
         self.intent_id = intent_id
         self.installment_id = installment_id
+        self.contact_details = contact_details
         self.no_of_units = int(no_of_units)
         self.units_returned = 0 if units_returned is None else units_returned
 
@@ -50,7 +52,7 @@ class memberTransactions(object):
     @classmethod
     def update_member_transaction(cls, name, member_id, garment_name, wage_expected, advance_paid, remaining_amount,
                                   no_of_units, deadline, transaction_id, units_returned, user_id, transaction_status,
-                                  thrift, share, issue_date, deductions):
+                                  thrift, share, issue_date, deductions, garment_size):
         if deadline:
             deadline = (datetime.combine(datetime.strptime(deadline, '%Y-%m-%d').date(),
                                          datetime.now().time()))
@@ -69,7 +71,7 @@ class memberTransactions(object):
                                            no_of_units=int(no_of_units), name=name, member_id=member_id,
                                            units_returned=units_returned, deadline=deadline, user_id=user_id,
                                            transaction_status=transaction_status, thrift=int(thrift), share=int(share),
-                                           issue_date=issue_date, deductions=deductions)
+                                           issue_date=issue_date, deductions=deductions, garment_size=garment_size)
 
     @classmethod
     def update_paid_wages(cls, _id, wage_paid):
@@ -85,6 +87,7 @@ class memberTransactions(object):
             'society': self.society,
             'garment_type': self.garment_type,
             'garment_name': self.garment_name,
+            'garment_size': self.garment_size,
             'wage_expected': self.wage_expected,
             'advance_paid': self.advance_paid,
             'deductions': self.deductions,
@@ -97,6 +100,7 @@ class memberTransactions(object):
             'deadline': self.deadline,
             'issue_date': self.issue_date,
             'units_returned': self.units_returned,
+            'contact_details': self.contact_details,
             '_id': self._id
         }
 

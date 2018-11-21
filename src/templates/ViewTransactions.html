@@ -31,7 +31,7 @@
                     var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Type" + "</th>";
                     var th4 = "<th style='text-align:center;vertical-align:middle'>" + "Issue Date" + "</th>";
                     var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Deadline" + "</th>";
-                    var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Advance Paid" + "</th>";
+                    var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Size" + "</th>";
                     var th7 = "<th style='text-align:center;vertical-align:middle'>" + "Wage Expected" + "</th>";
                     var th8 = "<th style='text-align:center;vertical-align:middle'>" + "# of Units" + "</th>";
                     var th9 = "<th style='text-align:center;vertical-align:middle'>" + "# Units Returned" + "</th>";
@@ -49,7 +49,7 @@
                                 '<td>'+jsonFunc[j]["garment_type"] +'</td>'+
                                 '<td>'+moment(jsonFunc[j]["issue_date"]['$date']).format('DD-MM-YYYY') +'</td>'+
                                 '<td>'+moment(jsonFunc[j]["deadline"]['$date']).format('DD-MM-YYYY') +'</td>'+
-                                '<td>'+jsonFunc[j]["advance_paid"] +'</td>'+
+                                '<td>'+jsonFunc[j]["garment_size"] +'</td>'+
                                 '<td>'+jsonFunc[j]["wage_expected"] +'</td>'+
                                 '<td>'+jsonFunc[j]["no_of_units"] +'</td>'+
                                 '<td>'+jsonFunc[j]["units_returned"] +'</td>'+

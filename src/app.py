@@ -422,7 +422,7 @@ def add_member_transaction_form(installment_id):
 
             wage_expected = float(assigned_units)*float(wage_per_unit)
 
-            member_identifier, bank_account, ifsc = None, None, None
+            contact_details, member_identifier, bank_account, ifsc = None, None, None, None
 
             member = Database.find("members", {"_id": member_id})
 
@@ -430,8 +430,9 @@ def add_member_transaction_form(installment_id):
                 member_identifier = result_object['member_id']
                 bank_account = result_object['bank_account_number']
                 ifsc = result_object['bank_ifsc_code']
+                contact_details = result_object['contact_details']
 
-            intent_id, assUnits, assUnitsIntent = None, None, None
+                garment_size, intent_id, assUnits, assUnitsIntent = None, None, None, None
 
             installment = Database.find("installments", {"_id": installment_id})
 
@@ -443,13 +444,15 @@ def add_member_transaction_form(installment_id):
 
             for result_object in intent[0:1]:
                 assUnitsIntent = result_object['units_assigned']
+                garment_size = result_object['garment_size']
 
             memberTransaction = memberTransactions(name=name, member_id=member_identifier, garment_name=garment_name,
                                                    wage_expected=wage_expected, advance_paid=advances, deductions=deductions,
                                                    installment_id=installment_id, intent_id=intent_id,
                                                    deadline=deadline, no_of_units=assigned_units,
                                                    issue_date=issue_date, district=district, society=society,
-                                                   bank_account=bank_account, ifsc=ifsc, garment_type=garment_type)
+                                                   bank_account=bank_account, ifsc=ifsc, garment_type=garment_type,
+                                                   garment_size=garment_size, contact_details=contact_details)
 
             memberTransaction.save_to_mongo()
 
@@ -493,7 +496,7 @@ def update_member_transaction_form(_id):
             intent_id, assUnits, installment_id, assUnitsIntent, mem_mongo_id = None, None, None, None, None
             District, Society, overall_current_thrift, overall_current_share = None, None, None, None
             received_units_intent, received_units_installment, units_returned_previous = None, None, None
-            units_assigned_previous, required_units_installment = None, None
+            garment_size, units_assigned_previous, required_units_installment = None, None, None
 
             member_trans = Database.find("memberTransactions", {"_id": _id})
 
@@ -527,6 +530,7 @@ def update_member_transaction_form(_id):
                 District = result_object['district']
                 Society = result_object['center']
                 received_units_intent = result_object['units_received']
+                garment_size = result_object['garment_size']
 
             member = Database.find("members", {"$and": [{"district": District},
                                                         {"center": Society},
@@ -538,6 +542,15 @@ def update_member_transaction_form(_id):
                 overall_current_thrift = result_object['current_thrift_value']
 
             total_thrift_value = 0.10 * wage_to_pay
+
+            decimal_part_wage = wage_to_pay % 1
+            decimal_part_deductions = deductions % 1
+            wage_to_pay -= decimal_part_wage
+            deductions -= decimal_part_deductions
+
+            total_decimal_part = decimal_part_wage+decimal_part_deductions
+            total_thrift_value += total_decimal_part
+
             current_thrift = total_thrift_value % 1000
             current_share = total_thrift_value - current_thrift
 
@@ -548,7 +561,8 @@ def update_member_transaction_form(_id):
                                                          no_of_units=assigned_units, transaction_id=_id,
                                                          units_returned=returned_units, transaction_status=status,
                                                          thrift=current_thrift, share=current_share,
-                                                         issue_date=issue_date, deductions=deductions)
+                                                         issue_date=issue_date, deductions=deductions,
+                                                         garment_size=garment_size)
 
             if status == 'Closed':
                 overall_thrift = overall_current_thrift+current_thrift
@@ -1878,6 +1892,22 @@ def raw_installments_for_received(district, society):
     accounts_dict = Database.find("installments", {"$and": [{"district": district},
                                                             {"center": society},
                                                             {"$where": "this.units_received > this.units_sanctioned"}]})
+
+    for tran in accounts_dict:
+        accounts.append(tran)
+
+    accounts_final = json.dumps(accounts, default=json_util.default)
+
+    return accounts_final
+
+
+@app.route('/raw_all_unreturned_units/<string:district>/<string:society>')
+def raw_unreturned_units(district, society):
+    accounts = []
+
+    accounts_dict = Database.find("memberTransactions", {"$and": [{"district": district},
+                                                                  {"society": society},
+                                                                  {"$where": "this.units_assigned > this.units_returned"}]})
 
     for tran in accounts_dict:
         accounts.append(tran)

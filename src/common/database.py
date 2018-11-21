@@ -152,7 +152,7 @@ class Database(object):
     @staticmethod
     def update_member_transaction(name, member_id, garment_name, wage_expected, advance_paid, remaining_amount,
                                   no_of_units, deadline, units_returned, query, collection, user_id,
-                                  transaction_status, thrift, share, issue_date, deductions):
+                                  transaction_status, thrift, share, issue_date, deductions, garment_size):
         return Database.DATABASE[collection].update_one(query, {'$set': {'garment_name': garment_name,
                                                                          'wage_expected': wage_expected,
                                                                          'advance_paid': advance_paid,
@@ -166,6 +166,7 @@ class Database(object):
                                                                          'transaction_status': transaction_status,
                                                                          'no_of_units': no_of_units,
                                                                          'deadline': deadline,
+                                                                         'garment_size': garment_size,
                                                                          'issue_date': issue_date,
                                                                          'units_returned': units_returned}}, True)
 

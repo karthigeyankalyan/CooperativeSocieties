@@ -1,10 +1,12 @@
 {% extends "post_login_accountant.html" %}
 {% block content %}
 
+
 <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-top: 10px">
     <button onclick="downloadBWReport()">Bank Wise Report</button>
     <button onclick="downloadMGReport()">Member Garment Report</button>
     <button onclick="downloadMWTeport()">Member Wage/Thrift Report</button>
+    <button onclick="downloadURUReport()">Unreturned Units Summary</button>
 </div>
 
 <script>
@@ -339,7 +341,6 @@
         dataType: 'json',
         success: function (json) {
             console.log(json);
-
             var aggregatedData = d3.nest()
                 .key(function (d) {
                     return d.name;
@@ -354,21 +355,15 @@
                         }
                     })
                 .entries(json);
-
             var doc = new jsPDF();
-
             doc.setFontSize(15);
             doc.setTextColor(0,0,255);
             doc.text(70, 10, 'Member Wise Garment Details');
-
             doc.setFontSize(10);
             doc.setTextColor(0,0,0);
             doc.text(60, 20, '{{society}}');
-
             doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
-
             doc.text(50, 30, 'Thrift and Share Accumulated between {{start_date}} to {{end_date}}');
-
             columns = ["S. No", "Member", "Shares", "Thrift", "Wages"];
             rows = [];
             var total_wages = 0;
@@ -378,15 +373,91 @@
                 total_wages += aggregatedData[l].values.wage_to_pay;
                 ur_total += aggregatedData[l].values.thrift;
                 ua_total += aggregatedData[l].values.shares;
-
                 rows.push([[l + 1], [aggregatedData[l].key],
                     [aggregatedData[l].values.shares], [aggregatedData[l].values.thrift],
                     [aggregatedData[l].values.wage_to_pay]]);
             }
             rows.push([['Total'], [''], [ua_total], [ur_total], [total_wages]]);
             doc.autoTable(columns, rows, {startY: 40});
-
             doc.save('Member-Garment-Report.pdf')
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+    }
+
+    function downloadURUReport() {
+    var doc = new jsPDF();
+    var source = "/raw_all_unreturned_units/"+"{{district}}/{{society}}";
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            console.log(json);
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.member_id + '-' + d.name + '- Ph:' + d.contact_details;
+                })
+                .key(function (d) {
+                    return d.garment_name;
+                })
+                .key(function (d) {
+                    return d.deadline;
+                })
+                .rollup(
+                    function(leaves)
+                    {
+                        return {
+                            "units_assigned": d3.sum(leaves, function(d) {return parseFloat(d.no_of_units);}),
+                            "units_returned": d3.sum(leaves, function(d) {return parseFloat(d.units_returned);})
+                        }
+                    })
+                .entries(json);
+
+            var doc = new jsPDF();
+
+            doc.setFontSize(15);
+            doc.setTextColor(0,0,255);
+            doc.text(70, 10, 'Member Wise Unreturned Details');
+
+            doc.setFontSize(10);
+            doc.setTextColor(0,0,0);
+            doc.text(60, 20, '{{society}}');
+
+            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+
+            columns = ["S. No", "Member Details", "Garment Name", "Deadline", "Assigned Units", "Returned Units"];
+            rows = [];
+            var total_wages = 0;
+            var ur_total = 0;
+            var ua_total = 0;
+            for (var i = 0; i < aggregatedData.length; i++) {
+                for (var j = 0; j < aggregatedData[i].values.length; j++) {
+                    for (var k = 0; k < aggregatedData[i].values[j].values.length; k++) {
+                        ua_total += aggregatedData[i].values[j].values.units_assigned;
+                        ur_total += aggregatedData[i].values[j].values.units_returned;
+
+                        rows.push([[k + 1], [[aggregatedData[i].key]],
+                            [[aggregatedData[i].values[j].key]], [[aggregatedData[i].values[j].values[k].key]],
+                            [[aggregatedData[i].values[j].values.units_assigned]],
+                            [[aggregatedData[i].values[j].values.units_returned]]]);
+                    }
+                }
+            }
+            rows.push([['Total'], [''], [''], [''], [ua_total], [ur_total]]);
+            doc.autoTable(columns, rows,
+                {
+                    startY: 40,
+                    styles: {overflow: 'linebreak', fontSize: 8},
+                    columnStyles: {1: {columnWidth: 40}}
+                }
+            );
+
+            doc.save('Unreturned-Units-Report.pdf')
         },
         error: function (e) {
             alert("error");
