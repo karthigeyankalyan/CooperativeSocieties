@@ -1838,6 +1838,26 @@ def raw_member_transactions(start_date, end_date, district, society):
     return accounts_final
 
 
+@app.route('/raw_member_transactions_between/<string:start_date>/<string:end_date>/<string:district>')
+def raw_member_transactions_district(start_date, end_date, district):
+    accounts = []
+
+    start = datetime.combine(datetime.strptime(start_date, '%Y-%m-%d').date(),
+                             datetime.now().time())
+    end = datetime.combine(datetime.strptime(end_date, '%Y-%m-%d').date(),
+                           datetime.now().time())
+
+    accounts_dict = Database.find("memberTransactions", {"$and": [{"issue_date": {"$gte": start, "$lt": end}},
+                                                                  {"district": district}]})
+
+    for tran in accounts_dict:
+        accounts.append(tran)
+
+    accounts_final = json.dumps(accounts, default=json_util.default)
+
+    return accounts_final
+
+
 @app.route('/raw_installments_between/<string:start_date>/<string:end_date>/<string:district>')
 def raw_installments_between(start_date, end_date, district):
     accounts = []

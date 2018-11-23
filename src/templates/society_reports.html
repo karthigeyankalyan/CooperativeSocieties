@@ -58,12 +58,20 @@
             columns = ["S. No", "Member Name", "Member Bank Account", "Member IFSC", "Wage To Be Paid"];
             rows = [];
             var total_wages = 0;
-            for (var l = 0; l < parseInt(aggregatedData.length); l++) {
-                total_wages += aggregatedData[l].values[0].wage_to_pay;
-                rows.push([[l + 1], [aggregatedData[l].key],
-                    [aggregatedData[l].values[0].key], [aggregatedData[l].values[0].values[0].key],
-                    [aggregatedData[0].values[0].values[0].values.wage_to_pay]]);
+
+            console.log(aggregatedData);
+
+            for (var i = 0; i < aggregatedData.length; i++) {
+                for (var j = 0; j < aggregatedData[i].values.length; j++) {
+                    for (var k = 0; k < aggregatedData[i].values[j].values.length; k++) {
+                    total_wages += aggregatedData[i].values[j].values.wage_to_pay;
+                    rows.push([[k + 1], [aggregatedData[i].key],
+                        [aggregatedData[i].values[j].key], [aggregatedData[i].values[j].values[k].key],
+                        [aggregatedData[i].values[j].values[k].values.wage_to_pay]]);
+                    }
+                }
             }
+
             rows.push([['Total'], [''], [''], [''], [total_wages]]);
             doc.autoTable(columns, rows, {startY: 40});
 

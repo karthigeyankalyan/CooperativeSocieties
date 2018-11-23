@@ -47,7 +47,7 @@
 
             doc.text(60, 30, 'Stock Records between {{start_date}} to {{end_date}}');
 
-            columns = ["S. No", "Center-Garment", "Cut Piece Stock", "Stitched Units Required", "Stitched Units Received"];
+            columns = ["S. No", "Center-Garment", "Cut Piece", "Required", "Received"];
             rows = [];
             var total_cpu = 0;
             var total_sureq = 0;
@@ -61,7 +61,13 @@
                     [aggregatedData[l].values.stitched_units]]);
             }
             rows.push([['Total'], [''], [total_cpu], [total_sureq], [total_surec]]);
-            doc.autoTable(columns, rows, {startY: 40});
+            doc.autoTable(columns, rows,
+                {
+                    startY: 40,
+                    styles: {overflow: 'linebreak', fontSize: 8},
+                    columnStyles: {1: {columnWidth: 40}}
+                }
+            );
 
             doc.save('Garment-Society-Stock Report.pdf')
         },
