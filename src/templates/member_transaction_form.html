@@ -37,6 +37,9 @@
                 <input type="date" id="issueDate" name="issueDate">
                 <input type="date" id="deadlineDate" name="deadlineDate">
                 <input type="text" id="MID" name="MID" style="display: none">
+                <input type="text" id="bank" name="bank" style="display: none">
+                <input type="text" id="account" name="account" style="display: none">
+                <input type="text" id="ifsc" name="ifsc" style="display: none">
             </div>
         </div>
 
@@ -156,8 +159,17 @@
                 dataType: 'json',
                 success: function (json) {
                     console.log(json);
+
+                    if(json[0]['_id']['$oid']) {
+                        var _id =  json[0]['_id']['$oid'];
+                    }
+
+                    else {
+                        _id =  json[0]['_id'];
+                    }
+
                     document.getElementById('memberName').value = json[0]['name'];
-                    document.getElementById('MID').value = json[0]['_id'];
+                    document.getElementById('MID').value = _id;
                     fixing_limit(member_id);
                 },
                 error: function (e) {
