@@ -424,7 +424,10 @@ def add_member_transaction_form(installment_id):
 
             contact_details, member_identifier, bank_account, ifsc = None, None, None, None
 
-            member = Database.find("members", {"_id": member_id})
+            if Database.is_valid(member_id):
+                member = Database.find("members", {"_id": ObjectId(member_id)})
+            else:
+                member = Database.find("members", {"_id": member_id})
 
             for result_object in member[0:1]:
                 member_identifier = result_object['member_id']
@@ -432,7 +435,7 @@ def add_member_transaction_form(installment_id):
                 ifsc = result_object['bank_ifsc_code']
                 contact_details = result_object['contact_details']
 
-                garment_size, intent_id, assUnits, assUnitsIntent = None, None, None, None
+            garment_size, intent_id, assUnits, assUnitsIntent = None, None, None, None
 
             installment = Database.find("installments", {"_id": installment_id})
 
