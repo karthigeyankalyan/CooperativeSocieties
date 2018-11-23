@@ -1,0 +1,142 @@
+{% extends "post_login_accountant.html" %}
+{% block content %}
+
+    <div style="display: flex; flex-direction: column; align-items: center; flex: 1; justify-content: space-around; margin-top: 10px">
+        <div>
+            <h3>Get Historic Transactions</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <label for="memberPicker">Select Member</label>
+                <label for="memberName">memberName</label>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                <select class="memberPicker" id="memberPicker" name="memberPicker" onchange="chooseName()"></select>
+                <input type="text" id="memberName" name="memberName" onmousemove="chooseName()">
+                <input type="text" id="MID" name="MID" style="display: none">
+            </div>
+        </div>
+
+    </div>
+
+    <div style="align-items: center; justify-content: center; display: flex;">
+        <button onclick="downloadHTReport()">Historic Transactions Report</button>
+    </div>
+
+<script>
+
+    var source1 = "/rawDistrictSocietyMembers/"+"{{district}}"+"/"+"{{society}}";
+        $.ajax({
+            type: 'GET',
+            url: source1,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (json) {
+                var arr = [];
+                for(var i = 0; i < json.length; i++) {
+                    if(arr.indexOf(json[i]['member_id']) === -1) {
+                        arr.push(json[i]['member_id']);
+                    }
+                }
+
+                var $mp = $('.memberPicker');
+
+                var htmlMP = $.map(arr, function(lcn){
+                    return '<option value="' + lcn + '">' + lcn + '</option>'
+                });
+                $mp.html(htmlMP);
+                chooseName();
+            },
+            error: function (e) {
+                alert("error");
+            }
+        });
+
+    function chooseName() {
+        var member_id = document.getElementById('memberPicker').value;
+        var source1 = "/rawDistrictSocietyIDMember/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+        console.log(source1);
+            $.ajax({
+                type: 'GET',
+                url: source1,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+
+                    if(json[0]['_id']['$oid']) {
+                        var _id =  json[0]['_id']['$oid'];
+                    }
+
+                    else {
+                        _id =  json[0]['_id'];
+                    }
+
+                    document.getElementById('memberName').value = json[0]['name'];
+                    document.getElementById('MID').value = _id;
+                },
+                error: function (e) {
+                    alert("error");
+                }
+            });
+        }
+
+    function downloadHTReport() {
+        var member_id = document.getElementById('memberPicker').value;
+        var source1 = "/raw_member_transactions_all/"+"{{district}}"+"/"+"{{society}}"+"/"+member_id;
+            $.ajax({
+                type: 'GET',
+                url: source1,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (json) {
+
+                    var doc = new jsPDF();
+
+                    doc.setFontSize(15);
+                    doc.setTextColor(0,0,255);
+
+                    doc.text(70, 10, 'Member Wise Garment Details');
+
+                    doc.setFontSize(10);
+                    doc.setTextColor(0,0,0);
+
+                    doc.text(60, 20, '{{society}}');
+                    doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+                    doc.text(50, 30, 'Member Historic Transactions Report');
+
+                    columns = ["S. No", "Member ID - Name", "Garment Name", "Units Assigned", "Units Returned", "Wages"];
+                    rows = [];
+
+                    var total_wages = 0;
+                    var ur_total = 0;
+                    var ua_total = 0;
+
+                    for (var l = 0; l < parseInt(json.length); l++) {
+
+                        total_wages += json[l].wage_expected;
+                        ur_total += json[l].units_returned;
+                        ua_total += json[l].no_of_units;
+
+                        rows.push([[l + 1], [json[l]['member_id'] + '-' + json[l]['name']],
+                            [json[l]['garment_name']], [json[l]['no_of_units']], [json[l]['units_returned']]
+                                [json[l]['wage_expected']]]);
+
+                    }
+
+                    rows.push([['Total'], [''], [''], [ua_total], [ur_total], [total_wages]]);
+
+                    doc.autoTable(columns, rows, {startY: 40});
+                    doc.save(json[0]['member_id']+'-Historic-Report.pdf')
+
+                },
+                error: function (e) {
+                    alert("error");
+                }
+            });
+    }
+
+</script>
+{% endblock %}

@@ -1795,12 +1795,28 @@ def get_dates_society():
         return render_template('login_fail.html')
 
 
+################################
+# Member All Transactions Report
+################################
+
+@app.route('/member_historic_transactions', methods=['POST', 'GET'])
+def member_historic_all():
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        return render_template('all_member_transactions.html', district=user.district, user=user,
+                               society=user.society_name)
+
+    else:
+        return render_template('login_fail.html')
+
+
 @app.route('/rawMemberTransactionsHistoric/<string:installment_id>/<string:member_id>')
 def raw_member_transactions_historic(installment_id, member_id):
     accounts = []
 
     accounts_dict = Database.find("memberTransactions", {"$and": [{"installment_id": installment_id},
-                                                                  {"member_id": member_id}]})
+                                                                  {"member_id": int(member_id)}]})
 
     for tran in accounts_dict:
         accounts.append(tran)
@@ -1832,6 +1848,22 @@ def raw_member_transactions(start_date, end_date, district, society):
     accounts_dict = Database.find("memberTransactions", {"$and": [{"issue_date": {"$gte": start, "$lt": end}},
                                                                   {"district": district},
                                                                   {"society": society}]})
+
+    for tran in accounts_dict:
+        accounts.append(tran)
+
+    accounts_final = json.dumps(accounts, default=json_util.default)
+
+    return accounts_final
+
+
+@app.route('/raw_member_transactions_all/<string:district>/<string:society>/<string:member_id>')
+def all_historic_member_transactions(district, society, member_id):
+    accounts = []
+
+    accounts_dict = Database.find("memberTransactions", {"$and": [{"district": district},
+                                                                  {"society": society},
+                                                                  {"member_id": int(member_id)}]})
 
     for tran in accounts_dict:
         accounts.append(tran)
