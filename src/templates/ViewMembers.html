@@ -58,7 +58,7 @@
                                 '<td>'+moment(jsonFunc[j]["enrollment_date"]['$date']).format('DD-MM-YYYY')+'</td>'+
 //                                '<td><button class="btn btn-default"><a href="' + url2 + '">'+ 'Assign Intent' +'</a></button></td>'+
                                 '<td><button class="btn btn-default"><a href="' + url + '">'+ 'Update Member' +'</a></button></td>'+
-                                '<td><button class="btn btn-default"><a href="' + url1 + '">'+ 'Delete Member' +'</a></button></td>');
+                                '<td><button class="btn btn-default"><a href="' + url1 + '" onclick="confirmDelete()">'+ 'Delete Member' +'</a></button></td>');
                             $("#eoDetails").append(row);
                         }
                     }
@@ -68,6 +68,10 @@
                 alert("error");
             }
         });
+
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this item?');
+    }
 
     function myFunction() {
         var input, filter, table, tr, td, i;
