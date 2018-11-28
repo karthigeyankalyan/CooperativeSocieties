@@ -21,6 +21,11 @@
             dataType: 'json',
             success: function (jsonFunc) {
                 {
+                    var string_to_sort = "member_id";
+
+                    var jsonSorted = sortByKey(jsonFunc, string_to_sort);
+                    console.log(jsonSorted);
+
                     $("#eoDetails").find("tbody").empty();
                     var tbl = $("<table class='table table-bordered table-dark' id='eoDetails'/>");
                     $("#eoList").append(tbl);
@@ -71,6 +76,24 @@
 
     function confirmDelete() {
         return confirm('Are you sure you want to delete this item?');
+    }
+
+    function sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var x = a[key];
+            var y = b[key];
+
+            if (typeof x === "string")
+            {
+                x = (""+x).toLowerCase();
+            }
+            if (typeof y === "string")
+            {
+                y = (""+y).toLowerCase();
+            }
+
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
     }
 
     function myFunction() {
