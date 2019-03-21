@@ -81,7 +81,10 @@ def register_user():
 
 @app.route('/change_password/<string:_id>', methods=['POST', 'GET'])
 def change_password(_id):
-    user = User.get_by_id(_id)
+    if len(_id) <= 3:
+        user = User.get_by_id(int(_id))
+    else:
+        user = User.get_by_id(_id)
     if request.method == 'GET':
         return render_template('update_password.html', user=user)
     else:
@@ -178,7 +181,10 @@ def update_installment_form(_id):
                                                 units_required=units_required, deadline=deadline, total_wages=total_wages,
                                                 units_pm=units_pm, set_id=set_id, eo=eo_name, _id=_id)
 
-                user = User.get_by_id(user_id)
+                if len(user_id) <= 3:
+                    user = User.get_by_id(int(user_id))
+                else:
+                    user = User.get_by_id(user_id)
 
             else:
                 date_received = request.form['receivedDate']
@@ -281,7 +287,10 @@ def intent_form(user_id):
     email = session['email']
     if email is not None:
         if request.method == 'GET':
-            user = User.get_by_id(user_id)
+            if len(user_id) <= 3:
+                user = User.get_by_id(int(user_id))
+            else:
+                user = User.get_by_id(user_id)
             return render_template('intent_form.html', user=user, district=user.district,
                                    society=user.society_name)
 
@@ -307,7 +316,10 @@ def intent_form(user_id):
 
             intent.save_to_mongo()
 
-            user = User.get_by_id(user_id)
+            if len(user_id) <= 3:
+                user = User.get_by_id(int(user_id))
+            else:
+                user = User.get_by_id(user_id)
 
             return render_template('intent_added.html', intent=intent, intent_id=intent._id, user=user)
 
@@ -346,7 +358,10 @@ def another_intent_form(_id):
 
             intent.save_to_mongo()
 
-            user = User.get_by_id(user_id)
+            if len(user_id) <= 3:
+                user = User.get_by_id(int(user_id))
+            else:
+                user = User.get_by_id(user_id)
 
             return render_template('intent_added.html', intent_id=intent._id, user=user)
 
@@ -385,7 +400,10 @@ def update_intent_form(_id):
 
             intent.save_to_mongo()
 
-            user = User.get_by_id(user_id)
+            if len(user_id) <= 3:
+                user = User.get_by_id(int(user_id))
+            else:
+                user = User.get_by_id(user_id)
 
             return render_template('intent_added.html', intent=intent, user=user)
 
@@ -644,7 +662,10 @@ def view_transactions(installment_id):
 @app.route('/new_member/<string:user_id>', methods=['POST', 'GET'])
 def add_member_form(user_id):
     email = session['email']
-    user = User.get_by_id(user_id)
+    if len(user_id) <= 3:
+        user = User.get_by_id(int(user_id))
+    else:
+        user = User.get_by_id(user_id)
     if email is not None:
         if request.method == 'GET':
             return render_template('member_form.html', user=user, user_id=user_id)
@@ -838,7 +859,7 @@ def delete_member(_id):
 def delete_indent(_id):
 
     email = session['email']
-    user = User.get_by_id(email)
+    user = User.get_by_email(email)
 
     if Database.is_valid(_id):
         Intent.delete_from_mongo(_id=ObjectId(_id))
@@ -847,6 +868,7 @@ def delete_indent(_id):
 
     return render_template('deleted.html', user=user)
 
+
 ################################
 #  Add EO / View EO / Update EO
 ################################
@@ -854,7 +876,10 @@ def delete_indent(_id):
 @app.route('/new_EO/<string:user_id>', methods=['POST', 'GET'])
 def add_eo_form(user_id):
     email = session['email']
-    user = User.get_by_id(user_id)
+    if len(user_id) <= 3:
+        user = User.get_by_id(int(user_id))
+    else:
+        user = User.get_by_id(user_id)
     if email is not None:
         if request.method == 'GET':
             return render_template('eo_form.html', user=user)
@@ -1190,7 +1215,10 @@ def get_district_type_ico_garment_details(District, gtype):
 @app.route('/new_garment/<string:user_id>', methods=['POST', 'GET'])
 def add_garment_form(user_id):
     email = session['email']
-    user = User.get_by_id(user_id)
+    if len(user_id) <= 3:
+        user = User.get_by_id(int(user_id))
+    else:
+        user = User.get_by_id(user_id)
     if email is not None:
         if request.method == 'GET':
 
@@ -1283,7 +1311,10 @@ def view_garments():
 @app.route('/new_garment_ico/<string:user_id>', methods=['POST', 'GET'])
 def add_ico_garment_form(user_id):
     email = session['email']
-    user = User.get_by_id(user_id)
+    if len(user_id) <= 3:
+        user = User.get_by_id(int(user_id))
+    else:
+        user = User.get_by_id(user_id)
     if email is not None:
         if request.method == 'GET':
             district_intents_array = []
