@@ -2009,8 +2009,12 @@ def view_installments_ten_days_delivery():
     user = User.get_by_email(email)
     if email is not None:
         if user.society_name is not None:
-            return render_template('DeliveryInstallments.html', user=user, society=user.society_name,
-                                   district=user.district)
+            if user.designation == 'Accountant':
+                return render_template('DeliveryInstallments.html', user=user, society=user.society_name,
+                                       district=user.district)
+            else:
+                return render_template('DeliveryInstallmentsDSWO.html', user=user, society=user.society_name,
+                                       district=user.district)
 
     else:
         return render_template('login_fail.html')
