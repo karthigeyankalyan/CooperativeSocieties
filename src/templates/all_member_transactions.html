@@ -103,9 +103,9 @@
                     doc.setFontSize(10);
                     doc.setTextColor(0,0,0);
 
-                    doc.text(60, 20, '{{society}}');
+                    doc.text(50, 20, '{{society}}');
                     doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
-                    doc.text(50, 30, 'Member Historic Transactions Report');
+                    doc.text(70, 30, 'Member Historic Transactions Report');
 
                     columns = ["S. No", "Member ID - Name", "Garment Name", "Units Assigned", "Units Returned", "Wages"];
                     rows = [];
@@ -120,7 +120,7 @@
                         ur_total += json[l].units_returned;
                         ua_total += json[l].no_of_units;
 
-                        rows.push([[l + 1], [json[l]['member_id'] + '-' + json[l]['name']],
+                        rows.push([[l + 1], [json[l]['member_id'] + ' - ' + json[l]['name']],
                             [json[l]['garment_name']], [json[l]['no_of_units']], [json[l]['units_returned']]
                                 [json[l]['wage_expected']]]);
 

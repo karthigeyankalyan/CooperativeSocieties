@@ -980,7 +980,10 @@ def delete_garment(_id):
 
     GarmentDistrict.delete_from_mongo(_id=_id)
 
-    return render_template('deleted.html', user=user)
+    if user.designation == "DSWO/ICO":
+        return render_template('deleted.html', user=user)
+    else:
+        return render_template('deleted_society.html', user=user)
 
 
 ################################
@@ -1806,7 +1809,10 @@ def get_dates_society():
     user = User.get_by_email(email)
     if email is not None:
         if request.method == 'GET':
-            return render_template('get_dates_society_report.html', user=user)
+            if user.designation == 'Accountant':
+                return render_template('get_dates_society_report.html', user=user)
+            else:
+                return render_template('get_dates_society_report_ico.html', user=user)
 
         else:
                 start_date = request.form['startDate']

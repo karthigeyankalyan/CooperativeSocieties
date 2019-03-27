@@ -24,10 +24,10 @@
 
             var aggregatedData = d3.nest()
                 .key(function (d) {
-                    return d.name;
+                    return d.member_id+" - "+d.name;
                 })
                 .key(function (d) {
-                    return d.bank_account+"-"+d.bank_name;
+                    return d.bank_account+" - "+d.bank_name;
                 })
                 .key(function (d) {
                     return d.ifsc;
@@ -49,13 +49,13 @@
 
             doc.setFontSize(10);
             doc.setTextColor(0,0,0);
-            doc.text(60, 20, '{{society}}');
+            doc.text(45, 20, '{{society}}');
 
             doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
 
             doc.text(60, 30, 'Wages to be paid between {{start_date}} to {{end_date}}');
 
-            columns = ["S. No", "Member Name", "Member Bank Account", "Member IFSC", "Wage To Be Paid"];
+            columns = ["S. No", "Member Name", "Bank Name", "Account Number", "Bank IFSC", "Wage To Be Paid"];
             rows = [];
             var total_wages = 0;
 
@@ -64,7 +64,7 @@
             for (var i = 0; i < aggregatedData.length; i++) {
                 for (var j = 0; j < aggregatedData[i].values.length; j++) {
                     for (var k = 0; k < aggregatedData[i].values[j].values.length; k++) {
-                    total_wages += aggregatedData[i].values[j].values.wage_to_pay;
+                    total_wages += aggregatedData[i].values[j].values[k].values.wage_to_pay;
                     rows.push([[k + 1], [aggregatedData[i].key],
                         [aggregatedData[i].values[j].key], [aggregatedData[i].values[j].values[k].key],
                         [aggregatedData[i].values[j].values[k].values.wage_to_pay]]);
@@ -72,7 +72,7 @@
                 }
             }
 
-            rows.push([['Total'], [''], [''], [''], [total_wages]]);
+            rows.push([['Grand Total'], [''], [''], [''], [total_wages]]);
             doc.autoTable(columns, rows, {startY: 40});
 
             doc.save('Payment_Schedule.pdf')
@@ -93,7 +93,7 @@
         success: function (json) {
             var aggregatedData = d3.nest()
                 .key(function (d) {
-                    return d.member_id+"-"+d.name;
+                    return d.member_id+" - "+d.name;
                 })
                 .key(function (d) {
                     return d.garment_type;
@@ -125,7 +125,7 @@
 
             doc.setFontSize(13);
             doc.setTextColor(0,0,0);
-            doc.text(155, 20, '{{society}}');
+            doc.text(130, 15, '{{society}}');
 
             doc.text(170, 25, 'Tamil Nadu Social Welfare Department');
 
@@ -133,7 +133,7 @@
 
             doc.setFontSize(10);
 
-            columns = ["S. No", "Member ID-Name", "HP", "HPS", "FP", "FPS", "SKT", "BL", "SB", "ST", "DPT", "OC",
+            columns = ["S. No", "Member ID-Name", "HP", "HPS", "FP", "FPS", "SKT", "BL", "BOT", "TOP", "DUP", "OC",
             "Total Units", "Total Wages", "Thrift", "L", "LG", "LB", "LGB", "LZ", "Advance", "Total Deduction", "Nett. Wage"];
             rows = [];
             var total_wages = 0;
@@ -349,6 +349,7 @@
         dataType: 'json',
         success: function (json) {
             console.log(json);
+
             var aggregatedData = d3.nest()
                 .key(function (d) {
                     return d.name;
@@ -363,6 +364,7 @@
                         }
                     })
                 .entries(json);
+
             var doc = new jsPDF();
             doc.setFontSize(15);
             doc.setTextColor(0,0,255);
@@ -370,7 +372,7 @@
             doc.setFontSize(10);
             doc.setTextColor(0,0,0);
             doc.text(60, 20, '{{society}}');
-            doc.text(70, 25, 'Tamil Nadu Social Welfare Department');
+            doc.text(50, 25, 'Tamil Nadu Social Welfare Department');
             doc.text(50, 30, 'Thrift and Share Accumulated between {{start_date}} to {{end_date}}');
             columns = ["S. No", "Member", "Shares", "Thrift", "Wages"];
             rows = [];
