@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/another_intent_form.html" afterPath="$PROJECT_DIR$/src/templates/another_intent_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/eo_form.html" afterPath="$PROJECT_DIR$/src/templates/eo_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/garment_form.html" afterPath="$PROJECT_DIR$/src/templates/garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/initial_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/initial_garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/intent_form.html" afterPath="$PROJECT_DIR$/src/templates/intent_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_form.html" afterPath="$PROJECT_DIR$/src/templates/member_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/register.html" afterPath="$PROJECT_DIR$/src/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_garment_form.html" afterPath="$PROJECT_DIR$/src/templates/update_garment_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_member_form.html" afterPath="$PROJECT_DIR$/src/templates/update_member_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/garmentICO.py" afterPath="$PROJECT_DIR$/src/models/garmentICO.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,13 +18,47 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1806" column="24" lean-forward="false" selection-start-line="1806" selection-start-column="24" selection-end-line="1806" selection-end-column="24" />
+            <state relative-caret-position="21">
+              <caret line="1380" column="0" lean-forward="false" selection-start-line="1380" selection-start-column="0" selection-end-line="1380" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_ico_garment_form.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/update_ico_garment_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="garmentICO.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/garmentICO.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="garmentOvr.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/garmentOvr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member_form.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="member_form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="104" column="187" lean-forward="false" selection-start-line="104" selection-start-column="187" selection-end-line="104" selection-end-column="187" />
+            <state relative-caret-position="0">
+              <caret line="87" column="187" lean-forward="false" selection-start-line="87" selection-start-column="187" selection-end-line="87" selection-end-column="187" />
               <folding />
             </state>
           </provider>
@@ -71,7 +97,7 @@
       <file leaf-file-name="memberProfile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/memberProfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
+            <state relative-caret-position="508">
               <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
@@ -97,8 +123,6 @@
       <find>+&quot; - &quot;</find>
       <find>Member</find>
       <find>Member ID</find>
-      <find>Member ID</find>
-      <find>Member ID -</find>
       <find>Member ID -</find>
       <find>Member ID - N</find>
       <find>Member ID - Na</find>
@@ -121,6 +145,7 @@
       <find>Thrift and Sha</find>
       <find>Thrift and Share</find>
       <find>enter_dates_</find>
+      <find>add_gar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/profile_accountant.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_dswo.html" />
         <option value="$PROJECT_DIR$/src/templates/update_password.html" />
         <option value="$PROJECT_DIR$/src/templates/passwords_changed.html" />
@@ -175,11 +199,12 @@
         <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewTransactions.html" />
         <option value="$PROJECT_DIR$/src/templates/DeliveryInstallmentsDSWO.html" />
-        <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/get_dates_society_report_ico.html" />
         <option value="$PROJECT_DIR$/src/templates/all_member_transactions.html" />
         <option value="$PROJECT_DIR$/src/templates/society_reports.html" />
         <option value="$PROJECT_DIR$/src/templates/member_form.html" />
+        <option value="$PROJECT_DIR$/src/app.py" />
+        <option value="$PROJECT_DIR$/src/models/garmentICO.py" />
       </list>
     </option>
   </component>
@@ -261,6 +286,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CooperativeSocieties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CooperativeSocieties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,34 +568,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/ico_garment_added.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/another_intent_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="89" column="93" lean-forward="false" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="98" lean-forward="true" selection-start-line="42" selection-start-column="98" selection-end-line="42" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/installment_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
@@ -837,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/memberProfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/society_reports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6018">
@@ -853,13 +860,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.py">
+    <entry file="file://$PROJECT_DIR$/src/models/memberProfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1806" column="24" lean-forward="false" selection-start-line="1806" selection-start-column="24" selection-end-line="1806" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="508">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="87" column="187" lean-forward="false" selection-start-line="87" selection-start-column="187" selection-end-line="87" selection-end-column="187" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,11 +894,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/member_form.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/initial_garment_form_ico.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="104" column="187" lean-forward="false" selection-start-line="104" selection-start-column="187" selection-end-line="104" selection-end-column="187" />
+        <state relative-caret-position="-663">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1541742164790" expanded="true" signature="2589:2676" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="2751:2789" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3040:3078" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3328:3366" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3616:3655" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="3881:3920" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4200:4265" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4340:4378" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4560:4598" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="4790:4828" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="5020:5059" ph="..." />
+            <marker date="1541742164790" expanded="true" signature="5212:5251" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_ico_garment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/garmentICO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/garmentOvr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1380" column="0" lean-forward="false" selection-start-line="1380" selection-start-column="0" selection-end-line="1380" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

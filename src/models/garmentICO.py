@@ -21,11 +21,11 @@ class GarmentICO(object):
         Database.insert(collection='GarmentICO', data=self.json())
 
     @classmethod
-    def update_ico_garment(cls, garment_id, district, garment_type, wage_per_unit,
+    def update_ico_garment(cls, garment_id, district, garment_type, wage_per_unit, garment_name,
                            cutting_charges, user_id):
         Database.update_garment_ico(collection='GarmentICO', query={'_id': garment_id}, district=district,
                                     last_updated=datetime.combine(datetime.now().date(), datetime.now().time()),
-                                    garment_type=garment_type, wage_per_unit=wage_per_unit,
+                                    garment_type=garment_type, wage_per_unit=wage_per_unit, garment_name=garment_name,
                                     cutting_charges=cutting_charges, user_id=user_id)
 
     def json(self):

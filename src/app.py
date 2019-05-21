@@ -1340,14 +1340,17 @@ def add_ico_garment_form(user_id):
 
             for i in range(int(numCenters)):
                 garment_type = "gt" + str(i)
+                garment_name = "gn" + str(i)
                 wage_per_unit = "wpu" + str(i)
                 cutting_charges = "cc" + str(i)
 
                 gtype = request.form[garment_type]
+                gname = request.form[garment_name]
                 ccharges = request.form[cutting_charges]
                 wpu = request.form[wage_per_unit]
 
                 eo = GarmentICO(district=district, garment_type=gtype,
+                                garment_name=gname,
                                 cutting_charges=ccharges, wage_per_unit=wpu,
                                 user_id=user._id)
 
@@ -1370,10 +1373,11 @@ def update_ico_garment_form(_id):
         else:
             district = request.form['district']
             gType = request.form['gType']
+            gName = request.form['gName']
             cCharges = request.form['cCharges']
             wpu = request.form['wpu']
 
-            GarmentICO.update_ico_garment(district=district, garment_type=gType,
+            GarmentICO.update_ico_garment(district=district, garment_type=gType, garment_name=gName,
                                           cutting_charges=cCharges, wage_per_unit=wpu, garment_id=_id,
                                           user_id=user._id)
 
