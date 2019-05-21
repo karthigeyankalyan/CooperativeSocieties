@@ -85,10 +85,11 @@ class Database(object):
 
     @staticmethod
     def update_garment_ico(collection, query, last_updated, district, garment_type, wage_per_unit,
-                           cutting_charges, user_id):
+                           cutting_charges, user_id, garment_name):
         return Database.DATABASE[collection].update_one(query, {'$set': {'district': district,
                                                                          'last_updated': last_updated,
                                                                          'garment_type': garment_type,
+                                                                         'garment_name': garment_name,
                                                                          'wage_per_unit': wage_per_unit,
                                                                          'cutting_charges': cutting_charges,
                                                                          'user_id': user_id}}, True)
