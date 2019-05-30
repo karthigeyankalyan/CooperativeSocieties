@@ -997,7 +997,10 @@ def delete_ICO_garment(_id):
 
     GarmentICO.delete_from_mongo(_id=_id)
 
-    return render_template('deleted_society.html', user=user)
+    if user.designation == "DSWO/ICO":
+        return render_template('deleted.html', user=user)
+    else:
+        return render_template('deleted_society.html', user=user)
 
 
 ################################
