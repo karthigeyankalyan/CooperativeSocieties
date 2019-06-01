@@ -34,6 +34,7 @@
                     var intent_id = json[j]["_id"];
                     var url = '/update_intent/'+intent_id;
                     var url1 = '/view_installments/'+intent_id;
+                    var url2 = '/delete_indent/'+intent_id;
                     var row = $('<tr></tr>').html('<td>' +
                         json[j]["intent_id"] + '</td>'+
                         '<td>'+json[j]["center"]+'</td>'+
