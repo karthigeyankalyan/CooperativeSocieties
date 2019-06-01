@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
-    </list>
+    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +18,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="857" column="24" lean-forward="false" selection-start-line="857" selection-start-column="13" selection-end-line="857" selection-end-column="24" />
+            <state relative-caret-position="274">
+              <caret line="1576" column="37" lean-forward="false" selection-start-line="1576" selection-start-column="37" selection-end-line="1576" selection-end-column="37" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -65,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Member ID - Na</find>
       <find>Member ID - Nam</find>
       <find>M</find>
       <find>Member Wis</find>
@@ -95,6 +91,7 @@
       <find>doc.se</find>
       <find>YTA</find>
       <find>delete_inde</find>
+      <find>YTAIntents</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,9 +168,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
-    <option name="y" value="1" />
     <option name="width" value="1364" />
-    <option name="height" value="726" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -492,7 +488,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="1" y="0" width="1364" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2852761" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -535,27 +531,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/update_eo_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/intent_added.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_added.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/update_installment_delivef_form.html" />
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallments.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -675,13 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -869,10 +837,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-526">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1541856562615" expanded="true" signature="655:694" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="757:796" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="865:904" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="966:1005" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="1075:1114" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="1176:1215" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="1281:1320" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="1388:1427" ph="..." />
+            <marker date="1541856562615" expanded="true" signature="1604:1643" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1541008520080" expanded="true" signature="590:629" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="692:731" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="800:839" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="901:940" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1010:1049" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1111:1150" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1216:1255" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1323:1362" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-322">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1539418344882" expanded="true" signature="587:626" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="689:728" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="797:836" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="892:931" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="993:1032" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="1098:1137" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="1205:1244" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="1312:1351" ph="..." />
+            <marker date="1539418344882" expanded="true" signature="1419:1458" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1541008887529" expanded="true" signature="594:633" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="696:735" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="804:843" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="905:944" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1014:1053" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1115:1154" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1220:1259" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1327:1366" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1434:1473" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1541:1580" ph="..." />
+            <marker date="1541008887529" expanded="true" signature="1651:1690" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="857" column="24" lean-forward="false" selection-start-line="857" selection-start-column="13" selection-end-line="857" selection-end-column="24" />
+        <state relative-caret-position="274">
+          <caret line="1576" column="37" lean-forward="false" selection-start-line="1576" selection-start-column="37" selection-end-line="1576" selection-end-column="37" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
