@@ -1880,7 +1880,7 @@ def raw_member_transactions_historic(installment_id, member_id):
     return accounts_final
 
 
-@app.route('/raw_member_transactions_between/<string:start_date>/<string:end_date>/<string:district>/<string:society>')
+@app.route('/raw_member_transactions_society_between/<string:start_date>/<string:end_date>/<string:district>/<string:society>')
 def raw_member_transactions(start_date, end_date, district, society):
     accounts = []
 

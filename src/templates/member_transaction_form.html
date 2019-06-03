@@ -125,7 +125,7 @@
                     garmentFunction();
                 },
                 error: function (e) {
-                    alert("error");
+                    alert("Garment Type Not Found");
                 }
             });
     }
@@ -143,7 +143,7 @@
                 document.getElementById('deductions').value = json[0]['deductions'];
             },
             error: function (e) {
-                alert("error");
+                alert("Garment Name Not Found");
             }
         });
     }

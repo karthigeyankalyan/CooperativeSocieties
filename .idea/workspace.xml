@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="" />
+    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/district_reports.html" afterPath="$PROJECT_DIR$/src/templates/district_reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_transaction_form.html" afterPath="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="1576" column="37" lean-forward="false" selection-start-line="1576" selection-start-column="37" selection-end-line="1576" selection-end-column="37" />
+            <state relative-caret-position="431">
+              <caret line="1919" column="44" lean-forward="false" selection-start-line="1919" selection-start-column="13" selection-end-line="1919" selection-end-column="44" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -27,24 +31,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ytaIntents.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
+      <file leaf-file-name="district_reports.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/district_reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <marker date="1559376937702" expanded="true" signature="628:667" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="730:769" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="838:877" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="939:978" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1048:1087" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1149:1188" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1254:1293" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1361:1400" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1468:1507" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1575:1614" ph="..." />
-                <marker date="1559376937702" expanded="true" signature="1686:1725" ph="..." />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,9 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Member ID - Nam</find>
-      <find>M</find>
-      <find>Member Wis</find>
       <find>Member Wise</find>
       <find>Member Wise G</find>
       <find>Member Wise Ga</find>
@@ -92,6 +81,9 @@
       <find>YTA</find>
       <find>delete_inde</find>
       <find>YTAIntents</find>
+      <find>assign_mem</find>
+      <find>enter_dates</find>
+      <find>raw_member_transactions_be</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,8 +127,6 @@
         <option value="$PROJECT_DIR$/src/templates/ViewInstallmentsReceived.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewInstallmentsDeliveryUpdate.html" />
         <option value="$PROJECT_DIR$/src/models/memberTransactions.py" />
-        <option value="$PROJECT_DIR$/src/templates/district_reports.html" />
-        <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/post_login_accountant.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewTransactions.html" />
@@ -149,8 +139,10 @@
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/templates/home.html" />
         <option value="$PROJECT_DIR$/src/templates/logged_out.html" />
-        <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
+        <option value="$PROJECT_DIR$/src/app.py" />
+        <option value="$PROJECT_DIR$/src/templates/district_reports.html" />
       </list>
     </option>
   </component>
@@ -604,20 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/district_reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/eo_added.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -913,16 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="1576" column="37" lean-forward="false" selection-start-line="1576" selection-start-column="37" selection-end-line="1576" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -939,6 +907,32 @@
             <marker date="1559376937702" expanded="true" signature="1468:1507" ph="..." />
             <marker date="1559376937702" expanded="true" signature="1575:1614" ph="..." />
             <marker date="1559376937702" expanded="true" signature="1686:1725" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/member_transaction_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="175" column="27" lean-forward="true" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/district_reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="1919" column="44" lean-forward="false" selection-start-line="1919" selection-start-column="13" selection-end-line="1919" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
