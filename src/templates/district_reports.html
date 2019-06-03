@@ -90,7 +90,7 @@
 
             var aggregatedData = d3.nest()
                 .key(function (d) {
-                    return d.name + "-" + d.garment_type;
+                    return d.member_id + " - " + d.name + " - " + d.garment_type + " - " + d.garment_size;
                 })
                 .rollup(
                     function(leaves)
@@ -120,7 +120,7 @@
 
             doc.text(50, 30, 'Stitching and Assigned details between {{start_date}} to {{end_date}}');
 
-            columns = ["S. No", "Member-Garment", "Units Assigned", "Units Returned", "Wages"];
+            columns = ["S. No", "ID - Member - Garment - Size", "Units Assigned", "Units Returned", "Wages"];
             rows = [];
             var total_wages = 0;
             var ur_total = 0;
