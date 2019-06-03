@@ -564,8 +564,8 @@ def update_member_transaction_form(_id):
 
             total_thrift_value = 0.10 * wage_to_pay
 
-            decimal_part_wage = wage_to_pay % 1
-            decimal_part_deductions = deductions % 1
+            decimal_part_wage = float(wage_to_pay) % 1
+            decimal_part_deductions = float(deductions) % 1
             wage_to_pay -= decimal_part_wage
             deductions -= decimal_part_deductions
 
