@@ -505,7 +505,7 @@ def update_member_transaction_form(_id):
             assigned_units = request.form['assignedUnits']
             returned_units = request.form['returnedUnits']
             advance = request.form['advances']
-            deductions = request.form['deductions']
+            deductions = int(request.form['deductions'])
             wage_per_unit = request.form['wpu']
             deadline = request.form['deadlineDate']
             status = request.form['statusSelect']
