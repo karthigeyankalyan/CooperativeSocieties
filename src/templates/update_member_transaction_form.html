@@ -26,7 +26,7 @@
 
             <div class="form-group" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
                 <input type="text" id="gName" name="gName" onmousemove="garmentWPU()">
-                <select class="memberPicker" id="memberPicker" name="memberPicker" onselect="chooseName()"></select>
+                <input type="text" id="memberPicker" name="memberPicker">
                 <input type="text" id="memberName" name="memberName">
                 <input type="number" id="assignedUnits" name="assignedUnits">
                 <input type="number" id="returnedUnits" name="returnedUnits">
@@ -65,6 +65,7 @@
             console.log(json);
             document.getElementById("memberName").value = json[0]["name"];
             document.getElementById("memberPicker").value = json[0]["member_id"];
+            document.getElementById("memberName").value = json[0]["name"];
             document.getElementById("assignedUnits").value = json[0]["no_of_units"];
             document.getElementById("deductions").value = json[0]["deductions"];
             document.getElementById("deadlineDate").value = moment(json[0]["deadline"]['$date']).format('YYYY-MM-DD');

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/district_reports.html" afterPath="$PROJECT_DIR$/src/templates/district_reports.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/member_transaction_form.html" afterPath="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" afterPath="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="1919" column="44" lean-forward="false" selection-start-line="1919" selection-start-column="13" selection-end-line="1919" selection-end-column="44" />
+            <state relative-caret-position="172">
+              <caret line="491" column="26" lean-forward="false" selection-start-line="491" selection-start-column="13" selection-end-line="491" selection-end-column="26" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -31,11 +29,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="update_member_transaction_form.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/update_member_transaction_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="district_reports.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/district_reports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Member Wise</find>
       <find>Member Wise G</find>
       <find>Member Wise Ga</find>
       <find>Member Wise Gar</find>
@@ -84,6 +91,7 @@
       <find>assign_mem</find>
       <find>enter_dates</find>
       <find>raw_member_transactions_be</find>
+      <find>update_member</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,7 +113,6 @@
         <option value="$PROJECT_DIR$/src/templates/ViewInstallments_acc.html" />
         <option value="$PROJECT_DIR$/src/templates/installment_added.html" />
         <option value="$PROJECT_DIR$/src/templates/installment_form.html" />
-        <option value="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/another_intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/update_intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/update_ico_garment_form.html" />
@@ -143,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/district_reports.html" />
+        <option value="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
       </list>
     </option>
   </component>
@@ -523,7 +531,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/update_installment_delivef_form.html" />
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallments.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -921,19 +928,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/district_reports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="1919" column="44" lean-forward="false" selection-start-line="1919" selection-start-column="13" selection-end-line="1919" selection-end-column="44" />
+        <state relative-caret-position="172">
+          <caret line="491" column="26" lean-forward="false" selection-start-line="491" selection-start-column="13" selection-end-line="491" selection-end-column="26" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/update_member_transaction_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
