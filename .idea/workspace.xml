@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/database.py" afterPath="$PROJECT_DIR$/src/common/database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/installment.py" afterPath="$PROJECT_DIR$/src/models/installment.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/memberTransactions.py" afterPath="$PROJECT_DIR$/src/models/memberTransactions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ViewIntents.html" afterPath="$PROJECT_DIR$/src/templates/ViewIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntents.html" afterPath="$PROJECT_DIR$/src/templates/completedIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntents.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +20,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="878" column="0" lean-forward="false" selection-start-line="878" selection-start-column="0" selection-end-line="878" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="875" column="0" lean-forward="true" selection-start-line="875" selection-start-column="0" selection-end-line="875" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -1017,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="878" column="0" lean-forward="false" selection-start-line="878" selection-start-column="0" selection-end-line="878" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="875" column="0" lean-forward="true" selection-start-line="875" selection-start-column="0" selection-end-line="875" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

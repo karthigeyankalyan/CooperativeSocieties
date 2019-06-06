@@ -869,11 +869,12 @@ def delete_indent(_id):
         Intent.delete_from_mongo(_id=_id)
 
     indent_transactions = Database.find("memberTransactions", {"intent_id": _id})
+    indent_installments = Database.find("installments", {"intent_id": _id})
 
     if indent_transactions.count() > 0:
         memberTransactions.delete_transactions_indent_removed(indent_id=_id)
 
-    if indent_transactions.count() > 0:
+    if indent_installments.count() > 0:
         Installment.delete_installments_indent_removed(indent_id=_id)
 
     return render_template('deleted.html', user=user)
