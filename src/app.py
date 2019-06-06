@@ -593,8 +593,10 @@ def update_member_transaction_form(_id):
 
             Installment.update_assigned(_id=installment_id, units_assigned=int(units_assigned_previous)+int(assUnits),
                                         units_received=int(units_returned_previous)+int(received_units_installment))
+
             Intent.update_assigned(_id=intent_id, units_assigned=int(units_assigned_previous)+int(assUnitsIntent),
                                    units_received=int(units_returned_previous) + int(received_units_intent))
+
             memberTransactions.update_paid_wages(_id=_id, wage_paid=wage_paid)
 
             if int(required_units_installment) >= int(units_returned_previous) + int(received_units_installment):
@@ -1022,8 +1024,8 @@ def delete_member_transaction(_id):
         installment_id = result_object['installment_id']
         no_of_units = result_object['no_of_units']
 
-    intent = Database.find("intents", {"_id": _id})
-    installment = Database.find("installments", {"_id": _id})
+    intent = Database.find("intents", {"_id": intent_id})
+    installment = Database.find("installments", {"_id": installment_id})
 
     for result_object in intent[0:1]:
         intent_units = result_object['units_assigned']
@@ -1033,7 +1035,7 @@ def delete_member_transaction(_id):
 
     memberTransactions.delete_from_mongo(_id=_id)
     Intent.update_transaction_delete(_id=intent_id, units_assigned_new=int(intent_units)-int(no_of_units))
-    Installment.update_installment_transaction_delete(_id=intent_id, units_assigned_new=(int(installment_units)-int(no_of_units)))
+    Installment.update_installment_transaction_delete(_id=installment_id, units_assigned_new=(int(installment_units)-int(no_of_units)))
 
     return render_template('deleted_society.html', user=user)
 
