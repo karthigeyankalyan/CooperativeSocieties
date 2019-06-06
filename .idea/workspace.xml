@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="" />
+    <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/database.py" afterPath="$PROJECT_DIR$/src/common/database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/installment.py" afterPath="$PROJECT_DIR$/src/models/installment.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/memberTransactions.py" afterPath="$PROJECT_DIR$/src/models/memberTransactions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ViewIntents.html" afterPath="$PROJECT_DIR$/src/templates/ViewIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntents.html" afterPath="$PROJECT_DIR$/src/templates/completedIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntents.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +31,41 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="1037" column="0" lean-forward="false" selection-start-line="1037" selection-start-column="0" selection-end-line="1037" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="878" column="0" lean-forward="false" selection-start-line="878" selection-start-column="0" selection-end-line="878" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="installment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/installment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="111" column="43" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memberTransactions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/memberTransactions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="82" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,7 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>T</find>
       <find>Thr</find>
       <find>Thrift</find>
       <find>Thrift and</find>
@@ -80,6 +122,7 @@
       <find>delete</find>
       <find>member_transaction_for</find>
       <find>delete_member_tra</find>
+      <find>delete_in</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,16 +131,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/update_password.html" />
-        <option value="$PROJECT_DIR$/src/templates/passwords_changed.html" />
-        <option value="$PROJECT_DIR$/src/templates/passwords_dont_match.html" />
         <option value="$PROJECT_DIR$/src/models/user.py" />
         <option value="$PROJECT_DIR$/src/templates/violatedIntents.html" />
-        <option value="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/eo_form.html" />
         <option value="$PROJECT_DIR$/src/templates/deleted.html" />
         <option value="$PROJECT_DIR$/src/templates/deleted_society.html" />
-        <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewInstallments_acc.html" />
         <option value="$PROJECT_DIR$/src/templates/installment_added.html" />
         <option value="$PROJECT_DIR$/src/templates/installment_form.html" />
@@ -111,17 +149,14 @@
         <option value="$PROJECT_DIR$/src/templates/initial_garment_form_ico.html" />
         <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/intent_added.html" />
-        <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/member_transaction_added.html" />
         <option value="$PROJECT_DIR$/src/templates/update_installment_delivery_form.html" />
         <option value="$PROJECT_DIR$/src/templates/post_login_dswo.html" />
         <option value="$PROJECT_DIR$/src/models/memberProfile.py" />
         <option value="$PROJECT_DIR$/src/templates/update_member_form.html" />
         <option value="$PROJECT_DIR$/src/models/intent.py" />
-        <option value="$PROJECT_DIR$/src/models/installment.py" />
         <option value="$PROJECT_DIR$/src/templates/ViewInstallmentsReceived.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewInstallmentsDeliveryUpdate.html" />
-        <option value="$PROJECT_DIR$/src/models/memberTransactions.py" />
         <option value="$PROJECT_DIR$/src/templates/post_login_accountant.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewMembers.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewTransactions.html" />
@@ -131,13 +166,21 @@
         <option value="$PROJECT_DIR$/src/templates/society_reports.html" />
         <option value="$PROJECT_DIR$/src/templates/member_form.html" />
         <option value="$PROJECT_DIR$/src/models/garmentICO.py" />
-        <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/templates/home.html" />
         <option value="$PROJECT_DIR$/src/templates/logged_out.html" />
-        <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/district_reports.html" />
+        <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/ViewIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/models/memberTransactions.py" />
+        <option value="$PROJECT_DIR$/src/models/installment.py" />
+        <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
       </list>
     </option>
@@ -519,27 +562,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/update_installment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/update_installment_delivery_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/karthigeyan/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="983" column="0" lean-forward="false" selection-start-line="983" selection-start-column="0" selection-end-line="983" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/update_member_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -556,13 +578,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallmentsDelivery.html" />
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallmentsDeliveryUpdate.html" />
-    <entry file="file://$PROJECT_DIR$/src/models/installment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallments_acc.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -595,13 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="61" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/memberTransactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -767,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/garmentICO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -799,24 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-526">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1541856562615" expanded="true" signature="655:694" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="757:796" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="865:904" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="966:1005" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="1075:1114" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="1176:1215" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="1281:1320" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="1388:1427" ph="..." />
-            <marker date="1541856562615" expanded="true" signature="1604:1643" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -833,64 +815,6 @@
             <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
             <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
             <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1539418344882" expanded="true" signature="587:626" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="689:728" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="797:836" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="892:931" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="993:1032" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="1098:1137" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="1205:1244" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="1312:1351" ph="..." />
-            <marker date="1539418344882" expanded="true" signature="1419:1458" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1541008887529" expanded="true" signature="594:633" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="696:735" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="804:843" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="905:944" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1014:1053" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1115:1154" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1220:1259" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1327:1366" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1434:1473" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1541:1580" ph="..." />
-            <marker date="1541008887529" expanded="true" signature="1651:1690" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <marker date="1559376937702" expanded="true" signature="628:667" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="730:769" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="838:877" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="939:978" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1048:1087" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1149:1188" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1254:1293" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1361:1400" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1468:1507" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1575:1614" ph="..." />
-            <marker date="1559376937702" expanded="true" signature="1686:1725" ph="..." />
           </folding>
         </state>
       </provider>
@@ -927,6 +851,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <marker date="1559819686100" expanded="true" signature="617:656" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="719:758" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="827:866" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="928:967" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1037:1076" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1138:1177" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1243:1282" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1350:1389" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1457:1496" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1564:1603" ph="..." />
+            <marker date="1559819686100" expanded="true" signature="1674:1713" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding>
+            <marker date="1559819686521" expanded="true" signature="675:714" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="777:816" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="885:924" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="986:1025" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="1095:1134" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="1196:1235" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="1301:1340" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="1408:1447" ph="..." />
+            <marker date="1559819686521" expanded="true" signature="1624:1663" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/completedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <marker date="1559819686403" expanded="true" signature="619:658" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="721:760" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="829:868" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="930:969" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1039:1078" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1140:1179" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1245:1284" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1352:1391" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1459:1498" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1566:1605" ph="..." />
+            <marker date="1559819686403" expanded="true" signature="1677:1716" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding>
+            <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="820:859" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="915:954" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1016:1055" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1121:1160" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1228:1267" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1335:1374" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1442:1481" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <folding>
+            <marker date="1559819686613" expanded="true" signature="678:717" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="780:819" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="888:927" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="989:1028" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="1098:1137" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="1199:1238" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="1304:1343" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="1411:1450" ph="..." />
+            <marker date="1559819686613" expanded="true" signature="1627:1666" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="49" />
+          <folding>
+            <marker date="1559819686314" expanded="true" signature="651:690" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="753:792" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="861:900" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="962:1001" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1071:1110" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1172:1211" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1277:1316" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1384:1423" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1491:1530" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1598:1637" ph="..." />
+            <marker date="1559819686314" expanded="true" signature="1709:1748" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/intent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
@@ -935,10 +973,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/completedIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding>
+            <marker date="1559819686213" expanded="true" signature="677:716" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="779:818" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="887:926" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="988:1027" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="1097:1136" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="1198:1237" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="1303:1342" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="1410:1449" ph="..." />
+            <marker date="1559819686213" expanded="true" signature="1626:1665" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/memberTransactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/installment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="111" column="43" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="1037" column="0" lean-forward="false" selection-start-line="1037" selection-start-column="0" selection-end-line="1037" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="878" column="0" lean-forward="false" selection-start-line="878" selection-start-column="0" selection-end-line="878" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

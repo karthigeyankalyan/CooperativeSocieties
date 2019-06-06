@@ -201,3 +201,11 @@ class Database(object):
     @staticmethod
     def change_password(collection, query, password):
         return Database.DATABASE[collection].update_one(query, {'$set': {'password': password}}, True)
+
+    @staticmethod
+    def transactions_indent_delete(collection, query):
+        return Database.DATABASE[collection].delete_many(query)
+
+    @staticmethod
+    def installments_indent_delete(collection, query):
+        return Database.DATABASE[collection].delete_many(query)

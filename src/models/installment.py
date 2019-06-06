@@ -107,6 +107,10 @@ class Installment(object):
         Database.update_installment_transaction_delete(collection='installments', query={'_id': _id},
                                                        units_assigned_new=units_assigned_new)
 
+    @classmethod
+    def delete_installments_indent_removed(cls, indent_id):
+        Database.installments_indent_delete(collection='installments', query={'intent_id': indent_id})
+
     def json(self):
         return {
             'intent_id': self.intent_id,

@@ -77,6 +77,10 @@ class memberTransactions(object):
     def update_paid_wages(cls, _id, wage_paid):
         Database.update_wages_paid(collection='memberTransactions', query={'_id': _id}, wage_paid=wage_paid)
 
+    @classmethod
+    def delete_transactions_indent_removed(cls, indent_id):
+        Database.transactions_indent_delete(collection='memberTransactions', query={'intent_id': indent_id})
+
     def json(self):
         return {
             'name': self.name,
