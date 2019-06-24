@@ -13,8 +13,13 @@
         contentType: "application/json",
         dataType: 'json',
         success: function (json) {
-            console.log(json);
-            $("#intentDetails").find("tbody").empty();
+
+             json.sort(function(a,b){
+                return a.intent_id - b.intent_id;
+                }
+            );
+
+           $("#intentDetails").find("tbody").empty();
             var tbl = $("<table class='table table-bordered table-dark' id='intentDetails'/>");
             $("#intentList").append(tbl);
             var hr = "<tr>";

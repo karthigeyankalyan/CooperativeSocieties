@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/intent_form.html" afterPath="$PROJECT_DIR$/src/templates/intent_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntents.html" afterPath="$PROJECT_DIR$/src/templates/completedIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntents.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntents.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,23 +24,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="875" column="0" lean-forward="false" selection-start-line="875" selection-start-column="0" selection-end-line="875" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="intent_form.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="intent_form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="92" column="57" lean-forward="false" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -43,61 +37,187 @@
       <file leaf-file-name="violatedIntents.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1541008520080" expanded="true" signature="590:629" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="692:731" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="800:839" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="901:940" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1010:1049" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1111:1150" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1216:1255" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1323:1362" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
-                <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="712:751" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="814:853" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="922:961" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1023:1062" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1132:1171" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1233:1272" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1338:1377" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1445:1484" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1552:1591" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1659:1698" ph="..." />
+                <marker date="1561365058971" expanded="true" signature="1769:1808" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="installment.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/installment.py">
+      <file leaf-file-name="violatedIntentsSociety.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/violatedIntentsSociety.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="111" column="43" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1561365167783" expanded="true" signature="768:807" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="870:909" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="978:1017" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1079:1118" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1188:1227" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1289:1328" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1394:1433" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1501:1540" ph="..." />
+                <marker date="1561365167783" expanded="true" signature="1717:1756" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberTransactions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/memberTransactions.py">
+      <file leaf-file-name="ViewIntents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="34">
+              <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <folding>
+                <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="820:859" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="915:954" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="1016:1055" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="1121:1160" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="1228:1267" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="1335:1374" ph="..." />
+                <marker date="1559819685957" expanded="true" signature="1442:1481" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/database.py">
+      <file leaf-file-name="ongoingIntents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3485">
-              <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <marker date="1561365168205" expanded="true" signature="737:776" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="839:878" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="947:986" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1048:1087" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1157:1196" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1258:1297" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1363:1402" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1470:1509" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1577:1616" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1684:1723" ph="..." />
+                <marker date="1561365168205" expanded="true" signature="1794:1833" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/intent.py">
+      <file leaf-file-name="ongoingIntentsSociety.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1561365167661" expanded="true" signature="795:834" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="897:936" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1005:1044" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1106:1145" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1215:1254" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1316:1355" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1421:1460" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1528:1567" ph="..." />
+                <marker date="1561365167661" expanded="true" signature="1744:1783" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ytaIntents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <marker date="1561365168099" expanded="true" signature="742:781" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="844:883" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="952:991" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1053:1092" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1162:1201" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1263:1302" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1368:1407" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1475:1514" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1582:1621" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1689:1728" ph="..." />
+                <marker date="1561365168099" expanded="true" signature="1800:1839" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ytaIntentsSociety.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1561365167877" expanded="true" signature="799:838" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="901:940" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1009:1048" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1110:1149" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1219:1258" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1320:1359" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1425:1464" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1532:1571" ph="..." />
+                <marker date="1561365167877" expanded="true" signature="1748:1787" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="completedIntents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/completedIntents.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <marker date="1561365167962" expanded="true" signature="739:778" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="841:880" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="949:988" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1050:1089" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1159:1198" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1260:1299" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1365:1404" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1472:1511" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1579:1618" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1686:1725" ph="..." />
+                <marker date="1561365167962" expanded="true" signature="1797:1836" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="completedIntentsSociety.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/completedIntentsSociety.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1561365168299" expanded="true" signature="797:836" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="899:938" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1007:1046" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1108:1147" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1217:1256" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1318:1357" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1423:1462" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1530:1569" ph="..." />
+                <marker date="1561365168299" expanded="true" signature="1746:1785" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/models/user.py" />
-        <option value="$PROJECT_DIR$/src/templates/violatedIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/eo_form.html" />
         <option value="$PROJECT_DIR$/src/templates/deleted.html" />
         <option value="$PROJECT_DIR$/src/templates/deleted_society.html" />
@@ -192,18 +310,20 @@
         <option value="$PROJECT_DIR$/src/templates/member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/update_member_transaction_form.html" />
         <option value="$PROJECT_DIR$/src/templates/district_reports.html" />
-        <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
-        <option value="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
-        <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/ViewIntents.html" />
-        <option value="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
-        <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
-        <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/models/memberTransactions.py" />
         <option value="$PROJECT_DIR$/src/models/installment.py" />
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
         <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
+        <option value="$PROJECT_DIR$/src/templates/violatedIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/ytaIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
+        <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
       </list>
     </option>
   </component>
@@ -584,13 +704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallmentsDelivery.html" />
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallmentsDeliveryUpdate.html" />
     <entry file="file://$PROJECT_DIR$/src/templates/ViewInstallments_acc.html">
@@ -832,60 +945,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/completedIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/intent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/completedIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -913,26 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1541008520080" expanded="true" signature="590:629" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="692:731" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="800:839" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="901:940" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1010:1049" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1111:1150" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1216:1255" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1323:1362" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
-            <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -945,9 +989,179 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="92" column="57" lean-forward="false" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365058971" expanded="true" signature="712:751" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="814:853" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="922:961" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1023:1062" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1132:1171" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1233:1272" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1338:1377" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1445:1484" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1552:1591" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1659:1698" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1769:1808" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365167783" expanded="true" signature="768:807" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="870:909" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="978:1017" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1079:1118" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1188:1227" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1289:1328" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1394:1433" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1501:1540" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1717:1756" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="820:859" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="915:954" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1016:1055" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1121:1160" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1228:1267" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1335:1374" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1442:1481" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1561365168205" expanded="true" signature="737:776" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="839:878" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="947:986" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1048:1087" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1157:1196" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1258:1297" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1363:1402" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1470:1509" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1577:1616" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1684:1723" ph="..." />
+            <marker date="1561365168205" expanded="true" signature="1794:1833" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365167661" expanded="true" signature="795:834" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="897:936" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1005:1044" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1106:1145" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1215:1254" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1316:1355" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1421:1460" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1528:1567" ph="..." />
+            <marker date="1561365167661" expanded="true" signature="1744:1783" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1561365168099" expanded="true" signature="742:781" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="844:883" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="952:991" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1053:1092" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1162:1201" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1263:1302" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1368:1407" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1475:1514" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1582:1621" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1689:1728" ph="..." />
+            <marker date="1561365168099" expanded="true" signature="1800:1839" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ytaIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365167877" expanded="true" signature="799:838" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="901:940" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1009:1048" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1110:1149" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1219:1258" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1320:1359" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1425:1464" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1532:1571" ph="..." />
+            <marker date="1561365167877" expanded="true" signature="1748:1787" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/completedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1561365167962" expanded="true" signature="739:778" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="841:880" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="949:988" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1050:1089" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1159:1198" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1260:1299" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1365:1404" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1472:1511" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1579:1618" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1686:1725" ph="..." />
+            <marker date="1561365167962" expanded="true" signature="1797:1836" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/completedIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365168299" expanded="true" signature="797:836" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="899:938" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1007:1046" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1108:1147" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1217:1256" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1318:1357" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1423:1462" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1530:1569" ph="..." />
+            <marker date="1561365168299" expanded="true" signature="1746:1785" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
