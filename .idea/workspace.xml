@@ -33,9 +33,31 @@
       <file leaf-file-name="intent_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="126" column="45" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="45" />
+            <state relative-caret-position="17">
+              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="violatedIntents.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1541008520080" expanded="true" signature="590:629" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="692:731" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="800:839" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="901:940" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1010:1049" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1111:1150" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1216:1255" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1323:1362" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
+                <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -304,6 +325,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,7 +544,7 @@
     <frame x="1" y="0" width="1364" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2898773" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29447854" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -730,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,9 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,9 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,13 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -905,6 +913,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1541008520080" expanded="true" signature="590:629" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="692:731" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="800:839" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="901:940" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1010:1049" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1111:1150" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1216:1255" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1323:1362" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1430:1469" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1537:1576" ph="..." />
+            <marker date="1541008520080" expanded="true" signature="1647:1686" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -917,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="126" column="45" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="45" />
+        <state relative-caret-position="17">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
