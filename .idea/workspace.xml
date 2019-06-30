@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntents.html" afterPath="$PROJECT_DIR$/src/templates/completedIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntents.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ongoingIntentsSociety.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntents.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntents.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" afterPath="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="intent_form.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="intent_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="92" column="57" lean-forward="false" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
+            <state relative-caret-position="204">
+              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -38,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <marker date="1561365058971" expanded="true" signature="712:751" ph="..." />
                 <marker date="1561365058971" expanded="true" signature="814:853" ph="..." />
@@ -80,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding>
                 <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
                 <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
@@ -202,7 +195,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="completedIntentsSociety.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="completedIntentsSociety.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/completedIntentsSociety.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -315,7 +308,6 @@
         <option value="$PROJECT_DIR$/src/models/installment.py" />
         <option value="$PROJECT_DIR$/src/common/database.py" />
         <option value="$PROJECT_DIR$/src/app.py" />
-        <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
         <option value="$PROJECT_DIR$/src/templates/violatedIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/violatedIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/ongoingIntents.html" />
@@ -324,6 +316,7 @@
         <option value="$PROJECT_DIR$/src/templates/ytaIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
+        <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
       </list>
     </option>
   </component>
@@ -362,6 +355,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -445,7 +439,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -664,17 +657,17 @@
     <frame x="1" y="0" width="1364" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29447854" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29907975" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34860885" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34860885" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -949,7 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3485">
           <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="82" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
           <caret line="111" column="43" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,73 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="875" column="0" lean-forward="false" selection-start-line="875" selection-start-column="0" selection-end-line="875" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="92" column="57" lean-forward="false" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1561365058971" expanded="true" signature="712:751" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="814:853" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="922:961" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1023:1062" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1132:1171" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1233:1272" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1338:1377" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1445:1484" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1552:1591" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1659:1698" ph="..." />
-            <marker date="1561365058971" expanded="true" signature="1769:1808" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntentsSociety.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1561365167783" expanded="true" signature="768:807" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="870:909" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="978:1017" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1079:1118" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1188:1227" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1289:1328" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1394:1433" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1501:1540" ph="..." />
-            <marker date="1561365167783" expanded="true" signature="1717:1756" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="820:859" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="915:954" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="1016:1055" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="1121:1160" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="1228:1267" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="1335:1374" ph="..." />
-            <marker date="1559819685957" expanded="true" signature="1442:1481" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,6 +1084,70 @@
             <marker date="1561365168299" expanded="true" signature="1530:1569" ph="..." />
             <marker date="1561365168299" expanded="true" signature="1746:1785" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365058971" expanded="true" signature="712:751" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="814:853" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="922:961" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1023:1062" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1132:1171" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1233:1272" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1338:1377" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1445:1484" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1552:1591" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1659:1698" ph="..." />
+            <marker date="1561365058971" expanded="true" signature="1769:1808" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/violatedIntentsSociety.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1561365167783" expanded="true" signature="768:807" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="870:909" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="978:1017" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1079:1118" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1188:1227" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1289:1328" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1394:1433" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1501:1540" ph="..." />
+            <marker date="1561365167783" expanded="true" signature="1717:1756" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ViewIntents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <marker date="1559819685957" expanded="true" signature="610:649" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="712:751" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="820:859" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="915:954" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1016:1055" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1121:1160" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1228:1267" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1335:1374" ph="..." />
+            <marker date="1559819685957" expanded="true" signature="1442:1481" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/intent_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
