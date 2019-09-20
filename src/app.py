@@ -249,7 +249,7 @@ def societies_summary_district(district):
     user = User.get_by_email(email)
     if email is not None:
         if user.society_name is not None:
-            return render_template('society_summary.html', user=user, society=society_name, district=district)
+            return render_template('society_summary.html', user=user, district=district)
 
     else:
         return render_template('login_fail.html')
