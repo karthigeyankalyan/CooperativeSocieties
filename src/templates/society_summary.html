@@ -20,7 +20,7 @@
 
 <script>
     var district = "{{district}}";
-    var source = "/RawViolations/"+district;
+    var source = "/rawSocietiesSummary/"+district;
     $.ajax({
         type: 'GET',
         url: source,
@@ -43,7 +43,7 @@
                 })
                 .entries(json);
 
-            console.log(json);
+            console.log(aggregatedData);
 
             $("#societyList").find("tbody").empty();
             var tbl = $("<table class='table table-bordered table-dark' style='margin-left: auto;margin-right: auto;'/>").attr("id", "societyList");
