@@ -35,7 +35,7 @@
                 .key(function (d) {
                     return d.garment_type;
                 })
-                .rollup(function (v) {
+                .rollup(function (leaves) {
                     return {
                         "Units Issued": d3.sum(leaves, function (d) {return d.no_of_units;}),
                         "Units Returned": d3.sum(leaves, function (d) {return d.no_of_units;})
