@@ -51,6 +51,8 @@ def login_user():
             return render_template('profile_hq.html', user=user)
         elif user.designation == 'Accountant':
             return render_template('profile_accountant.html', user=user)
+        elif user.designation == 'Admin':
+            return render_template('profile_admin.html', user=user)
         else:
             return render_template('profile_dswo.html', user=user)
 
@@ -70,6 +72,20 @@ def register_user():
     User.register(email, password, username, designation, district, society)
 
     user = User.get_by_email(email)
+
+    if user.designation == 'HQ Staff':
+        return render_template('profile_hq.html', user=user)
+    elif user.designation == 'Accountant':
+        return render_template('profile_accountant.html', user=user)
+    else:
+        return render_template('profile_dswo.html', user=user)
+
+
+@app.route('/indentsSummaryAdmin', methods=['POST'])
+def indents_summary():
+    email = session['email']
+    if email is not None:
+        user = User.get_by_email(email)
 
     if user.designation == 'HQ Staff':
         return render_template('profile_hq.html', user=user)
@@ -225,6 +241,31 @@ def view_intents_ovr_district():
 
     else:
         return render_template('login_fail.html')
+
+
+@app.route('/societies_summary/<string:district>')
+def societies_summary_district(district):
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        if user.society_name is not None:
+            return render_template('society_summary.html', user=user, society=user.society_name, district=user.district)
+
+    else:
+        return render_template('login_fail.html')
+
+
+@app.route('/rawSocietiesSummary/<string:district>')
+def get_societies_summary(district):
+    district_intents_array = []
+    district_intents = Database.find("memberTransactions", {"district": district})
+
+    for intent in district_intents:
+        district_intents_array.append(intent)
+
+    completed_intents = json.dumps(district_intents_array, default=json_util.default)
+
+    return completed_intents
 
 
 @app.route('/view_installments/<string:_id>', methods=['POST', 'GET'])

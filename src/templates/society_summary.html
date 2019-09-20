@@ -1,0 +1,76 @@
+{% extends "post_login_admin.html" %}
+{% block content %}
+
+<style>
+    #username {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div id="username">
+    <h2>Welcome, {{ user.username }}! </h2>
+    <h2>Below are the options for Admin! </h2>
+</div>
+
+<div id="societyDetails">
+</div>
+
+<script>
+    var district = "{{district}}";
+    var source = "/RawViolations/"+district;
+    $.ajax({
+        type: 'GET',
+        url: source,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+
+            var aggregatedData = d3.nest()
+                .key(function (d) {
+                    return d.center;
+                })
+                .key(function (d) {
+                    return d.garment_type;
+                })
+                .rollup(function (v) {
+                    return {
+                        "Units Issued": d3.sum(leaves, function (d) {return d.no_of_units;}),
+                        "Units Returned": d3.sum(leaves, function (d) {return d.no_of_units;})
+                    }
+                })
+                .entries(json);
+
+            $("#societyList").find("tbody").empty();
+            var tbl = $("<table class='table table-bordered table-dark' style='margin-left: auto;margin-right: auto;'/>").attr("id", "societyList");
+            $("#societyDetails").append(tbl);
+            var hr = "<tr>";
+            var th1 = "<th style='text-align:center;vertical-align:middle'>" + "S.No" + "</th>";
+            var th2 = "<th style='text-align:center;vertical-align:middle'>" + "District" + "</th>";
+            var th3 = "<th style='text-align:center;vertical-align:middle'>" + "Center" + "</th>";
+            var th4 = "<th style='text-align:center;vertical-align:middle'>" + "Garment Type" + "</th>";
+            var th5 = "<th style='text-align:center;vertical-align:middle'>" + "Units Issued" + "</th>";
+            var th6 = "<th style='text-align:center;vertical-align:middle'>" + "Units Returned" + "</th>";
+            $("#societyList").append(hr + th1 + th2 + th3 + th4 + th5 + th6);
+                for (var l = 0; l < aggregatedData.length; l++) {
+                    for (var j = 0; j < aggregatedData[l].values.length; j++) {
+                        var row13 = $('<tr></tr>').html(
+                            '<td>' + (j + 1) + '</td>' +
+                            '<td>' + district + '</td>' +
+                            '<td>' + aggregatedData[l].key + '</td>' +
+                            '<td>' + aggregatedData[l].values[j].key + '</td>' +
+                            '<td>' + aggregatedData[l].values[j].values["Units Issued"] + '</td>' +
+                            '<td>' + aggregatedData[l].values[j].values["Units Returned"] + '</td>');
+                        $("#societyList").append(row13);
+                    }
+                }
+        },
+        error: function (e) {
+            alert("error");
+        }
+    });
+</script>
+
+{% endblock %}

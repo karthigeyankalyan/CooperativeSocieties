@@ -1,0 +1,63 @@
+{% extends "post_login_admin.html" %}
+{% block content %}
+
+<style>
+    #username {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div id="username">
+    <h2>Welcome, {{ user.username }}! </h2>
+    <h2>Below are the options for Admin! </h2>
+</div>
+
+<div style="flex-direction: row; align-items: center; justify-content: space-around; display: flex;">
+  <div id="districtLinks" style="flex-direction: column; justify-content: space-between; display: flex;">
+      <a href="/society_summary/Ariyalur">Ariyalur</a>
+      <a href="/society_summary/Chennai">Chennai</a>
+      <a href="/society_summary/Coimbatore">Coimbatore</a>
+      <a href="/society_summary/Cuddalore">Cuddalore</a>
+      <a href="/society_summary/Dharmapuri">Dharmapuri</a>
+      <a href="/society_summary/Dindugul">Dindigul</a>
+      <a href="/society_summary/Erode">Erode</a>
+  </div>
+  <div style="flex-direction: column; justify-content: space-between; display: flex;">
+      <a href="/society_summary/Kancheepuram">Kancheepuram</a>
+      <a href="/society_summary/Kanyakumari">Kanyakumari</a>
+      <a href="/society_summary/Karur">Karur</a>
+      <a href="/society_summary/Krishnagiri">Krishnagiri</a>
+      <a href="/society_summary/Madurai">Madurai</a>
+      <a href="/society_summary/Nagapattinam">Nagapattinam</a>
+      <a href="/society_summary/Namakkal">Namakkal</a>
+  </div>
+  <div style="flex-direction: column; justify-content: space-between; display: flex;">
+      <a href="/society_summary/Nilgiris">Nilgiris</a>
+      <a href="/society_summary/Perambalur">Perambalur</a>
+      <a href="/society_summary/Pudukottai">Pudukottai</a>
+      <a href="/society_summary/Ramnad">Ramanathapuram</a>
+      <a href="/society_summary/Salem">Salem</a>
+      <a href="/society_summary/Sivagangai">Sivagangai</a>
+  </div>
+  <div style="flex-direction: column; justify-content: space-between; display: flex;">
+      <a href="/society_summary/Thanjavur">Thanjavur</a>
+      <a href="/society_summary/Theni">Theni</a>
+      <a href="/society_summary/Thirunelveli">Thirunelveli</a>
+      <a href="/society_summary/Thiruvallur">Thiruvallur</a>
+      <a href="/society_summary/Thiruvarur">Thiruvarur</a>
+      <a href="/society_summary/Tuticorin">Thoothukudi</a>
+      <a href="/society_summary/Thiruvannamalai">Thiruvannamalai</a>
+  </div>
+  <div style="flex-direction: column; justify-content: space-between; display: flex;">
+      <a href="/society_summary/Thirupur">Tirupur</a>
+      <a href="/society_summary/Trichy">Trichy</a>
+      <a href="/society_summary/Vellore">Vellore</a>
+      <a href="/society_summary/Villupuram">Villupuram</a>
+      <a href="/society_summary/Virudhunagar">Virudhunagar</a>
+  </div>
+</div>
+
+{% endblock %}
