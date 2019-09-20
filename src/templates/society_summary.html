@@ -38,10 +38,12 @@
                 .rollup(function (leaves) {
                     return {
                         "Units Issued": d3.sum(leaves, function (d) {return d.no_of_units;}),
-                        "Units Returned": d3.sum(leaves, function (d) {return d.no_of_units;})
+                        "Units Returned": d3.sum(leaves, function (d) {return d.units_returned;})
                     }
                 })
                 .entries(json);
+
+            console.log(json);
 
             $("#societyList").find("tbody").empty();
             var tbl = $("<table class='table table-bordered table-dark' style='margin-left: auto;margin-right: auto;'/>").attr("id", "societyList");
