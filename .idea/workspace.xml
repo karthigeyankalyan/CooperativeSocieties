@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd02a6-1e4d-40c6-8c3f-d6a51537de00" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.py" afterPath="$PROJECT_DIR$/src/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/post_login_admin.html" afterPath="$PROJECT_DIR$/src/templates/post_login_admin.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +17,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -30,7 +30,7 @@
       <file leaf-file-name="society_summary.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/society_summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="918">
               <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <marker date="1568994898075" expanded="true" signature="1312:1349" ph="..." />
@@ -67,6 +67,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_login_admin.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/post_login_admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,11 +189,11 @@
         <option value="$PROJECT_DIR$/src/templates/completedIntents.html" />
         <option value="$PROJECT_DIR$/src/templates/completedIntentsSociety.html" />
         <option value="$PROJECT_DIR$/src/templates/intent_form.html" />
-        <option value="$PROJECT_DIR$/src/templates/post_login_admin.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_hq.html" />
         <option value="$PROJECT_DIR$/src/templates/profile_admin.html" />
         <option value="$PROJECT_DIR$/src/templates/society_summary.html" />
         <option value="$PROJECT_DIR$/src/app.py" />
+        <option value="$PROJECT_DIR$/src/templates/post_login_admin.html" />
       </list>
     </option>
   </component>
@@ -853,14 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/post_login_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="68" column="57" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/profile_dswo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -885,22 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/society_summary.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <marker date="1568994898075" expanded="true" signature="1312:1349" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1491:1530" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1588:1627" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1689:1728" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1788:1827" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1893:1932" ph="..." />
-            <marker date="1568994898075" expanded="true" signature="1998:2037" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/profile_admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -920,6 +906,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/society_summary.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <marker date="1568994898075" expanded="true" signature="1312:1349" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1491:1530" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1588:1627" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1689:1728" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1788:1827" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1893:1932" ph="..." />
+            <marker date="1568994898075" expanded="true" signature="1998:2037" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/post_login_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
