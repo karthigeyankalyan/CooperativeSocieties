@@ -61,8 +61,8 @@
                         var url = '/View_Members_Admin/'+district+"/"+aggregatedData[l].key;
                         var row13 = $('<tr></tr>').html(
                             '<td>' + (j + 1) + '</td>' +
-                            '<td><a href="' + url + '">' + district + '</a></td>'+
-                            '<td>' + aggregatedData[l].key + '</td>' +
+                            '<td>' + district + '</td>'+
+                            '<td><a href="' + url + '">' + aggregatedData[l].key + '</a></td>' +
                             '<td>' + aggregatedData[l].values[j].key + '</td>' +
                             '<td>' + aggregatedData[l].values[j].values["Units Issued"] + '</td>' +
                             '<td>' + aggregatedData[l].values[j].values["Units Returned"] + '</td>');
