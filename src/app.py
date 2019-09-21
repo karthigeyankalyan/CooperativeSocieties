@@ -800,6 +800,18 @@ def view_members():
         return render_template('login_fail.html')
 
 
+@app.route('/View_Members_Admin/<string:district>/<string:society>')
+def view_members_admin(district, society):
+    email = session['email']
+    user = User.get_by_email(email)
+    if email is not None:
+        if user.society_name is not None:
+            return render_template('ViewMembers.html', user=user, society=society, district=district)
+
+    else:
+        return render_template('login_fail.html')
+
+
 @app.route('/loggedOut')
 def log_out():
     email = session['email']

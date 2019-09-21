@@ -58,9 +58,10 @@
             $("#societyList").append(hr + th1 + th2 + th3 + th4 + th5 + th6);
                 for (var l = 0; l < aggregatedData.length; l++) {
                     for (var j = 0; j < aggregatedData[l].values.length; j++) {
+                        var url = '/View_Members_Admin/'+district+"/"+aggregatedData[l].key;
                         var row13 = $('<tr></tr>').html(
                             '<td>' + (j + 1) + '</td>' +
-                            '<td>' + district + '</td>' +
+                            '<td><a href="' + url + '">' + district + '</a></td>'+
                             '<td>' + aggregatedData[l].key + '</td>' +
                             '<td>' + aggregatedData[l].values[j].key + '</td>' +
                             '<td>' + aggregatedData[l].values[j].values["Units Issued"] + '</td>' +
